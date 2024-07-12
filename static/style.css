@@ -1,0 +1,334 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --azul1: #020f8345;
+    --azul2: #4881fce6;
+    --azul3: #0000ff;
+    --vermelho: #ff0000;
+    --vermelho2: #fc5555;
+    --branco: #ffffff;
+    --verde: #008000;
+    --amarelo: #ffa500;
+
+}    
+body {
+    background-color: var(--azul1);
+}
+
+.terceiro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--vermelho);
+    height: 80px;
+    color: var(--branco);
+    font-size: 1.5rem;
+}
+
+.terceiro .painel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.terceiro .painel form {
+    margin-bottom: 10px;
+}
+
+.terceiro .painel form input{
+    height: 25px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 5px;
+    border: 1px solid var(--azul3);
+}
+
+#clt ,#cub {
+    width: 40px;
+}
+
+#mot ,#dest {
+    width: 300px;
+}
+
+
+/* ####### ESTILO DO PAINEL GRAFICO  ########*/
+.pai {
+    display: flex;
+    background-color: var(--azul1);
+}
+
+.pai .grafico {
+    height: 700px;
+    width: 100%;
+    background-color: var(--azul3);
+    justify-content: center;
+    align-items: normal;
+    text-align: center;
+    margin: 5px 5px 5px 0;
+    border-radius: 3px;
+    color: var(--branco);
+}
+
+.pai .grafico .cubtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.cubGeral{
+    background-color: var(--azul2);
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+    
+}
+
+.pai .grafico .cubtotal .total{
+    width: 115px;
+    height: 30px;
+    background-color: var(--azul2);
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+.pai .conf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--azul2);
+    height: 150px;
+    margin: 5px 5px 5px 5px;
+    gap: 10px;
+    border-radius: 5px;
+    font-size: 0.6rem;
+    color: var(--branco);
+}
+
+
+
+#chartdiv2{
+    height: 340px;
+    justify-content: center;
+    color: var(--branco);
+    cursor: pointer;
+}
+
+
+
+
+
+/* ####### FIM DO ESTILO PAINEL GRÁFICO  ########*/
+
+
+.mestre .principal {
+    width: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 5px 5px 5px;
+    padding: 0 5px 0 5px;
+    background-color: var(--azul2);
+    border-radius: 3px;
+}
+
+.logo {
+    background-color: var(--azul3);
+    border-radius: 3px;
+}
+
+.logo img {
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 3px 0 3px 0;
+}
+
+.menu  {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--branco);
+    justify-content: space-between;
+    
+}
+
+.menu div {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 7px;
+}
+
+.menu h1 {
+    font-size: 0.7rem;
+}
+
+.menu span {
+    font-size: 0.7rem;
+}
+
+.menu .destino {
+    width: 250px;
+    
+}
+.menu .motorista {
+    width: 250px;
+    
+}
+
+.menu #CONF {
+    width: 50px;
+}
+
+/* ####### ESTILO DAS FASES  ########*/
+
+.mae {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 0 3px 3px 3px;
+}
+
+.fase {
+    width: 100%;
+    height: 20px;
+    color: var(--branco);
+    border-radius: 3px;
+    align-items: center;
+    font-size: 0.5rem;
+    background-color: var(--azul3);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fase i {
+    color: var(--vermelho);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+
+
+
+/* SECTION NÃO CARREGAMENTO*/
+.noCcarregamento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.noCcarregamento h1 {
+    font-size: 2rem;
+    color: var(--azul3);
+}
+
+
+footer {
+    background-color: var(--azul3);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: var(--branco);
+    font-size: 0.8rem;
+    padding-right: 10px;
+}
+
+
+/*ESTILO DA FASE CONCLUÍDO*/
+.concluido {
+    width: 100%;
+    height: 20px;
+    color: var(--branco);
+    border-radius: 3px;
+    align-items: center;
+    font-size: 0.5rem;
+    background-color: var(--verde);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.concluido i {
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+/*ESTILO DA FASE CANCELADO*/
+.cancelado {
+    width: 100%;
+    height: 20px;
+    color: var(--branco);
+    border-radius: 3px;
+    align-items: center;
+    font-size: 0.5rem;
+    background-color: var(--vermelho);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cancelado i {
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+
+/*ESTILO DA FASE ADIADO*/
+.adiado {
+    width: 100%;
+    height: 20px;
+    color: var(--branco);
+    border-radius: 3px;
+    align-items: center;
+    font-size: 0.5rem;
+    background-color: var(--amarelo);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.adiado i {
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
