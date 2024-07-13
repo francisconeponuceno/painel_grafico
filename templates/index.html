@@ -11,6 +11,7 @@
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 <body class="body">
@@ -99,15 +100,28 @@
                 </div>
             </div>
 
-            <div class="conf" id="chartdiv">
-                
+            <div id="rosca" >
+                <canvas id="myChart"></canvas>
             </div>
-            <div class="conf" id="chartdiv2"></div>
+            
+            <div class="conf" id="chartdiv2">
+            </div>
             
         </div>
 
     </div>
     
+    <div class="porcento">
+        <p id="cubFabio">{{Dgrafico[1]}}</p>
+        <p id="cubKassio">{{Dgrafico[2]}}</p>
+        <p id="cubArimateia">{{Dgrafico[3]}}</p>
+        <p id="cubVicente">{{Dgrafico[4]}}</p>
+        <p id="cubCaze">{{Dgrafico[5]}}</p>
+        <p id="cubZecarlos">{{Dgrafico[6]}}</p>
+        <p id="porcentoTerceiro">{{Dgrafico[10]}} </p>
+        <p id="porcentoClaudino">{{Dgrafico[11]}}</p>
+        <p id="porcentoEscoamento">{{Dgrafico[12]}}</p>
+    </div>
     
     <section class="noCcarregamento">
         <h1 class="TextVasio"></h1>

@@ -58,7 +58,7 @@ def consultarDados():
 
 # dados para os graficos
 def DadosGrafico():
-    cubtotal = cubT = cubC = cubE = cubV = cubKZ = cubF = cubA = cubCS = cubZC =  porcentoTerceiro = porcentoClaudino = pocentoEscoameto = 0
+    cubtotal = cubT = cubC = cubE = cubV = cubKZ = cubF = cubA = cubCSS = cubZC =  porcentoTerceiro = porcentoClaudino = porcentoEscoameto = 0
     conect = sqlite3.connect('banco.db')
     cursor = conect.cursor()
     cursor.execute('SELECT * FROM carrego')
@@ -68,12 +68,12 @@ def DadosGrafico():
         if i[4] == 'FABIO':
             cubF += i[6]
         if i[4] == 'KASSIO':
-            cubCS += i[6]
+            cubCSS += i[6]
         if i[4] == 'ARIMATEIA':
             cubA += i[6]
         if i[4] == 'VICENTE':
             cubV += i[6]
-        if i[4] == 'KAZE':
+        if i[4] == 'CAZE':
             cubKZ += i[6]
         if i[4] == 'ZE CARLOS':
             cubZC += i[6]
@@ -84,9 +84,10 @@ def DadosGrafico():
         if i[1] == 'E':
             cubE += i[6]
         cubtotal += i[6]
-
-    print(porcentoTerceiro)
-    dadoslidos = [cubtotal, cubF, cubCS, cubA, cubV, cubKZ, cubZC, cubC, cubT, cubE,]
+    porcentoTerceiro = cubT / cubtotal * 100
+    porcentoClaudino = cubC / cubtotal * 100
+    porcentoEscoameto = cubE / cubtotal * 100
+    dadoslidos = [cubtotal, cubF, cubCSS, cubA, cubV, cubKZ, cubZC, cubC, cubT, cubE,porcentoTerceiro,porcentoClaudino,porcentoEscoameto]
     return dadoslidos
 
 DadosGrafico()
@@ -145,7 +146,7 @@ def excluir(id):
     conect.commit()
     conect.close()
 
-# excluir(45)
+#excluir(51)
 # eliminando a tabela
 def eliminaTabela():
     conect = sqlite3.connect('banco.db')

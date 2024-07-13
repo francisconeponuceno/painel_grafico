@@ -11,7 +11,7 @@
 }
 
 :root {
-    --azul1: #020f8345;
+    --azul1: #b2b3b545;
     --azul2: #4881fce6;
     --azul3: #0000ff;
     --vermelho: #ff0000;
@@ -67,7 +67,7 @@ body {
 /* ####### ESTILO DO PAINEL GRAFICO  ########*/
 .pai {
     display: flex;
-    
+    background-color: var(--azul1);
 }
 
 .pai .grafico {
@@ -117,6 +117,20 @@ body {
     border-radius: 5px;
     font-size: 0.8rem;
     color: var(--branco);
+}
+
+
+#rosca {
+    width: 100%;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--branco);
+}
+canvas #myChart{
+    
+    width: 100%;
 }
 
 
@@ -265,6 +279,11 @@ footer {
     color: var(--branco);
     font-size: 0.8rem;
     padding-right: 10px;
+}
+
+
+.porcento{
+    
 }
 
 
