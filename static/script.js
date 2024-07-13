@@ -89,7 +89,7 @@ columnTemplate.setAll({
     tooltipText: "porcentagem",
     cornerRadiusBR: 3,
     cornerRadiusTR: 3,
-    maxHeight: 15,
+    maxHeight: 30,
     strokeOpacity: 0
 });
 columnTemplate.adapters.add("fill", (fill, target) => {
@@ -267,7 +267,7 @@ am5.ready(function() {
     series.columns.template.setAll({
       cornerRadiusTL: 5,
       cornerRadiusTR: 5,
-      maxWidth: 25,
+      maxWidth: 40,
       strokeOpacity: 0
     });
     

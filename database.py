@@ -26,7 +26,8 @@ def TabCarrego():
         frase2 TEXT,
         frase3 TEXT,
         frase4 TEXT,
-        frase5 TEXT
+        frase5 TEXT,
+        img TEXT
         );
     """)
     conect.close()
@@ -57,7 +58,7 @@ def consultarDados():
 
 # dados para os graficos
 def DadosGrafico():
-    cubtotal = cubT = cubC = cubE = cubV = cubKZ = cubF = cubA = cubCS = cubZC = 0
+    cubtotal = cubT = cubC = cubE = cubV = cubKZ = cubF = cubA = cubCS = cubZC =  porcentoTerceiro = porcentoClaudino = pocentoEscoameto = 0
     conect = sqlite3.connect('banco.db')
     cursor = conect.cursor()
     cursor.execute('SELECT * FROM carrego')
@@ -83,11 +84,12 @@ def DadosGrafico():
         if i[1] == 'E':
             cubE += i[6]
         cubtotal += i[6]
+
+    print(porcentoTerceiro)
     dadoslidos = [cubtotal, cubF, cubCS, cubA, cubV, cubKZ, cubZC, cubC, cubT, cubE,]
     return dadoslidos
 
-
-
+DadosGrafico()
 # alterar dados
 def alterarFase(id,fase):
     conect = sqlite3.connect('banco.db')
@@ -143,7 +145,7 @@ def excluir(id):
     conect.commit()
     conect.close()
 
-#excluir(45)
+# excluir(45)
 # eliminando a tabela
 def eliminaTabela():
     conect = sqlite3.connect('banco.db')
@@ -153,7 +155,7 @@ def eliminaTabela():
     conect.close()
 
 # eliminaTabela()
-TabCarrego()
+# TabCarrego()
 
 
 # salvar(Dados[0],Dados[1],Dados[2],Dados[3],Dados[4],Dados[5],
@@ -161,6 +163,5 @@ TabCarrego()
 # Dados[12],Dados[13],Dados[14],Dados[15],Dados[16],Dados[17],
 # Dados[18],Dados[19],Dados[20])
 
-#alterarFase(43,1)
-#normal(44,'NORMAL')
-
+# alterarFase(43,1)
+# normal(44,'NORMAL')
