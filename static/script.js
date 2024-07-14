@@ -18,18 +18,18 @@ const ctx = document.getElementById('grafico1');
       labels: ['Terceiro', 'Claudino', 'Escoamento','Escoamento + Claudino' ],
       datasets: [{
         label: '%',
+        
         data: [Number(porcentoTerceiro.innerHTML), Number(porcentoClaudino.innerHTML),
               Number(porcentoEscoamento.innerHTML), Number(Cladino_Escoamento)],
+        backgroundColor: ['#ff0000', '#0000ff', '#4881fce6','#fc5555']
         
-        borderWidth: 1
       }]
     },
     options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
+      layout : {
+        with : 300
       }
+
     }
   });
  
