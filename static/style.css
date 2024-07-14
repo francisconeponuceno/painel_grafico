@@ -120,19 +120,21 @@ body {
 }
 
 
-#rosca {
-    width: 100%;
+canvas #grafico1{
+    border: 1px solid gainsboro;
+    background: white;
+    box-shadow: 3ox 3px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.rosca {
+    
     height: 230px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--branco);
 }
-canvas #myChart{
-    
-    width: 100%;
-}
-
 
 
 #chartdiv2{

@@ -10,7 +10,7 @@ let porcentoClaudino = document.getElementById('porcentoClaudino');
 let porcentoEscoamento = document.getElementById('porcentoEscoamento');
 let Cladino_Escoamento = Number(porcentoClaudino.innerHTML) + Number(porcentoEscoamento.innerHTML)
 
-const ctx = document.getElementById('myChart');
+const ctx = document.getElementById('grafico1');
 
   new Chart(ctx, {
     type: 'doughnut',
@@ -19,7 +19,8 @@ const ctx = document.getElementById('myChart');
       datasets: [{
         label: '%',
         data: [Number(porcentoTerceiro.innerHTML), Number(porcentoClaudino.innerHTML),
-          Number(porcentoEscoamento.innerHTML), Number(Cladino_Escoamento)],
+              Number(porcentoEscoamento.innerHTML), Number(Cladino_Escoamento)],
+        
         borderWidth: 1
       }]
     },
