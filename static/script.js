@@ -45,7 +45,7 @@ new Chart(ctx2, {
       data: [Number(cubArimateia.innerHTML),Number(cubFabio.innerHTML),
             Number(cubZecarlos.innerHTML),Number(cubCaze.innerHTML),
             Number(cubKassio.innerHTML),Number(cubVicente.innerHTML)],
-      backgroundColor: ['#0000ff']
+      backgroundColor: ['#0000ff','#ff0000']
       
     }]
   },

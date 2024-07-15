@@ -129,15 +129,20 @@ canvas #grafico1{
     background-color: var(--branco);
     margin: 0 5px 0 5px;
     border-radius: 5px;
+
 }
 
-
-#grafico2{
-    height: 340px;
+.barra {
+    display: flex;
+    height: 300px;
     justify-content: center;
-    color: var(--branco);
-    cursor: pointer;
+    align-items: center;
+    background-color: var(--branco);
+    margin: 5px 5px 0 5px;
+    border-radius: 5px;
 }
+
+
 
 
 
