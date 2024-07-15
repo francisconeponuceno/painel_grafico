@@ -91,12 +91,6 @@ body {
     font-size: 0.8rem;
 }
 
-.cubGeral{
-    background-color: var(--azul3);
-    margin: 5px 5px 5px 5px;
-    border-radius: 5px;
-    
-}
 
 .pai .grafico .cubtotal .total{
     width: 115px;
@@ -128,12 +122,13 @@ canvas #grafico1{
 }
 
 .rosca {
-    
-    height: 230px;
     display: flex;
+    height: 230px;
     justify-content: center;
     align-items: center;
     background-color: var(--branco);
+    margin: 0 5px 0 5px;
+    border-radius: 5px;
 }
 
 
@@ -285,7 +280,7 @@ footer {
 
 
 .porcento{
-    
+    display: none;
 }
 
 
