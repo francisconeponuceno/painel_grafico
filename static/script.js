@@ -21,7 +21,7 @@ const ctx = document.getElementById('grafico1');
         
         data: [Number(porcentoTerceiro.innerHTML), Number(porcentoClaudino.innerHTML),
               Number(porcentoEscoamento.innerHTML), Number(Cladino_Escoamento)],
-        backgroundColor: ['#ff0000', '#0000ff', '#4881fce6','#fc5555']
+        backgroundColor: ['#ff0000', '#0000ff', '#4881fce6','#f86f6f']
         
       }]
     },

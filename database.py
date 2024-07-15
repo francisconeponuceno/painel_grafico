@@ -27,22 +27,23 @@ def TabCarrego():
         frase3 TEXT,
         frase4 TEXT,
         frase5 TEXT,
-        img TEXT
+        img TEXT,
+        status TEXT
         );
     """)
     conect.close()
 
 
 def salvar(clt,mot,dest,conf,placa,cub,casse1,classe2,classe3,classe4,classe5,
-           icone1,icone2,icone3,icone4,icone5,frase1,frase2,frase3,frase4,frase5):
+           icone1,icone2,icone3,icone4,icone5,frase1,frase2,frase3,frase4,frase5,img,status):
     conect = sqlite3.connect('banco.db')
     cursor = conect.cursor()
     cursor.execute('''INSERT INTO carrego(clt, mot, dest, conf, placa, cub,
                    classe1, classe2, classe3, classe4, classe5,
                    icone1, icone2, icone3, icone4, icone5,
-                   frase1, frase2, frase3, frase4, frase5) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
+                   frase1, frase2, frase3, frase4, frase5,img, status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
                    [clt,mot,dest,conf,placa,cub,casse1,classe2,classe3,classe4,classe5,
-                    icone1,icone2,icone3,icone4,icone5,frase1,frase2,frase3,frase4,frase5])
+                    icone1,icone2,icone3,icone4,icone5,frase1,frase2,frase3,frase4,frase5,img,status])
     conect.commit()
     conect.close()
 
@@ -50,7 +51,7 @@ def salvar(clt,mot,dest,conf,placa,cub,casse1,classe2,classe3,classe4,classe5,
 def consultarDados():
     conect = sqlite3.connect('banco.db')
     cursor = conect.cursor()
-    cursor.execute('SELECT * FROM carrego')
+    cursor.execute('SELECT * FROM carrego ')
     registros = cursor.fetchall()
     conect.close()
     return registros
@@ -146,7 +147,7 @@ def excluir(id):
     conect.commit()
     conect.close()
 
-#excluir(51)
+excluir(43)
 # eliminando a tabela
 def eliminaTabela():
     conect = sqlite3.connect('banco.db')

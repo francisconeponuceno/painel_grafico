@@ -15,7 +15,7 @@
     --azul2: #4881fce6;
     --azul3: #0000ff;
     --vermelho: #ff0000;
-    --vermelho2: #fc5555;
+    --vermelho2: #f86f6f;
     --branco: #ffffff;
     --verde: #008000;
     --amarelo: #ffa500;
@@ -72,7 +72,7 @@ body {
 
 .pai .grafico {
     height: 700px;
-    width: 100%;
+    width: 380px;
     background-color: var(--azul2);
     justify-content: center;
     align-items: normal;
