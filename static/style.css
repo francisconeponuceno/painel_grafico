@@ -132,7 +132,7 @@ canvas #grafico1{
 }
 
 
-#chartdiv2{
+#grafico2{
     height: 340px;
     justify-content: center;
     color: var(--branco);

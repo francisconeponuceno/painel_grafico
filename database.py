@@ -62,9 +62,11 @@ def DadosGrafico():
     cubtotal = cubT = cubC = cubE = cubV = cubKZ = cubF = cubA = cubCSS = cubZC =  porcentoTerceiro = porcentoClaudino = porcentoEscoameto = 0
     conect = sqlite3.connect('banco.db')
     cursor = conect.cursor()
-    cursor.execute('SELECT * FROM carrego')
+    cursor.execute("SELECT * FROM carrego WHERE status = 'ATIVO' ")
     Dgrafico = cursor.fetchall()
     conect.close()
+    if Dgrafico == []:
+        return
     for i in Dgrafico:
         if i[4] == 'FABIO':
             cubF += i[6]
@@ -91,7 +93,7 @@ def DadosGrafico():
     dadoslidos = [cubtotal, cubF, cubCSS, cubA, cubV, cubKZ, cubZC, cubC, cubT, cubE,porcentoTerceiro,porcentoClaudino,porcentoEscoameto]
     return dadoslidos
 
-DadosGrafico()
+
 # alterar dados
 def alterarFase(id,fase):
     conect = sqlite3.connect('banco.db')
@@ -119,19 +121,19 @@ def normal(id,classe):
     conect = sqlite3.connect('banco.db')
     cursor = conect.cursor()
     if classe == 'NORMAL':
-        cursor.execute(f"UPDATE carrego SET classe1 = 'fase', icone1 = 'bi bi-truck', frase1 = 'AGUARD' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe1 = 'fase', icone1 = 'bi bi-truck', frase1 = 'AGUARD', status = 'ATIVO' WHERE id = {id}")
         cursor.execute(f"UPDATE carrego SET classe2 = 'fase', icone2 = 'bi bi-cone-striped', frase2 = 'CARREGANDO' WHERE id = {id}" )
         cursor.execute(f"UPDATE carrego SET classe3 = 'fase', icone3 = 'bi bi-cone-striped', frase3 = 'AGUARD FAT' WHERE id = {id}")
         cursor.execute(f"UPDATE carrego SET classe4 = 'fase', icone4 = 'bi bi-cone-striped', frase4 = 'FATURANDO' WHERE id = {id}")
         cursor.execute(f"UPDATE carrego SET classe5 = 'fase', icone5 = 'bi bi-cone-striped', frase5 = 'CONCLUÍDO' WHERE id = {id}")
     if classe == 'CANCELADO':
-        cursor.execute(f"UPDATE carrego SET classe1 = 'cancelado', icone1 = 'bi bi-x-circle', frase1 = 'CANCELADO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe1 = 'cancelado', icone1 = 'bi bi-x-circle', frase1 = 'CANCELADO', status = 'CANCELADO' WHERE id = {id}")
         cursor.execute(f"UPDATE carrego SET classe2 = 'cancelado', icone2 = 'bi bi-x-circle', frase2 = 'CANCELADO' WHERE id = {id}" )
         cursor.execute(f"UPDATE carrego SET classe3 = 'cancelado', icone3 = 'bi bi-x-circle', frase3 = 'CANCELADO' WHERE id = {id}")
         cursor.execute(f"UPDATE carrego SET classe4 = 'cancelado', icone4 = 'bi bi-x-circle', frase4 = 'CANCELADO' WHERE id = {id}")
         cursor.execute(f"UPDATE carrego SET classe5 = 'cancelado', icone5 = 'bi bi-x-circle', frase5 = 'CANCELADO' WHERE id = {id}")
     if classe == 'ADIADO':
-        cursor.execute(f"UPDATE carrego SET classe1 = 'adiado', icone1 = 'bi bi-arrow-repeat', frase1 = 'ADIADO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe1 = 'adiado', icone1 = 'bi bi-arrow-repeat', frase1 = 'ADIADO', status = 'ADIADO' WHERE id = {id}")
         cursor.execute(f"UPDATE carrego SET classe2 = 'adiado', icone2 = 'bi bi-arrow-repeat', frase2 = 'ADIADO' WHERE id = {id}" )
         cursor.execute(f"UPDATE carrego SET classe3 = 'adiado', icone3 = 'bi bi-arrow-repeat', frase3 = 'ADIADO' WHERE id = {id}")
         cursor.execute(f"UPDATE carrego SET classe4 = 'adiado', icone4 = 'bi bi-arrow-repeat', frase4 = 'ADIADO' WHERE id = {id}")
@@ -147,7 +149,7 @@ def excluir(id):
     conect.commit()
     conect.close()
 
-excluir(43)
+#excluir(4)
 # eliminando a tabela
 def eliminaTabela():
     conect = sqlite3.connect('banco.db')
@@ -155,9 +157,11 @@ def eliminaTabela():
     cursor.execute(f'DROP TABLE carrego')
     conect.commit()
     conect.close()
+#eliminaTabela()
+
 
 # eliminaTabela()
-# TabCarrego()
+#TabCarrego()
 
 
 # salvar(Dados[0],Dados[1],Dados[2],Dados[3],Dados[4],Dados[5],
@@ -166,4 +170,4 @@ def eliminaTabela():
 # Dados[18],Dados[19],Dados[20])
 
 # alterarFase(43,1)
-# normal(44,'NORMAL')
+normal(13,'NORMAL')

@@ -18,26 +18,24 @@ def cadastrar():
     CONF = request.form['conf']
     PLACA = request.form['placa']
     CUB = request.form['cub']
-    IMG = ''
+    IMG = '/static/images.jpg'
     if CLT =='' or MOT =='' or DEST =='' or CONF =='' or PLACA =='' or CUB == '':
         print('preencha todos os campos')
         return redirect("/")
     else:
         if CONF == 'ARIMATEIA':
-            IMG = '/static/usuario.avif'
+            IMG = '/static/img_arimateia.jpg'
         if CONF == 'CAZE':
-            IMG = '/static/usuario.avif'
+            IMG = '/static/img_caze.jpg'
         if CONF == 'FABIO':
-            IMG = '/static/usuario.avif'
+            IMG = '/static/img_fabio.png'
         if CONF == 'VICENTE':
-            IMG = '/static/usuario.avif'
+            IMG = '/static/img_vicente.png'
         if CONF == 'KASSIO':
-            IMG = '/static/usuario.avif'
+            IMG = '/static/img_cassio.png'
         if CONF == 'ZE CARLOS':
-            IMG = '/static/usuario.avif'
-        else:
-            IMG = '/static/images.jpg'
-            
+            IMG = '/static/img_zecarlos.png'
+        
         Dados = [CLT,MOT,DEST,CONF,PLACA,CUB,'fase','fase','fase','fase','fase',
                 'bi bi-truck','bi bi-cone-striped','bi bi-cone-striped',
                 'bi bi-cone-striped','bi bi-cone-striped','AGUARD','CARREGANDO','AGUARD FAT','FATURANDO','CONCLUÍDO', IMG,'ATIVO']  
