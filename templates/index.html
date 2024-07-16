@@ -14,23 +14,25 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
-<body">
-    <section class="terceiro">
-        <div class="painel">
-            <h1>PAINEL DE CARREGAMENTO DIÁRIO!</h1>
-            <form action="/cadastrar" method="post">
-                <input type="text" name="clt" id="clt" placeholder="clt">
-                <input type="text" name="mot" id="mot" placeholder="motorista">
-                <input type="text" name="dest" id="dest" placeholder="destino">
-                <input type="text" name="conf" id="conf" placeholder="conferente">
-                <input type="text" name="placa" id="placa" placeholder="placa">
-                <input type="text" name="cub" id="cub" placeholder="cub">
-                <input type="submit" name="add" id="add">
-                
-            </form>
-        </div>
-    </section>
+<body>
+    
     <main class="table" id="customers_table">
+
+        <section class="terceiro">
+            <div class="painel">
+                <h1>PAINEL DE CARREGAMENTO DIÁRIO!</h1>
+                <form action="/cadastrar" method="post">
+                    <input type="text" name="clt" id="clt" placeholder="clt">
+                    <input type="text" name="mot" id="mot" placeholder="motorista">
+                    <input type="text" name="dest" id="dest" placeholder="destino">
+                    <input type="text" name="conf" id="conf" placeholder="conferente">
+                    <input type="text" name="placa" id="placa" placeholder="placa">
+                    <input type="text" name="cub" id="cub" placeholder="cub">
+                    <input type="submit" name="add" id="add">
+                    
+                </form>
+            </div>
+        </section>
         
         <section class="table__body">
             <table>
@@ -68,92 +70,34 @@
     </main>
 
     <main class="grafico">
-        <div><h1>GRÁFICOS</h1></div>
-    </main>
-
-
-    <div class="pai">
-        <section class="mestre">
-        
-            {% for item in registro %}
-            <div class="principal">
-        
-                <div class="card">
-                    <div class="menu">
-                        <div><h1>SEQ :</h1><span id="SEQ">{{item[0]}}</span></div>
-                        <div><h1>CLT :</h1><span id="CLT">{{item[1]}}</span></div>
-                        <div class="motorista"><h1>MOT :</h1><span id="MOT">{{item[2]}}</span></div>
-                        <div class="destino"><h1>DEST :</h1><span id="DEST">{{item[3]}}</span></div>
-                        <div><h1>CONF :</h1><span id="CONF">{{item[4]}}</span></div>
-                        <div><h1>PLC :</h1><span id="PLACA">{{item[5]}}</span></div>
-                        <div><h1>CUB :</h1><span id="CUB">{{item[6]}}</span></div>
-                    </div>
-        
-                    <div class="mae">
-                        <div class="{{item[7]}}">
-                            <h1>{{item[17]}}</h1>
-                            <i class="{{item[12]}}" id="IconP1"></i>
-                        </div>
-                        <div class="{{item[8]}}">
-                            <h1>{{item[18]}}</h1>
-                            <i class="{{item[13]}}" id="IconP2"></i>
-                        </div>
-                        <div class="{{item[9]}}">
-                            <h1>{{item[19]}}</h1>
-                            <i class="{{item[14]}}" id="IconP3"></i>
-                        </div>
-                        <div class="{{item[10]}}">
-                            <h1>{{item[20]}}</h1>
-                            <i class="{{item[15]}}" id="IconP4"></i>
-                        </div>
-                        <div class="{{item[11]}}">
-                            <h1>{{item[21]}}</h1>
-                            <i class="{{item[16]}}" id="IconP5"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="logo">
-                    <img src="{{item[22]}}" alt="Não a imagem">
-                </div>
+        <div class="cubtotal">
+            <div class="total">
+                <P>Total</P>
+                <span>{{Dgrafico[0]}} cub</span>
             </div>
-            {% endfor %}
-        
-        </section>
-        
-        
-
-
-        <div class="grafico">
-            
-            <div class="cubtotal">
-                <div class="total">
-                    <P>Total</P>
-                    <span>{{Dgrafico[0]}} cub</span>
-                </div>
-                <div class="total">
-                    <p>Terceiro</p>
-                    <span>{{Dgrafico[8]}} cub</span>
-                </div>
-                <div class="total">
-                    <p>Claudino</p>
-                    <span>{{Dgrafico[7]}} cub</span>
-                </div>
-                <div class="total">
-                    <p>Escoamento</p>
-                    <span>{{Dgrafico[9]}} cub</span>
-                </div>
+            <div class="total">
+                <p>Terceiro</p>
+                <span>{{Dgrafico[8]}} cub</span>
             </div>
-
-            <div class="rosca" >
-                <canvas id="grafico1"></canvas>
+            <div class="total">
+                <p>Claudino</p>
+                <span>{{Dgrafico[7]}} cub</span>
             </div>
-            <div class="barra" >
-                <canvas id="grafico2"></canvas>
+            <div class="total">
+                <p>Escoamento</p>
+                <span>{{Dgrafico[9]}} cub</span>
             </div>
-            
         </div>
 
-    </div>
+        <div class="rosca" >
+            <canvas id="grafico1"></canvas>
+        </div>
+        <div class="barra" >
+            <canvas id="grafico2"></canvas>
+        </div>
+
+        <div class="futer"><p>Desenvolvido pro Francisco Neponuceno</p></div>
+    </main>
     
     <div class="porcento">
         <p id="cubFabio">{{Dgrafico[1]}}</p>
@@ -167,11 +111,6 @@
         <p id="porcentoEscoamento">{{Dgrafico[12]}}</p>
     </div>
 
-    <footer>
-        <div>Desenvolvido por  Francisco Neponuceno</div>
-    </footer>
-
-    
     <script src="/static/script.js"></script>
 </body>
 </html>
