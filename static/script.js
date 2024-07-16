@@ -40,7 +40,7 @@ new Chart(ctx2, {
   data: {
     labels: ['Arimatéia', 'Fabio', 'Zé carlos','Cazé','Kassio','Vicente'],
     datasets: [{
-      label: '%',
+      label: 'CUB',
       
       data: [Number(cubArimateia.innerHTML),Number(cubFabio.innerHTML),
             Number(cubZecarlos.innerHTML),Number(cubCaze.innerHTML),
