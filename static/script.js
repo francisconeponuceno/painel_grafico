@@ -51,7 +51,7 @@ new Chart(ctx2, {
   },
   options: {
     layout : {
-      with : 300
+      width : 100
     }
 
   }

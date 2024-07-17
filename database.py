@@ -149,7 +149,7 @@ def excluir(id):
     conect.commit()
     conect.close()
 
-#excluir(4)
+excluir(11)
 # eliminando a tabela
 def eliminaTabela():
     conect = sqlite3.connect('banco.db')

@@ -11,7 +11,7 @@
 }
 
 :root {
-    --azul1: #b2b3b545;
+    --azul1: #8ab0fd45;
     --azul2: #4881fce6;
     --azul3: #0000ff;
     --vermelho: #ff0000;
@@ -34,7 +34,7 @@ body {
     background-color: var(--vermelho);
     height: 80px;
     color: var(--branco);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .terceiro .painel {
@@ -46,16 +46,18 @@ body {
 }
 
 .terceiro .painel form {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .terceiro .painel form input{
     height: 25px;
     border: none;
     border-radius: 3px;
-    padding-left: 5px;
+    padding-left: 3px;
     border: 1px solid var(--azul3);
 }
+
+
 
 /* ####### ESTILO TABELA  ########*/
 /* ####### ESTILOTABELA  ########*/
@@ -64,9 +66,8 @@ body {
 main.table {
     width: 100%;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.333);
+    background-color: var(--azul1);
     backdrop-filter: blur(5px);
-    box-shadow: 0 .4rem .8rem #0005;
     overflow: hidden;
 }
 
@@ -74,7 +75,7 @@ main.table {
 .table__body {
     width: 100%;
     max-height: calc(100% - 1rem);
-    background-color: rgba(255, 255, 255, 0.733);
+    background-color: var(--azul1);
     overflow: auto;
     overflow: overlay;
 }
@@ -119,18 +120,19 @@ thead th {
     position: sticky;
     top: 0;
     left: 0;
-    background-color: #d1d4defe;
+    background-color: var(--azul3);
     cursor: pointer;
-    
+    color: var(--branco);
 }
 
 tbody tr:nth-child(even) {
-    background-color: #0000000b;
+    background-color: #7701010b;
 }
 
 tbody tr {
     --delay: .1s;
     transition: .5s ease-in-out var(--delay), background-color 0s;
+    cursor: pointer;
 }
 
 tbody tr.hide {
@@ -139,7 +141,7 @@ tbody tr.hide {
 }
 
 tbody tr:hover {
-    background-color: rgba(253, 160, 153, 0.4) !important;
+    background-color: var(--azul2) !important;
 }
 
 tbody tr td,
@@ -180,9 +182,8 @@ tbody tr.hide td img {
     flex-direction: column;
     text-align: center;
     align-items: normal;
-    background-color: #006b21;
-    margin: 5px 5px 5px 0;
-    border-radius: 3px;
+    background-color: var(--azul2);
+    margin: 0 5px 5px 0;
     color: var(--branco);
 }
 
@@ -195,11 +196,15 @@ tbody tr.hide td img {
 
 
 .grafico .cubtotal .total{
-    width: 95px;
-    height: 30px;
+    width: 110px;
+    height: 50px;
     background-color: var(--azul3);
     margin: 5px 5px 5px 5px;
     border-radius: 5px;
+}
+
+.grafico .cubtotal .total span{
+    font-size: 1.2rem;
 }
 
 
@@ -229,7 +234,7 @@ tbody tr.hide td img {
     background-color: var(--azul3);
     text-align: right;
     font-size: 0.7rem;
-    margin: 0 5px 0 5px;
+    
     padding-right: 10px;
 }
 
@@ -281,24 +286,7 @@ thead th.active,tbody td.active {
     position: relative;
 }
 
-.export__file .export__file-btn {
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    background: #fff6 url(images/export.png) center / 80% no-repeat;
-    border-radius: 50%;
-    transition: .2s ease-in-out;
-}
 
-.export__file .export__file-btn:hover { 
-    background-color: #fff;
-    transform: scale(1.15);
-    cursor: pointer;
-}
-
-.export__file input {
-    display: none;
-}
 
 .export__file .export__file-options {
     position: absolute;
@@ -318,11 +306,7 @@ thead th.active,tbody td.active {
     transition: .2s;
 }
 
-.export__file input:checked + .export__file-options {
-    opacity: 1;
-    transform: scale(1);
-    z-index: 100;
-}
+
 
 .export__file .export__file-options label{
     display: block;
