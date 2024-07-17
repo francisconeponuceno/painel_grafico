@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Carregamento Kanban</title>
+    <!--link do bostrep-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!--fim do link bootrep-->
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    
+    <main class="table" id="customers_table">
+
+        <section class="terceiro">
+            <div class="painel">
+                <h1>PAINEL DE CARREGAMENTO DIÁRIO!</h1>
+                <form action="/cadastrar" method="post">
+                    <input type="text" name="clt" id="clt" placeholder="clt" style="width: 40px;">
+                    <input type="text" name="mot" id="mot" placeholder="motorista" style="width: 280px;">
+                    <input type="text" name="dest" id="dest" placeholder="destino" style="width: 280px;">
+                    <input type="text" name="conf" id="conf" placeholder="conferente" style="width: 100px;">
+                    <input type="text" name="placa" id="placa" placeholder="placa" style="width: 80px;">
+                    <input type="text" name="cub" id="cub" placeholder="cub" style="width: 40px;">
+                    <input type="submit" name="add" id="add" style="width: 60px;">
+                    
+                </form>
+            </div>
+        </section>
+        
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> SEQ <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> CLT <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> MOTORISTA <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> DESTINO <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> CONFERENTE <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> PLACA <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> CUB <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> STATUS <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> IMG <span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in registro %}
+                    <tr>
+                        <td> {{item[0]}} </td>
+                        <td> {{item[1]}} </td>
+                        <td> {{item[2]}} </td>
+                        <td> {{item[3]}} </td>
+                        <td> {{item[4]}}</td>
+                        <td> {{item[5]}}</td>
+                        <td>{{item[6]}}</td>
+                        <td><p class="status delivered">CONCLUÍDO</p></td>
+                        <td> <img src="{{item[22]}}" alt=""></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <main class="grafico">
+        <div class="cubtotal">
+            <div class="total">
+                <P>Total</P>
+                <span>{{Dgrafico[0]}} cub</span>
+            </div>
+            <div class="total">
+                <p>Terceiro</p>
+                <span>{{Dgrafico[8]}} cub</span>
+            </div>
+            <div class="total">
+                <p>Claudino</p>
+                <span>{{Dgrafico[7]}} cub</span>
+            </div>
+            <div class="total">
+                <p>Escoamento</p>
+                <span>{{Dgrafico[9]}} cub</span>
+            </div>
+        </div>
+
+        <div class="rosca" >
+            <canvas id="grafico1" style="width: 500; height: 500;"></canvas>
+        </div>
+        <div class="barra" style="position: relative; height:180px; width:100" >
+            <canvas id="grafico2" ></canvas>
+        </div>
+        <div class="barra" style="position: relative; height:100%; width:100">
+            <canvas id="grafico3"></canvas>
+        </div>
+        
+        <div class="futer"><p>Desenvolvido por Francisco Neponuceno</p></div>
+    </main>
+    
+    <div class="porcento">
+        <p id="cubFabio">{{Dgrafico[1]}}</p>
+        <p id="cubKassio">{{Dgrafico[2]}}</p>
+        <p id="cubArimateia">{{Dgrafico[3]}}</p>
+        <p id="cubVicente">{{Dgrafico[4]}}</p>
+        <p id="cubCaze">{{Dgrafico[5]}}</p>
+        <p id="cubZecarlos">{{Dgrafico[6]}}</p>
+        <p id="porcentoTerceiro">{{Dgrafico[10]}} </p>
+        <p id="porcentoClaudino">{{Dgrafico[11]}}</p>
+        <p id="porcentoEscoamento">{{Dgrafico[12]}}</p>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
