@@ -214,7 +214,7 @@ tbody tr.hide td img {
 
 .rosca {
     display: flex;
-    height: 40%;
+    height: 28%;
     justify-content: center;
     align-items: center;
     background-color: var(--branco);
@@ -232,6 +232,11 @@ tbody tr.hide td img {
     margin: 5px 5px 0 5px;
     border-radius: 5px 5px 0 0;
 
+}
+
+.canvas #grafico2 {
+    margin: 5px 5px 5px 5px;
+    height: 150px;
 }
 
 .futer {
