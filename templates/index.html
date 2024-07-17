@@ -59,7 +59,7 @@
                         <td> {{item[4]}}</td>
                         <td> {{item[5]}}</td>
                         <td>{{item[6]}}</td>
-                        <td><p class="status delivered">CONCLUÍDO</p></td>
+                        <td><p class="status concluido">CONCLUÍDO</p></td>
                         <td> <img src="{{item[22]}}" alt=""></td>
                     </tr>
                     {% endfor %}
@@ -89,8 +89,8 @@
             </div>
         </div>
 
-        <div class="rosca" >
-            <canvas id="grafico1" style="width: 500; height: 500;"></canvas>
+        <div class="rosca" style="position: relative; height:180px; width:100" >
+            <canvas id="grafico1" ></canvas>
         </div>
         <div class="barra" style="position: relative; height:180px; width:100" >
             <canvas id="grafico2" ></canvas>
