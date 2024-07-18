@@ -77,7 +77,7 @@ main.table {
 .table__body {
     width: 100%;
     max-height: calc(89% - 1.6rem);
-    background-color: var(--azul1);
+    background-color: #fffb;
     overflow: auto;
     overflow: overlay;
     
@@ -123,14 +123,14 @@ thead th {
     position: sticky;
     top: 0;
     left: 0;
-    background-color: var(--azul3);
+    background-color: var(--azul2);
     cursor: pointer;
     color: var(--branco);
     
 }
 
 tbody tr:nth-child(even) {
-    background-color: #7701010b;
+    background-color: #0000000b;
 }
 
 tbody tr {
@@ -145,7 +145,7 @@ tbody tr.hide {
 }
 
 tbody tr:hover {
-    background-color: var(--azul1) !important;
+    background-color: rgba(204, 204, 204, 0.4) !important;
 }
 
 tbody tr td,
