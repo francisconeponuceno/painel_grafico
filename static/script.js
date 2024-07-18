@@ -40,7 +40,7 @@ let ctx2 = document.getElementById('grafico2');
 new Chart(ctx2, {
   type: 'line',
   data: {
-    labels: ['Arimatéia', 'Fabio', 'Zé carlos','Cazé','Kassio','Vicente'],
+    labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
     datasets: [{
       label: 'CUB',
       
@@ -66,7 +66,7 @@ let ctx3 = document.getElementById('grafico3');
 new Chart(ctx3, {
   type: 'bar',
   data: {
-    labels: ['Arimatéia', 'Fabio', 'Zé carlos','Cazé','Kassio','Vicente'],
+    labels: ['Arimatéia', 'Fabio', 'Zé carlos','Cazé','Kassio','Vicente','Fernando','Raione','Lucas'],
     datasets: [{
       label: 'CUB',
       
