@@ -245,7 +245,8 @@ tbody tr.hide td img {
     align-items: normal;
     background-color: var(--azul2);
     margin: 0 5px 5px 0;
-    color: var(--branco);
+    color:var(--azul3);
+    font-weight: bold;
 }
 
 .grafico .cubtotal {
@@ -253,16 +254,17 @@ tbody tr.hide td img {
     justify-content: space-between;
     align-items: center;
     font-size: 0.8rem;
+    margin: 0 5px 0 5px;
 }
 
 
 .grafico .cubtotal .total{
-    width: 100px;
-    height: 50px;
+    width: 95px;
+    height: 45px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--azul3);
+    background-color: var(--branco);
     margin: 5px 2px 5px 2px;
     border-radius: 5px;
     
@@ -283,10 +285,10 @@ tbody tr.hide td img {
   }
 
 .futer {
-    background-color: var(--azul3);
+    background-color: var(--azul2);
     text-align: right;
     font-size: 0.7rem;
-    
+    color: var(--branco);
     padding-right: 10px;
 }
 
