@@ -113,7 +113,7 @@ td img {
 
 table, th, td {
     border-collapse: collapse;
-    padding: 0.4rem;
+    padding: 0.2rem;
     text-align: left;
     font-size: 0.8rem;
 }
@@ -208,8 +208,8 @@ tbody tr.hide td img {
 
 /*FAZE 5*/
 .status.concluido {
-    background-color: #86e49d;
-    color: #006b21;
+    background-color: var(--verde);
+    color: var(--verde0);
     font-size: 0.7rem;
     font-weight: bold;
 }
