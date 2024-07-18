@@ -34,7 +34,7 @@ def salvar(clt,mot,dest,conf,placa,cub,classe,frase,img,status):
 def consultarDados():
     conect = sqlite3.connect('banco.db')
     cursor = conect.cursor()
-    cursor.execute(f"SELECT * FROM carrego WHERE status = 'ATIVO' AND data = '{Data}' ")
+    cursor.execute(f"SELECT * FROM carrego WHERE data = '{Data}' ")
     registros = cursor.fetchall()
     conect.close()
     return registros
@@ -94,9 +94,9 @@ def alterarFase(id=0,fase=''):
     if fase == 5:
         cursor.execute(f"UPDATE carrego SET classe = 'concluido', frase = 'CONCLUÍDO' WHERE id = {id}")
     if fase == 'ADIADO':
-        cursor.execute(f"UPDATE carrego SET classe = 'adiado', frase = 'ADIADO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe = 'adiado', frase = 'ADIADO', status = 'ADIADO' WHERE id = {id}")
     if fase == 'CANCELADO':
-        cursor.execute(f"UPDATE carrego SET classe = 'cancelado', frase = 'CANCELADO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe = 'cancelado', frase = 'CANCELADO', status = 'CANCELADO' WHERE id = {id}")
     conect.commit()
     conect.close()
 
@@ -123,12 +123,6 @@ def eliminaTabela():
 
 # eliminaTabela()
 # TabCarrego()
-
-
-# salvar(Dados[0],Dados[1],Dados[2],Dados[3],Dados[4],Dados[5],
-# Dados[6],Dados[7],Dados[8],Dados[9],Dados[10],Dados[11],
-# Dados[12],Dados[13],Dados[14],Dados[15],Dados[16],Dados[17],
-# Dados[18],Dados[19],Dados[20])
 
 #alterarFase(12,'CANCELADO')
 

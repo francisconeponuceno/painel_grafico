@@ -11,29 +11,30 @@ let porcentoEscoamento = document.getElementById('porcentoEscoamento');
 let Cladino_Escoamento = Number(porcentoClaudino.innerHTML) + Number(porcentoEscoamento.innerHTML)
 
 
+
 // PRIMEIRO GRAFICO
 let ctx = document.getElementById('grafico1');
-new Chart(ctx, {
-  type: 'doughnut',
-  data: {
-    labels: ['Terceiro', 'Claudino', 'Escoamento','Escoamento + Claudino' ],
-    datasets: [{
-      label: '%',
-      
-      data: [Number(porcentoTerceiro.innerHTML), Number(porcentoClaudino.innerHTML),
-            Number(porcentoEscoamento.innerHTML), Number(Cladino_Escoamento)],
-      backgroundColor: ['#ff0000', '#0000ff', '#4881fce6','#f86f6f']
-      
-    }]
-  },
-  options: {
-    layout : {
-      with : 300
-    }
+let data = {
+  labels: ['Terc', 'Cla', 'Esc','Esc + Cla' ],
+  datasets: [{
+    label: "%",
+    backgroundColor: ['#ff0000', '#0000ff', '#4881fce6','#f86f6f'],
+    data: [Number(porcentoTerceiro.innerHTML), Number(porcentoClaudino.innerHTML),
+          Number(porcentoEscoamento.innerHTML), Number(Cladino_Escoamento)],
+  }]
+};
 
-  }
+let options = {
+  maintainAspectRatio: false,
+  
+};
+
+new Chart('chart', {
+  type: 'doughnut',
+  options: options,
+  data: data
 });
- 
+
 
 // SEGUNDO GRAFICO
 let ctx2 = document.getElementById('grafico2');

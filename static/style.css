@@ -271,16 +271,14 @@ tbody tr.hide td img {
 }
 
 
-.rosca {
-    display: flex;
-    height: 28%;
-    justify-content: center;
-    align-items: center;
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 25vh;
+    width: 30vw;
     background-color: var(--branco);
-    margin: 0 5px 0 5px;
-    border-radius: 5px;
-
-}
+    border-radius: 3px;
+  }
 
 .barra {
     display: flex;
