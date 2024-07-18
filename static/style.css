@@ -274,29 +274,11 @@ tbody tr.hide td img {
 .chart-container {
     position: relative;
     margin: auto;
-    height: 25vh;
+    height: 29vh;
     width: 30vw;
     background-color: var(--branco);
     border-radius: 3px;
   }
-
-.barra {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--branco);
-    margin: 5px 5px 0 5px;
-    border-radius: 5px 5px 0 0;
-
-}
-
-.canvas #grafico2 {
-    margin: 5px 5px 5px 5px;
-    height: 150px;
-}
-
-
 
 .futer {
     background-color: var(--azul3);
