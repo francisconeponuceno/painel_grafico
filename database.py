@@ -86,11 +86,11 @@ def alterarFase(id=0,fase=''):
     if fase == 1:
         cursor.execute(f"UPDATE carrego SET classe = 'aguardando', frase = 'AGUARDNDO' WHERE id = {id}")
     if fase == 2:
-        cursor.execute(f"UPDATE carrego SET classe = 'aguardando', frase = 'CARREGANDO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe = 'carregando', frase = 'CARREGANDO' WHERE id = {id}")
     if fase == 3:
-        cursor.execute(f"UPDATE carrego SET classe = 'aguardando', frase = 'AGUARD FAT' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe = 'aguard_fat', frase = 'AGUARD FAT' WHERE id = {id}")
     if fase == 4:
-        cursor.execute(f"UPDATE carrego SET classe = 'aguardando', frase = 'FATURANDO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe = 'faturando', frase = 'FATURANDO' WHERE id = {id}")
     if fase == 5:
         cursor.execute(f"UPDATE carrego SET classe = 'concluido', frase = 'CONCLUÍDO' WHERE id = {id}")
     if fase == 'ADIADO':
@@ -130,5 +130,5 @@ def eliminaTabela():
 # Dados[12],Dados[13],Dados[14],Dados[15],Dados[16],Dados[17],
 # Dados[18],Dados[19],Dados[20])
 
-#alterarFase(5,5)
-# normal(13,'NORMAL')
+#alterarFase(12,'CANCELADO')
+

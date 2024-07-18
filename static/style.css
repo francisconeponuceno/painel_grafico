@@ -169,16 +169,52 @@ tbody tr.hide td img {
     padding: .5rem 0;
     border-radius: 2rem;
     text-align: center;
+    width: 90PX;
 }
 
 /*classe das fases*/
+
+/*FASE 1*/
 .status.aguardando {
+    background-color: #96dbfc;
+    color: var(--azul3);
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/*FASE 2*/
+.status.carregando {
+    background-color: #25b6fa;
+    color: var(--azul3);
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/*FASE 3*/
+.status.aguard_fat {
     background-color: var(--azul2);
     color: var(--azul3);
     font-size: 0.7rem;
     font-weight: bold;
 }
 
+/*FASE 4*/
+.status.faturando {
+    background-color: var(--azul3);
+    color: #73cffa;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/*FAZE 5*/
+.status.concluido {
+    background-color: #86e49d;
+    color: #006b21;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/*CANCELADO*/
 .status.cancelado {
     background-color: var(--vermelho2);
     color: var(--vermelho);
@@ -186,6 +222,7 @@ tbody tr.hide td img {
     font-weight: bold;
 }
 
+/*ADIADO*/
 .status.adiado {
     background-color: var(--amarelo);
     color: var(--amarelo2);
@@ -194,12 +231,6 @@ tbody tr.hide td img {
 }
 
 
-.status.concluido {
-    background-color: #86e49d;
-    color: #006b21;
-    font-size: 0.7rem;
-    font-weight: bold;
-}
 /*fim das fases*/
 
 /* ESTILO DOS GRAFICO */

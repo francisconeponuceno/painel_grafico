@@ -36,7 +36,7 @@ def cadastrar():
         if CONF == 'ZE CARLOS':
             IMG = '/static/img_zecarlos.png'
         
-        Dados = [CLT,MOT,DEST,CONF,PLACA,CUB,'aguardando','AGUARDANDO',IMG,'ATIVO']  
+        Dados = [CLT,MOT,DEST,CONF,PLACA,CUB,'aguardando','AGUARD',IMG,'ATIVO']  
         salvar(Dados[0],Dados[1],Dados[2],Dados[3],Dados[4],Dados[5],Dados[6],Dados[7],Dados[8],Dados[9])
         
         return redirect("/")
