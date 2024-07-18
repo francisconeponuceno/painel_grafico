@@ -32,13 +32,15 @@ def salvar(clt,mot,dest,conf,placa,cub,classe,frase,img,status):
 
 # Consultar dados
 def consultarDados():
-    conect = sqlite3.connect('banco.db')
-    cursor = conect.cursor()
-    cursor.execute(f"SELECT * FROM carrego WHERE data = '{Data}' ")
-    registros = cursor.fetchall()
-    conect.close()
-    return registros
-
+    try:
+        conect = sqlite3.connect('banco.db')
+        cursor = conect.cursor()
+        cursor.execute(f"SELECT * FROM carrego WHERE data = '{Data}'")
+        registros = cursor.fetchall()
+        conect.close()
+        return registros
+    except:
+        return
 
 # dados para os graficos
 def DadosGrafico():
