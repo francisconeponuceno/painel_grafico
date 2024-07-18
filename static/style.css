@@ -20,6 +20,7 @@
     --verde: #008000;
     --verde0: #86e49d;
     --amarelo: #ffa500;
+    --amarelo2: #ff5900fc;
 
 }    
 body {
@@ -142,7 +143,7 @@ tbody tr.hide {
 }
 
 tbody tr:hover {
-    background-color: var(--azul2) !important;
+    background-color: var(--azul1) !important;
 }
 
 tbody tr td,
@@ -170,11 +171,36 @@ tbody tr.hide td img {
     text-align: center;
 }
 
+/*classe das fases*/
+.status.aguardando {
+    background-color: var(--azul2);
+    color: var(--azul3);
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.status.cancelado {
+    background-color: var(--vermelho2);
+    color: var(--vermelho);
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.status.adiado {
+    background-color: var(--amarelo);
+    color: var(--amarelo2);
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+
 .status.concluido {
     background-color: #86e49d;
     color: #006b21;
     font-size: 0.7rem;
+    font-weight: bold;
 }
+/*fim das fases*/
 
 /* ESTILO DOS GRAFICO */
 
