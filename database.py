@@ -1,5 +1,5 @@
 import sqlite3
-from datetime import date
+from datetime import date, timedelta
 
 Data = date.today()
 def TabCarrego():
@@ -79,6 +79,26 @@ def DadosGrafico():
     return dadoslidos
 
 
+def CubagemDia():
+    lista = []
+    conect = sqlite3.connect("banco.db")
+    cursor = conect.cursor()
+    cursor.execute('''SELECT 
+    strftime('%Y-%m-%d', data) AS dia,
+    COUNT(*) AS total_transacoes
+    FROM 
+        carrego
+    WHERE 
+        strftime('%Y-%m', data) = '2024-07'
+    GROUP BY 
+        dia
+    ORDER BY 
+    dia; ''')
+    CubDia = cursor.fetchall()
+    conect.close()
+
+print(Data + timedelta())
+
 # alterar dados
 def alterarFase(id=0,fase=''):
     if id == '' or fase == '':
@@ -86,7 +106,7 @@ def alterarFase(id=0,fase=''):
     conect = sqlite3.connect('banco.db')
     cursor = conect.cursor()
     if fase == 1:
-        cursor.execute(f"UPDATE carrego SET classe = 'aguardando', frase = 'AGUARDNDO' WHERE id = {id}")
+        cursor.execute(f"UPDATE carrego SET classe = 'aguardando', frase = 'AGUARD' WHERE id = {id}")
     if fase == 2:
         cursor.execute(f"UPDATE carrego SET classe = 'carregando', frase = 'CARREGANDO' WHERE id = {id}")
     if fase == 3:
@@ -126,5 +146,4 @@ def eliminaTabela():
 # eliminaTabela()
 # TabCarrego()
 
-#alterarFase(12,'CANCELADO')
-
+# alterarFase(11,'ADIADO')

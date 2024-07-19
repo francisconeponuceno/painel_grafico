@@ -71,6 +71,7 @@ main.table {
     background-color: var(--azul1);
     backdrop-filter: blur(5px);
     overflow: hidden;
+
 }
 
 

@@ -6,10 +6,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    dados = consultarDados()
-    Dgrafico = DadosGrafico()
-    return render_template("index.html", registro=dados ,Dgrafico=Dgrafico)
-        
+    try:
+        dados = consultarDados()
+        Dgrafico = DadosGrafico()
+        return render_template("index.html", registro=dados ,Dgrafico=Dgrafico)
+    except:
+        return redirect("/")
+
 @app.route('/cadastrar',methods=['POST','GET'])
 def cadastrar():
     CLT = request.form['clt'].upper()
@@ -20,7 +23,6 @@ def cadastrar():
     CUB = request.form['cub'].upper()
     IMG = '/static/images.jpg'
     if CLT =='' or MOT =='' or DEST =='' or CONF =='' or PLACA =='' or CUB == '':
-        print('preencha todos os campos')
         return redirect("/")
     else:
         if CONF == 'ARIMATEIA':
@@ -35,10 +37,9 @@ def cadastrar():
             IMG = '/static/img_cassio.png'
         if CONF == 'ZE CARLOS':
             IMG = '/static/img_zecarlos.png'
-        
+            
         Dados = [CLT,MOT,DEST,CONF,PLACA,CUB,'aguardando','AGUARD',IMG,'ATIVO']  
         salvar(Dados[0],Dados[1],Dados[2],Dados[3],Dados[4],Dados[5],Dados[6],Dados[7],Dados[8],Dados[9])
-        
         return redirect("/")
 
 
