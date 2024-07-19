@@ -245,7 +245,7 @@ tbody tr.hide td img {
     text-align: center;
     align-items: normal;
     background-color: var(--azul2);
-    margin: 0 5px 5px 0;
+    
     color:var(--azul3);
     font-weight: bold;
 }
@@ -283,6 +283,8 @@ tbody tr.hide td img {
     width: 30vw;
     background-color: var(--branco);
     border-radius: 3px;
+    justify-content: center;
+    align-items: center;
   }
 
 .futer {

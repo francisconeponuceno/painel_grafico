@@ -83,21 +83,17 @@ def CubagemDia():
     lista = []
     conect = sqlite3.connect("banco.db")
     cursor = conect.cursor()
-    cursor.execute('''SELECT 
-    strftime('%Y-%m-%d', data) AS dia,
-    COUNT(*) AS total_transacoes
-    FROM 
-        carrego
-    WHERE 
-        strftime('%Y-%m', data) = '2024-07'
-    GROUP BY 
-        dia
-    ORDER BY 
-    dia; ''')
+    cursor.execute(f'''SELECT cub, data FROM carrego  ''')
     CubDia = cursor.fetchall()
     conect.close()
+    return CubDia
 
-print(Data + timedelta())
+dados = CubagemDia()
+somaCubagem = 0
+for i in dados:
+    if i[1] == str(Data - timedelta(days=2)):
+        somaCubagem += i[0]
+print(somaCubagem)
 
 # alterar dados
 def alterarFase(id=0,fase=''):
@@ -147,3 +143,5 @@ def eliminaTabela():
 # TabCarrego()
 
 # alterarFase(11,'ADIADO')
+
+
