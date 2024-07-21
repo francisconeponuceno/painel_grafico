@@ -118,7 +118,8 @@ def CubagemMes():
         return meses
     except:
         return
-print(CubagemMes())
+d = CubagemMes()
+print(d[6])
 
 # alterar dados
 def alterarFase(id=0,fase=''):
