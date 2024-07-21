@@ -8,6 +8,10 @@ let cubZecarlos = document.getElementById('cubZecarlos');
 let porcentoTerceiro = document.getElementById('porcentoTerceiro');
 let porcentoClaudino = document.getElementById('porcentoClaudino');
 let porcentoEscoamento = document.getElementById('porcentoEscoamento');
+let CubagemMes = document.getElementById('cubagemMes').innerHTML;
+
+alert(CubagemMes)
+
 let Cladino_Escoamento = Number(porcentoClaudino.innerHTML) + Number(porcentoEscoamento.innerHTML)
 
 
@@ -45,9 +49,7 @@ new Chart(ctx2, {
     datasets: [{
       label: '',
       
-      data: [Number(cubArimateia.innerHTML),Number(cubFabio.innerHTML),
-            Number(cubZecarlos.innerHTML),Number(cubCaze.innerHTML),
-            Number(cubKassio.innerHTML),Number(cubVicente.innerHTML)],
+      data: CubagemMes,
       backgroundColor: ['#0000ff','#ff0000']
       
     }]

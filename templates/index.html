@@ -52,7 +52,7 @@
                 <tbody>
                     {% for item in registro %}
                     <tr>
-                        <td> {{item[0]}} </td>
+                        <td class="seq"> {{item[0]}} </td>
                         <td> {{item[1]}} </td>
                         <td> {{item[2]}} </td>
                         <td> {{item[3]}} </td>
@@ -113,6 +113,7 @@
         <p id="porcentoTerceiro">{{Dgrafico[10]}} </p>
         <p id="porcentoClaudino">{{Dgrafico[11]}}</p>
         <p id="porcentoEscoamento">{{Dgrafico[12]}}</p>
+        <p id="cubagemMes">{{graficoMes}}</p>
     </div>
 
     <script src="/static/script.js"></script>

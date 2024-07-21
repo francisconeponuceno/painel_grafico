@@ -1,5 +1,5 @@
 import sqlite3
-from datetime import date, timedelta
+from datetime import date, timedelta,datetime
 
 Data = date.today()
 def TabCarrego():
@@ -79,21 +79,46 @@ def DadosGrafico():
     return dadoslidos
 
 
-def CubagemDia():
-    lista = []
-    conect = sqlite3.connect("banco.db")
-    cursor = conect.cursor()
-    cursor.execute(f'''SELECT cub, data FROM carrego  ''')
-    CubDia = cursor.fetchall()
-    conect.close()
-    return CubDia
-
-dados = CubagemDia()
-somaCubagem = 0
-for i in dados:
-    if i[1] == str(Data - timedelta(days=2)):
-        somaCubagem += i[0]
-print(somaCubagem)
+def CubagemMes():
+    try:
+        jan = fev = mar = abr = mai = jun = jul = ago = set = out = nov = dez = 0
+        conect = sqlite3.connect("banco.db")
+        cursor = conect.cursor()
+        cursor.execute(f'''SELECT cub, data FROM carrego WHERE status = 'ATIVO' ''')
+        CubDia = cursor.fetchall()
+        conect.close()
+        for i in CubDia:
+            DataMes = i[1]
+            data_obj = datetime.strptime(DataMes, "%Y-%m-%d")
+            if data_obj.month == 1:
+                jan += i[0]
+            if data_obj.month == 2:
+                fev += i[0]
+            if data_obj.month == 3:
+                mar += i[0]
+            if data_obj.month == 4:
+                abr += i[0]
+            if data_obj.month == 5:
+                mai += i[0]
+            if data_obj.month == 6:
+                jun += i[0]
+            if data_obj.month == 7:
+                jul += i[0]
+            if data_obj.month == 8:
+                ago += i[0]
+            if data_obj.month == 9:
+                set += i[0]
+            if data_obj.month == 10:
+                out += i[0]
+            if data_obj.month == 11:
+                nov += i[0]
+            if data_obj.month == 12:
+                dez += i[0]
+        meses = [jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez]
+        return meses
+    except:
+        return
+print(CubagemMes())
 
 # alterar dados
 def alterarFase(id=0,fase=''):
@@ -143,5 +168,3 @@ def eliminaTabela():
 # TabCarrego()
 
 # alterarFase(11,'ADIADO')
-
-
