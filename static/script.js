@@ -10,6 +10,18 @@ let porcentoClaudino = document.getElementById('porcentoClaudino');
 let porcentoEscoamento = document.getElementById('porcentoEscoamento');
 let Cladino_Escoamento = Number(porcentoClaudino.innerHTML) + Number(porcentoEscoamento.innerHTML)
 
+let jan = document.getElementById('jan').innerHTML;
+let fev = document.getElementById('fev').innerHTML;
+let mar = document.getElementById('mar').innerHTML;
+let abr = document.getElementById('abr').innerHTML;
+let mai = document.getElementById('mai').innerHTML;
+let jun = document.getElementById('jun').innerHTML;
+let jul = document.getElementById('jul').innerHTML;
+let ago = document.getElementById('ago').innerHTML;
+let set = document.getElementById('set').innerHTML;
+let out = document.getElementById('out').innerHTML;
+let nov = document.getElementById('nov').innerHTML;
+let dez = document.getElementById('dez').innerHTML;
 
 
 // PRIMEIRO GRAFICO
@@ -39,15 +51,13 @@ new Chart('chart', {
 // SEGUNDO GRAFICO
 let ctx2 = document.getElementById('grafico2');
 new Chart(ctx2, {
-  type: 'line',
+  type: 'bar',
   data: {
     labels: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Desembro'],
     datasets: [{
-      label: '',
+      label: 'Cubagem por mês',
       
-      data: [Number(cubArimateia.innerHTML),Number(cubFabio.innerHTML),
-            Number(cubZecarlos.innerHTML),Number(cubCaze.innerHTML),
-            Number(cubKassio.innerHTML),Number(cubVicente.innerHTML)],
+      data: [jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez],
       backgroundColor: ['#0000ff','#ff0000']
       
     }]
@@ -57,7 +67,7 @@ new Chart(ctx2, {
       width : 100
       
     }
-
+    
   }
 });
 
@@ -69,7 +79,7 @@ new Chart(ctx3, {
   data: {
     labels: ['Arimatéia', 'Fabio', 'Zé carlos','Cazé','Kassio','Vicente','Fernando','Raione','Lucas'],
     datasets: [{
-      label: 'CUB',
+      label: 'Cubagem por conferente',
       
       data: [Number(cubArimateia.innerHTML),Number(cubFabio.innerHTML),
             Number(cubZecarlos.innerHTML),Number(cubCaze.innerHTML),
