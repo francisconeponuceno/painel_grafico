@@ -5,6 +5,9 @@ let cubVicente = document.getElementById('cubVicente');
 let cubCaze = document.getElementById('cubCaze');
 let cubKassio = document.getElementById('cubKassio');
 let cubZecarlos = document.getElementById('cubZecarlos');
+let cubFernando = document.getElementById('cubFernando');
+let cubRaione = document.getElementById('cubRaione');
+let cubLucas = document.getElementById('cubLucas');
 let porcentoTerceiro = document.getElementById('porcentoTerceiro');
 let porcentoClaudino = document.getElementById('porcentoClaudino');
 let porcentoEscoamento = document.getElementById('porcentoEscoamento');
@@ -81,9 +84,9 @@ new Chart(ctx3, {
     datasets: [{
       label: 'Cubagem por conferente',
       
-      data: [Number(cubArimateia.innerHTML),Number(cubFabio.innerHTML),
-            Number(cubZecarlos.innerHTML),Number(cubCaze.innerHTML),
-            Number(cubKassio.innerHTML),Number(cubVicente.innerHTML)],
+      data: [Number(cubArimateia.innerHTML),Number(cubFabio.innerHTML),Number(cubZecarlos.innerHTML),
+            Number(cubCaze.innerHTML),Number(cubKassio.innerHTML),Number(cubVicente.innerHTML),
+            Number(cubFernando.innerHTML),Number(cubRaione.innerHTML),Number(cubLucas.innerHTML)],
       backgroundColor: ['#0000ff','#ff0000']
       
     }]

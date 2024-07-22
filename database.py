@@ -51,7 +51,7 @@ def consultarDados():
 # dados para os graficos
 def DadosGrafico():
     try:
-        cubtotal = cubT = cubC = cubE = cubV = cubKZ = cubF = cubA = cubCSS = cubZC =  porcentoTerceiro = porcentoClaudino = porcentoEscoameto = 0
+        cubtotal = cubT = cubC = cubE = cubV = cubKZ = cubF = cubA = cubCSS = cubZC = cubfer = cubrai = cubluc =  porcentoTerceiro = porcentoClaudino = porcentoEscoameto = 0
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
         cursor.execute(f"SELECT * FROM carrego WHERE status = 'ATIVO' ")
@@ -72,6 +72,12 @@ def DadosGrafico():
                 cubKZ += i[6]
             if i[4] == 'ZE CARLOS':
                 cubZC += i[6]
+            if i[4] == 'FERNANDO':
+                cubfer += i[6]
+            if i[4] == 'RAIONE':
+                cubrai += i[6]
+            if i[4] == 'LUCAS':
+                cubluc += i[6]
             if i[1] == 'C':
                 cubC += i[6]
             if i[1] == 'T':
@@ -82,7 +88,13 @@ def DadosGrafico():
         porcentoTerceiro = cubT / cubtotal * 100
         porcentoClaudino = cubC / cubtotal * 100
         porcentoEscoameto = cubE / cubtotal * 100
-        dadoslidos = [cubtotal, cubF, cubCSS, cubA, cubV, cubKZ, cubZC, cubC, cubT, cubE,porcentoTerceiro,porcentoClaudino,porcentoEscoameto]
+        #formatado com duas casas decimais
+        porcentoTerceiro = f'{porcentoTerceiro:.2f}'
+        porcentoClaudino = f'{porcentoClaudino:.2f}'
+        porcentoEscoameto = f'{porcentoEscoameto:.2f}'
+        ##############################################
+        dadoslidos = [cubtotal, cubF, cubCSS, cubA, cubV, cubKZ, cubZC, cubfer, cubrai, cubluc, cubC, cubT, cubE,
+                      porcentoTerceiro, porcentoClaudino, porcentoEscoameto]
         return dadoslidos
     except:
         return

@@ -403,7 +403,7 @@ thead th.active,tbody td.active {
 /* ####### FIM DO ESTILO TABELA  ########*/
 
 .porcento{
-    display: none;
+    display: block;
 }
 
 
