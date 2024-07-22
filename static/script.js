@@ -8,12 +8,20 @@ let cubZecarlos = document.getElementById('cubZecarlos');
 let porcentoTerceiro = document.getElementById('porcentoTerceiro');
 let porcentoClaudino = document.getElementById('porcentoClaudino');
 let porcentoEscoamento = document.getElementById('porcentoEscoamento');
-let CubagemMes = document.getElementById('cubagemMes').innerHTML;
-
-alert(CubagemMes)
-
 let Cladino_Escoamento = Number(porcentoClaudino.innerHTML) + Number(porcentoEscoamento.innerHTML)
 
+let jan = document.getElementById('jan').innerHTML;
+let fev = document.getElementById('fev').innerHTML;
+let mar = document.getElementById('mar').innerHTML;
+let abr = document.getElementById('abr').innerHTML;
+let mai = document.getElementById('mai').innerHTML;
+let jun = document.getElementById('jun').innerHTML;
+let jul = document.getElementById('jul').innerHTML;
+let ago = document.getElementById('ago').innerHTML;
+let set = document.getElementById('set').innerHTML;
+let out = document.getElementById('out').innerHTML;
+let nov = document.getElementById('nov').innerHTML;
+let dez = document.getElementById('dez').innerHTML;
 
 
 // PRIMEIRO GRAFICO
@@ -47,9 +55,9 @@ new Chart(ctx2, {
   data: {
     labels: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Desembro'],
     datasets: [{
-      label: '',
+      label: 'CUBAGEM POR MÊS',
       
-      data: CubagemMes,
+      data: [jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez],
       backgroundColor: ['#0000ff','#ff0000']
       
     }]
@@ -59,7 +67,7 @@ new Chart(ctx2, {
       width : 100
       
     }
-
+    
   }
 });
 
@@ -71,7 +79,7 @@ new Chart(ctx3, {
   data: {
     labels: ['Arimatéia', 'Fabio', 'Zé carlos','Cazé','Kassio','Vicente','Fernando','Raione','Lucas'],
     datasets: [{
-      label: 'CUB',
+      label: 'CUBAGEM POR CONFERENTE',
       
       data: [Number(cubArimateia.innerHTML),Number(cubFabio.innerHTML),
             Number(cubZecarlos.innerHTML),Number(cubCaze.innerHTML),
