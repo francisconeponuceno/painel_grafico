@@ -51,6 +51,7 @@
                 </thead>
                 <tbody>
                     {% for item in registro %}
+                    
                     <tr>
                         <td class="seq"> {{item[0]}} </td>
                         <td> {{item[1]}} </td>
@@ -103,7 +104,7 @@
         <div class="futer"><p>Desenvolvido por Francisco Neponuceno</p></div>
     </main>
     
-    <div class="porcento">
+    <div class="porcento" style="display: none;">
         <p id="cubFabio">{{Dgrafico[1]}}</p>
         <p id="cubKassio">{{Dgrafico[2]}}</p>
         <p id="cubArimateia">{{Dgrafico[3]}}</p>
