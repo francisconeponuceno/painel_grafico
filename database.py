@@ -179,7 +179,7 @@ def excluir(id):
     except:
         return
 
-# excluir(26)
+#excluir(20)
 # eliminando a tabela
 
 def eliminaTabela():
@@ -192,7 +192,7 @@ def eliminaTabela():
         TabCarrego()
     except:
         return
-# eliminaTabela()
+eliminaTabela()
 
 
 # eliminaTabela()

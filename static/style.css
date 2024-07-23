@@ -15,7 +15,7 @@
     --azul2: #4881fce6;
     --azul3: #0000ff;
     --vermelho: #ff0000;
-    --vermelho2: #f86f6f;
+    --vermelho2: #fdb3b3;
     --branco: #ffffff;
     --verde: #008000;
     --verde0: #86e49d;
@@ -112,6 +112,7 @@ td img {
     border-radius: 50%;
     vertical-align: middle;
 }
+
 
 table, th, td {
     border-collapse: collapse;
@@ -249,7 +250,6 @@ tbody tr.hide td img {
     text-align: center;
     align-items: normal;
     background-color: var(--azul2);
-    
     color:var(--azul3);
     font-weight: bold;
 }

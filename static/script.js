@@ -13,6 +13,7 @@ let porcentoClaudino = document.getElementById('porcentoClaudino');
 let porcentoEscoamento = document.getElementById('porcentoEscoamento');
 let Cladino_Escoamento = Number(porcentoClaudino.innerHTML) + Number(porcentoEscoamento.innerHTML)
 
+
 let jan = document.getElementById('jan').innerHTML;
 let fev = document.getElementById('fev').innerHTML;
 let mar = document.getElementById('mar').innerHTML;
@@ -33,7 +34,7 @@ let data = {
   labels: ['Terc', 'Cla', 'Esc','Esc + Cla' ],
   datasets: [{
     label: "%",
-    backgroundColor: ['#ff0000', '#0000ff', '#4881fce6','#f86f6f'],
+    backgroundColor: ['#ff0000', '#0000ff', '#4881fce6','#fdb3b3'],
     data: [Number(porcentoTerceiro.innerHTML), Number(porcentoClaudino.innerHTML),
           Number(porcentoEscoamento.innerHTML), Number(Cladino_Escoamento)],
   }]
