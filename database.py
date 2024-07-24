@@ -2,6 +2,7 @@ import sqlite3
 from datetime import date, timedelta,datetime
 
 Data = date.today()
+# Criar tabela
 def TabCarrego():
     try:
         conect = sqlite3.connect('banco.db')
@@ -25,6 +26,7 @@ def TabCarrego():
     except:
         return
 
+# Adicionar carregamento
 def salvar(clt,mot,dest,conf,placa,cub,classe,frase,img,status):
     try:
         conect = sqlite3.connect('banco.db')
@@ -41,7 +43,7 @@ def consultarDados():
     try:
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        cursor.execute(f"SELECT * FROM carrego ")
+        cursor.execute(f"SELECT * FROM carrego  WHERE status = 'ATIVO' AND data = '{Data}' ")
         registros = cursor.fetchall()
         conect.close()
         return registros
@@ -54,7 +56,7 @@ def DadosGrafico():
         cubtotal = cubT = cubC = cubE = cubV = cubKZ = cubF = cubA = cubCSS = cubZC = cubfer = cubrai = cubluc =  porcentoTerceiro = porcentoClaudino = porcentoEscoameto = 0
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        cursor.execute(f"SELECT * FROM carrego WHERE status = 'ATIVO' ")
+        cursor.execute(f"SELECT * FROM carrego WHERE status = 'ATIVO' AND data = '{Data}' ")
         Dgrafico = cursor.fetchall()
         conect.close()
         if Dgrafico == []:
@@ -99,7 +101,7 @@ def DadosGrafico():
     except:
         return
 
-
+# dados pro mês
 def CubagemMes():
     try:
         jan = fev = mar = abr = mai = jun = jul = ago = set = out = nov = dez = 0
@@ -181,7 +183,6 @@ def excluir(id):
 
 
 # eliminando a tabela
-
 def eliminaTabela():
     try:
         conect = sqlite3.connect('banco.db')
@@ -192,9 +193,11 @@ def eliminaTabela():
         TabCarrego()
     except:
         return
+
+
+
+
 #eliminaTabela()
-
-
-# eliminaTabela()
+#eliminaTabela()
 #excluir(10)
 #alterarFase(10,5)
