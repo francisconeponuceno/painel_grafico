@@ -196,6 +196,5 @@ def eliminaTabela():
 
 
 # eliminaTabela()
-# TabCarrego()
 
 #alterarFase(1,2)
