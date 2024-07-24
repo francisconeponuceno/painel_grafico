@@ -179,7 +179,7 @@ def excluir(id):
     except:
         return
 
-#excluir(20)
+
 # eliminando a tabela
 
 def eliminaTabela():
@@ -196,5 +196,5 @@ def eliminaTabela():
 
 
 # eliminaTabela()
-
-#alterarFase(1,2)
+#excluir(10)
+#alterarFase(10,5)
