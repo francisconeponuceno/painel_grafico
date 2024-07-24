@@ -192,10 +192,10 @@ def eliminaTabela():
         TabCarrego()
     except:
         return
-eliminaTabela()
+#eliminaTabela()
 
 
 # eliminaTabela()
 # TabCarrego()
 
-# alterarFase(11,'ADIADO')
+#alterarFase(1,2)
