@@ -47,7 +47,19 @@ let options = {
 
 new Chart('chart', {
   type: 'doughnut',
-  options: options,
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'left',
+        
+      },
+      title: {
+        display: true,
+        text: 'Cubagem Diária'
+      }
+    }
+  },
   data: data
 });
 

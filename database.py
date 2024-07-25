@@ -199,5 +199,5 @@ def eliminaTabela():
 
 #eliminaTabela()
 #eliminaTabela()
-#excluir(10)
+#excluir(14)
 #alterarFase(10,5)
