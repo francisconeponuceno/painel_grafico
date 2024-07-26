@@ -43,7 +43,7 @@ def consultarDados():
     try:
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        cursor.execute(f"SELECT * FROM carrego  WHERE status = 'ATIVO' AND data = '{Data}' ")
+        cursor.execute(f"SELECT * FROM carrego  WHERE status = 'ATIVO'  ") #AND data = '{Data}'
         registros = cursor.fetchall()
         conect.close()
         return registros
@@ -56,7 +56,7 @@ def DadosGrafico():
         cubtotal = cubT = cubC = cubE = cubV = cubKZ = cubF = cubA = cubCSS = cubZC = cubfer = cubrai = cubluc =  porcentoTerceiro = porcentoClaudino = porcentoEscoameto = 0
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        cursor.execute(f"SELECT * FROM carrego WHERE status = 'ATIVO' AND data = '{Data}' ")
+        cursor.execute(f"SELECT * FROM carrego WHERE status = 'ATIVO'  ") #AND data = '{Data}'
         Dgrafico = cursor.fetchall()
         conect.close()
         if Dgrafico == []:
@@ -200,4 +200,4 @@ def eliminaTabela():
 #eliminaTabela()
 #eliminaTabela()
 #excluir(14)
-#alterarFase(10,5)
+alterarFase(3,5)
