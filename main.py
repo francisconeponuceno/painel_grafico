@@ -1,4 +1,4 @@
-from database import consultarDados, salvar, DadosGrafico, CubagemMes
+from database import consultarDados, salvar, DadosGrafico, CubagemMes, sequencia
 from flask import Flask, render_template, request, redirect
 
 
@@ -8,9 +8,10 @@ app = Flask(__name__)
 def index():
     try:
         dados = consultarDados()
+        index = sequencia()
         Dgrafico = DadosGrafico()
         graficoMes = CubagemMes()
-        return render_template("index.html", registro=dados ,Dgrafico=Dgrafico, graficoMes=graficoMes)
+        return render_template("index.html", registro=dados ,Dgrafico=Dgrafico, graficoMes=graficoMes, index=index)
     except:
         return redirect("/")
 

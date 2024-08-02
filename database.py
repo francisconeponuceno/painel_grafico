@@ -33,6 +33,7 @@ def salvar(clt,mot,dest,conf,placa,cub,classe,frase,img,status):
         cursor = conect.cursor()
         cursor.execute('''INSERT INTO carrego(clt, mot, dest, conf, placa, cub,classe,frase,img, status,data) VALUES(?,?,?,?,?,?,?,?,?,?,?)''',
                     [clt,mot,dest,conf,placa,cub,classe,frase,img,status,Data])
+        cursor.execute(f"DELETE FROM sqlite_sequence WHERE name = 'carrego' ")
         conect.commit()
         conect.close()
     except:
@@ -47,6 +48,20 @@ def consultarDados():
         registros = cursor.fetchall()
         conect.close()
         return registros
+    except:
+        return
+    
+def sequencia():
+    try:
+        index = []
+        conect = sqlite3.connect('banco.db')
+        cursor = conect.cursor()
+        cursor.execute(f"SELECT * FROM carrego  WHERE status = 'ATIVO'  ") #AND data = '{Data}'
+        itens = cursor.fetchall()
+        conect.close()
+        for i in range(0,len(itens)):
+            index.append(i + 1)
+        return index
     except:
         return
 
@@ -176,6 +191,7 @@ def excluir(id):
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
         cursor.execute(f'DELETE FROM carrego WHERE id = {id}')
+        cursor.execute(f"DELETE FROM sqlite_sequence WHERE name = 'carrego' ")
         conect.commit()
         conect.close()
     except:
@@ -199,5 +215,6 @@ def eliminaTabela():
 
 #eliminaTabela()
 #eliminaTabela()
-#excluir(14)
-alterarFase(3,5)
+excluir(10)
+#alterarFase(3,5)
+#sequencia()
