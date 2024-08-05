@@ -31,7 +31,7 @@ let dez = document.getElementById('dez').innerHTML;
 // PRIMEIRO GRAFICO
 let ctx = document.getElementById('grafico1');
 let data = {
-  labels: ['Terc', 'Cla', 'Esc','Esc + Cla' ],
+  labels: ['T', 'C', 'E','C + E' ],
   datasets: [{
     label: "%",
     backgroundColor: ['#ff0000', '#0000ff', '#4881fce6','#fdb3b3'],
@@ -51,11 +51,11 @@ new Chart('chart', {
     responsive: true,
     plugins: {
       legend: {
-        position: 'left',
+        position: 'right',
         
       },
       title: {
-        display: true,
+        display: false,
         text: 'Cubagem Diária'
       }
     }

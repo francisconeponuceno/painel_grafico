@@ -98,6 +98,7 @@ main.table {
 
 .table__body:hover::-webkit-scrollbar-thumb{ 
     visibility: visible;
+    
 }
 
 
