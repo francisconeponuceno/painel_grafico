@@ -188,8 +188,10 @@ am5.ready(function() {
   });
   
   // Make each column to be of a different color
+  //series.columns.template.fill.am5core.color("#67B7DC"); // Cor das colunas
   series.columns.template.adapters.add("fill", function (fill, target) {
     return chart.get("colors").getIndex(series.columns.indexOf(target));
+    
   });
   
   series.columns.template.adapters.add("stroke", function (stroke, target) {
@@ -214,42 +216,43 @@ am5.ready(function() {
   // Set data
   var data = [{
     "country": "Jan",
-    "value": 200
+    "value": 70
   }, {
     "country": "Fev",
-    "value": 300
+    "value": 80
   }, {
     "country": "Mar",
-    "value": 100
+    "value": 80
   }, {
     "country": "Abr",
-    "value": 150
+    "value": 80
   }, {
     "country": "Mai",
-    "value": 245
+    "value": 80
   }, {
     "country": "Jun",
-    "value": 1114
+    "value": 80
   }, {
     "country": "Jul",
-    "value": 984
+    "value": 80
   }, {
     "country": "Ago",
-    "value": 711
+    "value": 80
   }, {
     "country": "Set",
-    "value": 665
+    "value": 80
   }, {
     "country": "Out",
-    "value": 443
+    "value": 80
   }, {
     "country": "Nov",
-    "value": 441
+    "value": 80
   }, {
     "country": "Dez",
-    "value": 400
+    "value": 80
   }];
   
+
   xAxis.data.setAll(data);
   series.data.setAll(data);
   
@@ -258,6 +261,7 @@ am5.ready(function() {
     updateData();
   }, 1500)
   
+/*
   function updateData() {
     am5.array.each(series.dataItems, function (dataItem) {
       var value = dataItem.get("valueY") + Math.round(Math.random() * 300 - 150);
@@ -277,7 +281,7 @@ am5.ready(function() {
     sortCategoryAxis();
   }
   
-  
+  */
   // Get series item by category
   function getSeriesItem(category) {
     for (var i = 0; i < series.dataItems.length; i++) {
@@ -336,4 +340,5 @@ am5.ready(function() {
   series.appear(1000);
   chart.appear(1000, 100);
   
+
   }); // end am5.ready()
