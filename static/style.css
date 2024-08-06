@@ -293,6 +293,11 @@ tbody tr.hide td img {
     align-items: center;
   }
 
+#chartdiv {
+    width: 100%;
+    height: 100%;
+}
+
 
 .futer {
     background-color: var(--azul2);
