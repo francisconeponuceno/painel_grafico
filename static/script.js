@@ -29,6 +29,75 @@ let dez = document.getElementById('dez').innerHTML;
 
 
 // PRIMEIRO GRAFICO
+
+am5.ready(function() {
+
+  // Create root element
+  // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+  var root = am5.Root.new("chartdiv3");
+  
+  
+  // Set themes
+  // https://www.amcharts.com/docs/v5/concepts/themes/
+  root.setThemes([
+    am5themes_Animated.new(root)
+  ]);
+  
+  
+  // Create chart
+  // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/
+  var chart = root.container.children.push(am5percent.PieChart.new(root, {
+    layout: root.verticalLayout,
+    innerRadius: am5.percent(50)
+  }));
+  
+  
+  // Create series
+  // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Series
+  var series = chart.series.push(am5percent.PieSeries.new(root, {
+    valueField: "value",
+    categoryField: "category",
+    alignLabels: false
+  }));
+  
+  series.labels.template.setAll({
+    textType: "circular",
+    centerX: 0,
+    centerY: 0
+  });
+  
+  
+  // Set data
+  // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
+  series.data.setAll([
+    { value: 10, category: "One" },
+    { value: 9, category: "Two" },
+    { value: 6, category: "Three" },
+    { value: 5, category: "Four" },
+    { value: 4, category: "Five" },
+    { value: 3, category: "Six" },
+    { value: 1, category: "Seven" },
+  ]);
+  
+  
+  // Create legend
+  // https://www.amcharts.com/docs/v5/charts/percent-charts/legend-percent-series/
+  var legend = chart.children.push(am5.Legend.new(root, {
+    centerX: am5.percent(50),
+    x: am5.percent(50),
+    marginTop: 15,
+    marginBottom: 15,
+  }));
+  
+  legend.data.setAll(series.dataItems);
+  
+  
+  // Play initial series animation
+  // https://www.amcharts.com/docs/v5/concepts/animations/#Animation_of_series
+  series.appear(1000, 100);
+  
+  }); // end am5.ready()
+/*
 let ctx = document.getElementById('grafico1');
 let data = {
   labels: ['T', 'C', 'E','C + E' ],
@@ -63,47 +132,22 @@ new Chart('chart', {
   data: data
 });
 
-
-// SEGUNDO GRAFICO
-/*
-let ctx2 = document.getElementById('grafico2');
-new Chart(ctx2, {
-  type: 'bar',
-  data: {
-    labels: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Desembro'],
-    datasets: [{
-      label: 'Cubagem por mês',
-      
-      data: [jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez],
-      backgroundColor: ['#0000ff','#ff0000']
-      
-    }]
-  },
-  options: {
-    layout : {
-      width : 100
-      
-    }
-    
-  }
-});
 */
-
 // GRAFICO 2
 am5.ready(function() {
 
   // Data labels: 
   var allData = {
     "2002": {
-      "Arimatéia": 100,
-      "Fabio": 90,
-      "Zé carlos": 80,
-      "Cazé": 70,
-      "Kassio": 60,
-      "Vicente": 50,
-      "Fernando": 40,
-      "Raione": 30,
-      "Lucas": 20
+      "Arimatéia": Number(cubArimateia.innerHTML),
+      "Fabio": Number(cubFabio.innerHTML),
+      "Zé carlos": Number(cubZecarlos.innerHTML),
+      "Cazé": Number(cubCaze.innerHTML),
+      "Kassio": Number(cubKassio.innerHTML),
+      "Vicente": Number(cubVicente.innerHTML),
+      "Fernando": Number(cubFernando.innerHTML),
+      "Raione": Number(cubRaione.innerHTML),
+      "Lucas": Number(cubLucas.innerHTML)
     }
   };
   
@@ -151,7 +195,7 @@ am5.ready(function() {
   // Create axes
   // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
   var yRenderer = am5xy.AxisRendererY.new(root, {
-    minGridDistance: 20,
+    minGridDistance: 15,
     inversed: true,
     minorGridEnabled: true
   });
@@ -186,7 +230,7 @@ am5.ready(function() {
   }));
   
   // Rounded corners for columns
-  series.columns.template.setAll({ cornerRadiusBR: 5, cornerRadiusTR: 5 });
+  series.columns.template.setAll({ cornerRadiusBR: 0, cornerRadiusTR: 0 });
   
   // Make each column to be of a different color
   series.columns.template.adapters.add("fill", function (fill, target) {
@@ -212,7 +256,7 @@ am5.ready(function() {
   });
   
   var label = chart.plotContainer.children.push(am5.Label.new(root, {
-    text: "2002",
+    text: "",
     fontSize: "8em",
     opacity: 0.2,
     x: am5.p100,
@@ -344,33 +388,6 @@ am5.ready(function() {
   
   }); // end am5.ready()
 
-
-// TERCEIRO GRAFICO
-/*
-let ctx3 = document.getElementById('grafico3');
-new Chart(ctx3, {
-  type: 'bar',
-  data: {
-    labels: ['Arimatéia', 'Fabio', 'Zé carlos','Cazé','Kassio','Vicente','Fernando','Raione','Lucas'],
-    datasets: [{
-      label: 'Cubagem por conferente',
-      
-      data: [Number(cubArimateia.innerHTML),Number(cubFabio.innerHTML),Number(cubZecarlos.innerHTML),
-            Number(cubCaze.innerHTML),Number(cubKassio.innerHTML),Number(cubVicente.innerHTML),
-            Number(cubFernando.innerHTML),Number(cubRaione.innerHTML),Number(cubLucas.innerHTML)],
-      backgroundColor: ['#0000ff','#ff0000']
-      
-    }]
-  },
-  options: {
-    layout : {
-      width : 100
-    }
-
-  }
-});
-
-*/
 
 // GRAFICO 3
 am5.ready(function() { 
