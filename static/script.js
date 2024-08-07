@@ -30,73 +30,51 @@ let dez = document.getElementById('dez').innerHTML;
 
 // PRIMEIRO GRAFICO
 
-am5.ready(function() {
+am4core.useTheme(am4themes_animated);
 
-  // Create root element
-  // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-  var root = am5.Root.new("chartdiv3");
-  
-  
-  // Set themes
-  // https://www.amcharts.com/docs/v5/concepts/themes/
-  root.setThemes([
-    am5themes_Animated.new(root)
-  ]);
-  
-  
-  // Create chart
-  // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/
-  var chart = root.container.children.push(am5percent.PieChart.new(root, {
-    layout: root.verticalLayout,
-    innerRadius: am5.percent(50)
-  }));
-  
-  
-  // Create series
-  // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Series
-  var series = chart.series.push(am5percent.PieSeries.new(root, {
-    valueField: "value",
-    categoryField: "category",
-    alignLabels: false
-  }));
-  
-  series.labels.template.setAll({
-    textType: "circular",
-    centerX: 0,
-    centerY: 0
-  });
-  
-  
-  // Set data
-  // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
-  series.data.setAll([
-    { value: 10, category: "One" },
-    { value: 9, category: "Two" },
-    { value: 6, category: "Three" },
-    { value: 5, category: "Four" },
-    { value: 4, category: "Five" },
-    { value: 3, category: "Six" },
-    { value: 1, category: "Seven" },
-  ]);
-  
-  
-  // Create legend
-  // https://www.amcharts.com/docs/v5/charts/percent-charts/legend-percent-series/
-  var legend = chart.children.push(am5.Legend.new(root, {
-    centerX: am5.percent(50),
-    x: am5.percent(50),
-    marginTop: 15,
-    marginBottom: 15,
-  }));
-  
-  legend.data.setAll(series.dataItems);
-  
-  
-  // Play initial series animation
-  // https://www.amcharts.com/docs/v5/concepts/animations/#Animation_of_series
-  series.appear(1000, 100);
-  
-  }); // end am5.ready()
+// Criar o gráfico de rosca
+var chart = am4core.create("chartdiv3", am4charts.PieChart);
+
+// Definir a propriedade innerRadius para transformar o gráfico de pizza em um gráfico de rosca
+chart.innerRadius = am4core.percent(40);
+
+// Adicionar dados
+chart.data = [{
+  "category": "Terceiro",
+  "value": Number(porcentoTerceiro.innerHTML),
+  "color": am4core.color("#ff0000") // Vermelho
+}, {
+  "category": "Claudino",
+  "value": Number(porcentoClaudino.innerHTML),
+  "color": am4core.color("#0000ff") // 
+}, {
+  "category": "Escoamento",
+  "value": Number(porcentoEscoamento.innerHTML),
+  "color": am4core.color("#4881fce6") //
+}, {
+  "category": "Esco + clau",
+  "value": Number(Cladino_Escoamento),
+  "color": am4core.color("#fdb3b3") // 
+}];
+
+// Criar série de rosca
+var pieSeries = chart.series.push(new am4charts.PieSeries());
+pieSeries.dataFields.value = "value";
+pieSeries.dataFields.category = "category";
+
+// Definir cor de cada fatia
+pieSeries.slices.template.propertyFields.fill = "color";
+
+// Adicionar rótulo para mostrar valor real
+pieSeries.slices.template.adapter.add("tooltipText", function(text, target) {
+  return "[bold]{category}[/]\nValor: {value}";
+});
+
+// Adicionar rótulo dentro das fatias para mostrar valor real
+pieSeries.labels.template.adapter.add("text", function(text, target) {
+  return "{category}  "+"{value}%";
+});
+
 /*
 let ctx = document.getElementById('grafico1');
 let data = {
