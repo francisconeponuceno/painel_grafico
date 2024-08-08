@@ -336,241 +336,107 @@ am5.ready(function() {
   }); // end am5.ready()
 
 
+
 // GRAFICO 3
-am5.ready(function() { 
+am4core.ready(function() {
 
-  // Create root element
-  // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-  var root = am5.Root.new("chartdiv");
+  // Themes begin
+  am4core.useTheme(am4themes_animated);
+  // Themes end
   
+  var chart = am4core.create("chartdiv", am4charts.XYChart);
   
-  // Set themes
-  // https://www.amcharts.com/docs/v5/concepts/themes/
-  root.setThemes([
-    am5themes_Animated.new(root)
-  ]);
-  
-  
-  // Create chart
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/
-  var chart = root.container.children.push(am5xy.XYChart.new(root, {
-    panX: true,
-    panY: true,
-    wheelX: "none",
-    wheelY: "none",
-    paddingLeft: 0
-  }));
-  
-  // We don't want zoom-out button to appear while animating, so we hide it
-  chart.zoomOutButton.set("forceHidden", true);
-  
-  
-  // Create axes
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-  var xRenderer = am5xy.AxisRendererX.new(root, {
-    minGridDistance: 25,
-    minorGridEnabled: true
-  });
-  xRenderer.labels.template.setAll({
-    rotation: -90,
-    centerY: am5.p50,
-    centerX: 0,
-    paddingRight: 15,
-  });
-  xRenderer.grid.template.set("visible", false);
-  
-  var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-    maxDeviation: 0.3,
-    categoryField: "country",
-    renderer: xRenderer
-  }));
-  
-  var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-    maxDeviation: 0.3,
-    min: 0,
-    renderer: am5xy.AxisRendererY.new(root, {})
-  }));
-  
-  
-  // Add series
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-  var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-    name: "Series 1",
-    xAxis: xAxis,
-    yAxis: yAxis,
-    valueYField: "value",
-    categoryXField: "country"
-  }));
-  
-  // Rounded corners for columns
-  series.columns.template.setAll({
-    cornerRadiusTL: 0,
-    cornerRadiusTR: 0,
-    strokeOpacity: 0
-  });
-
-  series.columns.template.adapters.add("fill", function(fill, target) {
-    var colors = [am5.color(0xff0000), am5.color(0x00ff00), am5.color(0x0000ff)];
-    return colors[target.dataItem.index % colors.length];
-  });
-
-  series.columns.template.adapters.add("stroke", function(stroke, target) {
-      var colors = [am5.color(0xff0000), am5.color(0x00ff00), am5.color(0x0000ff)];
-      return colors[target.dataItem.index % colors.length];
-  });
-  
-  // Make each column to be of a different color
-  //series.columns.template.fill.am5core.color("#67B7DC"); // Cor das colunas
-  series.columns.template.adapters.add("fill", function (fill, target) {
-    return chart.get("colors").getIndex(series.columns.indexOf(target));
-    
-  });
-  
-  series.columns.template.adapters.add("stroke", function (stroke, target) {
-    return chart.get("colors").getIndex(series.columns.indexOf(target));
-  });
-  
-  // Add Label bullet
-  series.bullets.push(function () {
-    return am5.Bullet.new(root, {
-      locationY: 1,
-      sprite: am5.Label.new(root, {
-        text: "{valueYWorking.formatNumber('#.')}",
-        fill: root.interfaceColors.get("alternativeText"),
-        centerY: 8,
-        centerX: am5.p50,
-        populateText: true
-      })
-    });
-  });
-  
-  
-  // Set data 
-  var data = [{
-    "country": "Jan",
-    "value": 80 //Number(jan)
+  chart.data = [{
+   "country": "Jan",
+   "visits": 500,
+   "color": am4core.color("#0000ff") // AZUL
   }, {
-    "country": "Fev",
-    "value": 80 //Number(fev)
+   "country": "Fev",
+   "visits": 80,
+   "color": am4core.color("#ff0000") // VERMELHO
   }, {
-    "country": "Mar",
-    "value": 80 //Number(mar)
+   "country": "Mar",
+   "visits": 80,
+   "color": am4core.color("#0000ff") // AZUL
   }, {
-    "country": "Abr",
-    "value": 80 //Number(abr)
+   "country": "Abr",
+   "visits": 80,
+   "color": am4core.color("#ff0000") // VERMELHO
   }, {
-    "country": "Mai",
-    "value": 80 //Number(mai)
+   "country": "Mai",
+   "visits": 80,
+   "color": am4core.color("#0000ff") // AZUL
   }, {
-    "country": "Jun",
-    "value": 80 //Number(jun)
+   "country": "Jun",
+   "visits": 80,
+   "color": am4core.color("#ff0000") // VERMELHO
   }, {
-    "country": "Jul",
-    "value": 80 //Number(jul)
+   "country": "Jul",
+   "visits": 80,
+   "color": am4core.color("#0000ff") // AZUL
   }, {
-    "country": "Ago",
-    "value": 80 //Number(ago)
+   "country": "Ago",
+   "visits": 711,
+   "color": am4core.color("#ff0000") // VERMELHO
   }, {
-    "country": "Set",
-    "value": 80 //Number(set)
+   "country": "Set",
+   "visits": 665,
+   "color": am4core.color("#0000ff") // AZUL
   }, {
-    "country": "Out",
-    "value": 80 //Number(out)
+   "country": "Out",
+   "visits": 580,
+   "color": am4core.color("#ff0000") // VERMELHO
   }, {
-    "country": "Nov",
-    "value": 80 //Number(nov)
+   "country": "Nov",
+   "visits": 443,
+   "color": am4core.color("#0000ff") // AZUL
   }, {
-    "country": "Dez",
-    "value": 80 //Number(dez)
+   "country": "Dez",
+   "visits": 441,
+   "color": am4core.color("#ff0000") // VERMELHO
   }];
   
-
-  xAxis.data.setAll(data);
-  series.data.setAll(data);
+  chart.padding(5, 5, 5, 5);
   
-  // update data with random values each 1.5 sec
-  setInterval(function () {
-    updateData();
-  }, 1500)
+  var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+  categoryAxis.renderer.grid.template.location = 0;
+  categoryAxis.dataFields.category = "country";
+  categoryAxis.renderer.minGridDistance = 20;
+  categoryAxis.renderer.inversed = false;
+  categoryAxis.renderer.grid.template.disabled = true;
   
-/*
-  function updateData() {
-    am5.array.each(series.dataItems, function (dataItem) {
-      var value = dataItem.get("valueY") + Math.round(Math.random() * 300 - 150);
-      if (value < 0) {
-        value = 10;
-      }
-      // both valueY and workingValueY should be changed, we only animate workingValueY
-      dataItem.set("valueY", value);
-      dataItem.animate({
-        key: "valueYWorking",
-        to: value,
-        duration: 600,
-        easing: am5.ease.out(am5.ease.cubic)
-      });
-    })
+  var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+  valueAxis.min = 0;
+  valueAxis.extraMax = 0.1;
+  //valueAxis.rangeChangeEasing = am4core.ease.linear;
+  //valueAxis.rangeChangeDuration = 1500;
   
-    sortCategoryAxis();
-  }
+  var series = chart.series.push(new am4charts.ColumnSeries());
+  series.dataFields.categoryX = "country";
+  series.dataFields.valueY = "visits";
+  series.tooltipText = "{valueY.value}"
+  series.columns.template.strokeOpacity = 0;
+  series.columns.template.column.cornerRadiusTopRight = 0;
+  series.columns.template.column.cornerRadiusTopLeft = 0;
+  series.columns.template.propertyFields.fill = "color"; // Associa a cor definida no objeto de dados
   
-  */
-  // Get series item by category
-  function getSeriesItem(category) {
-    for (var i = 0; i < series.dataItems.length; i++) {
-      var dataItem = series.dataItems[i];
-      if (dataItem.get("categoryX") == category) {
-        return dataItem;
-      }
-    }
-  }
+  //series.interpolationDuration = 1500;
+  //series.interpolationEasing = am4core.ease.linear;
+  var labelBullet = series.bullets.push(new am4charts.LabelBullet());
+  labelBullet.label.verticalCenter = "bottom";
+  labelBullet.label.dy = -0;
+  labelBullet.label.text = "{values.valueY.workingValue.formatNumber('#.')}";
+  chart.zoomOutButton.disabled = true;
   
   
-  // Axis sorting
-  function sortCategoryAxis() {
+  //setInterval(function () {
+    //am4core.array.each(chart.data, function (item) {
+      //item.visits += Math.round(Math.random() * 200 - 100);
+      //item.visits = Math.abs(item.visits);
+    //})
+    //chart.invalidateRawData();
+   //}, 2000)
   
-    // Sort by value
-    series.dataItems.sort(function (x, y) {
-      return y.get("valueY") - x.get("valueY"); // descending
-      //return y.get("valueY") - x.get("valueY"); // ascending
-    })
+  //categoryAxis.sortBySeries = series;
   
-    // Go through each axis item
-    am5.array.each(xAxis.dataItems, function (dataItem) {
-      // get corresponding series item
-      var seriesDataItem = getSeriesItem(dataItem.get("category"));
-  
-      if (seriesDataItem) {
-        // get index of series data item
-        var index = series.dataItems.indexOf(seriesDataItem);
-        // calculate delta position
-        var deltaPosition = (index - dataItem.get("index", 0)) / series.dataItems.length;
-        // set index to be the same as series data item index
-        dataItem.set("index", index);
-        // set deltaPosition instanlty
-        dataItem.set("deltaPosition", -deltaPosition);
-        // animate delta position to 0
-        dataItem.animate({
-          key: "deltaPosition",
-          to: 0,
-          duration: 1000,
-          easing: am5.ease.out(am5.ease.cubic)
-        })
-      }
-    });
-  
-    // Sort axis items by index.
-    // This changes the order instantly, but as deltaPosition is set,
-    // they keep in the same places and then animate to true positions.
-    xAxis.dataItems.sort(function (x, y) {
-      return x.get("index") - y.get("index");
-    });
-  }
-  
-  
-  // Make stuff animate on load
-  // https://www.amcharts.com/docs/v5/concepts/animations/
-  series.appear(1000);
-  chart.appear(1000, 100);
-  
-
-  }); // end am5.ready()
+  }); // end am4core.ready()
