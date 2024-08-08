@@ -76,20 +76,6 @@ pieSeries.labels.template.adapter.add("text", function(text, target) {
 });
 
 
-
-/*
-"Arimatéia": Number(cubArimateia.innerHTML),
-"Fabio": Number(cubFabio.innerHTML),
-"Zé carlos": Number(cubZecarlos.innerHTML),
-"Cazé": Number(cubCaze.innerHTML),
-"Kassio": Number(cubKassio.innerHTML),
-"Vicente": Number(cubVicente.innerHTML),
-"Fernando": Number(cubFernando.innerHTML),
-"Raione": Number(cubRaione.innerHTML),
-"Lucas": Number(cubLucas.innerHTML)
-*/
-
-
 // GRAFICO 2
 am4core.ready(function() {
 
@@ -121,14 +107,9 @@ am4core.ready(function() {
   
   var labelBullet = series.bullets.push(new am4charts.LabelBullet())
   labelBullet.label.horizontalCenter = "left";
-  labelBullet.label.dx = 10;
+  labelBullet.label.dx = 5;
   labelBullet.label.text = "{values.valueX.workingValue.formatNumber('#.0as')}";
   labelBullet.locationX = 1;
-  
-  // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
-  //series.columns.template.adapter.add("fill", function(fill, target){
-    //return chart.colors.getIndex(target.dataItem.index);
-  //});
   
   categoryAxis.sortBySeries = series;
   chart.data = [
