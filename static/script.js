@@ -75,42 +75,9 @@ pieSeries.labels.template.adapter.add("text", function(text, target) {
   return "{category}  "+"{value}%";
 });
 
-/*
-let ctx = document.getElementById('grafico1');
-let data = {
-  labels: ['T', 'C', 'E','C + E' ],
-  datasets: [{
-    label: "%",
-    backgroundColor: ['#ff0000', '#0000ff', '#4881fce6','#fdb3b3'],
-    data: [Number(porcentoTerceiro.innerHTML), Number(porcentoClaudino.innerHTML),
-          Number(porcentoEscoamento.innerHTML), Number(Cladino_Escoamento)],
-  }]
-};
 
-let options = {
-  maintainAspectRatio: false,
-  
-};
 
-new Chart('chart', {
-  type: 'doughnut',
-  options: {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'right',
-        
-      },
-      title: {
-        display: false,
-        text: 'Cubagem Diária'
-      }
-    }
-  },
-  data: data
-});
 
-*/
 // GRAFICO 2
 am5.ready(function() {
 
@@ -162,7 +129,10 @@ am5.ready(function() {
     panY: true,
     wheelX: "none",
     wheelY: "none",
-    paddingLeft: 0
+    paddingLeft: 5,
+    paddingBottom: 0,
+    paddingTop: 3
+    
   }));
   
   
@@ -173,7 +143,7 @@ am5.ready(function() {
   // Create axes
   // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
   var yRenderer = am5xy.AxisRendererY.new(root, {
-    minGridDistance: 15,
+    minGridDistance: 10,
     inversed: true,
     minorGridEnabled: true
   });
@@ -363,13 +333,11 @@ am5.ready(function() {
   // https://www.amcharts.com/docs/v5/concepts/animations/
   series.appear(1000);
   chart.appear(1000, 100);
-  
   }); // end am5.ready()
 
 
 // GRAFICO 3
 am5.ready(function() { 
-
 
   // Create root element
   // https://www.amcharts.com/docs/v5/getting-started/#Root_element
@@ -407,7 +375,7 @@ am5.ready(function() {
     rotation: -90,
     centerY: am5.p50,
     centerX: 0,
-    paddingRight: 15
+    paddingRight: 15,
   });
   xRenderer.grid.template.set("visible", false);
   
@@ -439,6 +407,16 @@ am5.ready(function() {
     cornerRadiusTL: 0,
     cornerRadiusTR: 0,
     strokeOpacity: 0
+  });
+
+  series.columns.template.adapters.add("fill", function(fill, target) {
+    var colors = [am5.color(0xff0000), am5.color(0x00ff00), am5.color(0x0000ff)];
+    return colors[target.dataItem.index % colors.length];
+  });
+
+  series.columns.template.adapters.add("stroke", function(stroke, target) {
+      var colors = [am5.color(0xff0000), am5.color(0x00ff00), am5.color(0x0000ff)];
+      return colors[target.dataItem.index % colors.length];
   });
   
   // Make each column to be of a different color
