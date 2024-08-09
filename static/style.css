@@ -288,7 +288,7 @@ tbody tr.hide td img {
     position: relative;
     margin: auto;
     height: 29vh;
-    width: 30vw;
+    width: 96%;
     background-color: var(--branco);
     border-radius: 3px;
     justify-content: center;
