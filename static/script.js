@@ -29,14 +29,10 @@ let dez = document.getElementById('dez').innerHTML;
 
 
 // PRIMEIRO GRAFICO
-
 am4core.useTheme(am4themes_animated);
 
 // Criar o gráfico de rosca
 var chart = am4core.create("chartdiv3", am4charts.PieChart);
-
-// Definir a propriedade innerRadius para transformar o gráfico de pizza em um gráfico de rosca
-chart.innerRadius = am4core.percent(40);
 
 // Adicionar dados
 chart.data = [{
@@ -46,24 +42,34 @@ chart.data = [{
 }, {
   "category": "Claudino",
   "value": Number(porcentoClaudino.innerHTML),
-  "color": am4core.color("#0000ff") // 
+  "color": am4core.color("#0000ff") // AZUL
 }, {
   "category": "Escoamento",
   "value": Number(porcentoEscoamento.innerHTML),
-  "color": am4core.color("#4881fce6") //
+  "color": am4core.color("#fdb3b3") //  VERMELHO CLARO
 }, {
   "category": "Esco + clau",
   "value": Number(Cladino_Escoamento),
-  "color": am4core.color("#fdb3b3") // 
+  "color": am4core.color("#4881fce6") // AZUL CLARO
 }];
+
+
 
 // Criar série de rosca
 var pieSeries = chart.series.push(new am4charts.PieSeries());
 pieSeries.dataFields.value = "value";
 pieSeries.dataFields.category = "category";
 
+// Definir a propriedade innerRadius para transformar o gráfico de pizza em um gráfico de rosca
+pieSeries.innerRadius = am4core.percent(50);
+
 // Definir cor de cada fatia
 pieSeries.slices.template.propertyFields.fill = "color";
+
+
+// Adiciona uma animação ao carregar o gráfico
+pieSeries.hiddenState.properties.startAngle = -50;
+pieSeries.hiddenState.properties.endAngle = 0;
 
 // Adicionar rótulo para mostrar valor real
 pieSeries.slices.template.adapter.add("tooltipText", function(text, target) {
@@ -103,12 +109,12 @@ am4core.ready(function() {
   series.columns.template.strokeOpacity = 0;
   series.columns.template.column.cornerRadiusBottomRight = 0;
   series.columns.template.column.cornerRadiusTopRight = 0;
-  series.columns.template.propertyFields.fill = "color"; // Associa a cor definida no objeto de dados
+  series.columns.template.propertyFields.fill = "color"; // Associa a cor definida no objeto de dados 
   
   var labelBullet = series.bullets.push(new am4charts.LabelBullet())
   labelBullet.label.horizontalCenter = "left";
   labelBullet.label.dx = 5;
-  labelBullet.label.text = "{values.valueX.workingValue.formatNumber('#.0as')}";
+  labelBullet.label.text = "{values.valueX.workingValue.formatNumber('#.as')}";
   labelBullet.locationX = 1;
   
   categoryAxis.sortBySeries = series;
@@ -116,7 +122,7 @@ am4core.ready(function() {
       {
         "network": "Arimatéia",
         "MAU": Number(cubArimateia.innerHTML),
-        "color": am4core.color("#0000ff") // AZUL
+        "color": am4core.color("#ff0000") // VERMELHO
       },
       {
         "network": "Fabio",
@@ -126,7 +132,7 @@ am4core.ready(function() {
       {
         "network": "Zé carlos",
         "MAU": Number(cubZecarlos.innerHTML),
-        "color": am4core.color("#0000ff") // AZUL
+        "color": am4core.color("#ff0000") // VERMELHO
       },
       {
         "network": "Cazé",
@@ -136,7 +142,7 @@ am4core.ready(function() {
       {
         "network": "Kassio",
         "MAU": Number(cubKassio.innerHTML),
-        "color": am4core.color("#0000ff") // AZUL
+        "color": am4core.color("#ff0000") // VERMELHO
       },
       {
         "network": "Vicente",
@@ -146,7 +152,7 @@ am4core.ready(function() {
       {
         "network": "Fernando",
         "MAU": Number(cubFernando.innerHTML),
-        "color": am4core.color("#0000ff") // AZUL
+        "color": am4core.color("#ff0000") // VERMELHO
       },
       {
         "network": "Raione",
@@ -156,7 +162,7 @@ am4core.ready(function() {
       {
         "network": "Lucas",
         "MAU": Number(cubLucas.innerHTML),
-        "color": am4core.color("#0000ff") // AZUL
+        "color": am4core.color("#ff0000") // VERMELHO
       }
     ]
   
@@ -180,7 +186,7 @@ am4core.ready(function() {
   }, {
    "country": "Fev",
    "visits": 80,
-   "color": am4core.color("#ff0000") // VERMELHO
+   "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Mar",
    "visits": 80,
@@ -188,7 +194,7 @@ am4core.ready(function() {
   }, {
    "country": "Abr",
    "visits": 80,
-   "color": am4core.color("#ff0000") // VERMELHO
+   "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Mai",
    "visits": 80,
@@ -196,7 +202,7 @@ am4core.ready(function() {
   }, {
    "country": "Jun",
    "visits": 80,
-   "color": am4core.color("#ff0000") // VERMELHO
+   "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Jul",
    "visits": 80,
@@ -204,7 +210,7 @@ am4core.ready(function() {
   }, {
    "country": "Ago",
    "visits": 711,
-   "color": am4core.color("#ff0000") // VERMELHO
+   "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Set",
    "visits": 665,
@@ -212,7 +218,7 @@ am4core.ready(function() {
   }, {
    "country": "Out",
    "visits": 580,
-   "color": am4core.color("#ff0000") // VERMELHO
+   "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Nov",
    "visits": 443,
@@ -220,7 +226,7 @@ am4core.ready(function() {
   }, {
    "country": "Dez",
    "visits": 441,
-   "color": am4core.color("#ff0000") // VERMELHO
+   "color": am4core.color("#0000ff") // AZUL
   }];
   
   chart.padding(5, 5, 5, 5);
