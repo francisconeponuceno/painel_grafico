@@ -181,51 +181,51 @@ am4core.ready(function() {
   
   chart.data = [{
    "country": "Jan",
-   "visits": 500,
+   "visits": jan,
    "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Fev",
-   "visits": 80,
+   "visits": fev,
    "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Mar",
-   "visits": 80,
+   "visits": mar,
    "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Abr",
-   "visits": 80,
+   "visits": abr,
    "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Mai",
-   "visits": 80,
+   "visits": mai,
    "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Jun",
-   "visits": 80,
+   "visits": jun,
    "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Jul",
-   "visits": 80,
+   "visits": jul,
    "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Ago",
-   "visits": 711,
+   "visits": ago,
    "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Set",
-   "visits": 665,
+   "visits": set,
    "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Out",
-   "visits": 580,
+   "visits": out,
    "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Nov",
-   "visits": 443,
+   "visits": nov,
    "color": am4core.color("#0000ff") // AZUL
   }, {
    "country": "Dez",
-   "visits": 441,
+   "visits": dez,
    "color": am4core.color("#0000ff") // AZUL
   }];
   
