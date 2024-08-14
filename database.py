@@ -44,7 +44,7 @@ def consultarDados():
     try:
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        cursor.execute(f"SELECT * FROM carrego  WHERE status = 'ATIVO'  ") #AND data = '{Data}'
+        cursor.execute(f"SELECT * FROM carrego  WHERE status = 'ATIVO' AND data = '{Data}' ") #AND data = '{Data}'
         registros = cursor.fetchall()
         conect.close()
         return registros
@@ -57,7 +57,7 @@ def sequencia():
         index = []
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        cursor.execute(f"SELECT * FROM carrego  WHERE status = 'ATIVO'  ") #AND data = '{Data}'
+        cursor.execute(f"SELECT * FROM carrego  WHERE status = 'ATIVO' AND data = '{Data}' ") #AND data = '{Data}'
         itens = cursor.fetchall()
         conect.close()
         for i in range(0,len(itens)):
@@ -72,7 +72,7 @@ def DadosGrafico():
         cubtotal = cubT = cubC = cubE = cubV = cubKZ = cubF = cubA = cubCSS = cubZC = cubfer = cubrai = cubluc =  porcentoTerceiro = porcentoClaudino = porcentoEscoameto = 0
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        cursor.execute(f"SELECT * FROM carrego WHERE status = 'ATIVO'  ") #AND data = '{Data}'
+        cursor.execute(f"SELECT * FROM carrego WHERE status = 'ATIVO' AND data = '{Data}' ") #AND data = '{Data}'
         Dgrafico = cursor.fetchall()
         conect.close()
         if Dgrafico == []:
