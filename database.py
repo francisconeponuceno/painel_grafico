@@ -44,7 +44,8 @@ def consultarDados():
     try:
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        cursor.execute(f"SELECT * FROM carrego  WHERE status = 'ATIVO' AND data = '{Data}' ") #AND data = '{Data}'
+        cursor.execute(
+            f"SELECT * FROM carrego  WHERE status = 'ATIVO' AND data = '2024-08-15' ")  # AND data = '{Data}'
         registros = cursor.fetchall()
         conect.close()
         return registros
@@ -57,7 +58,8 @@ def sequencia():
         index = []
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        cursor.execute(f"SELECT * FROM carrego  WHERE status = 'ATIVO' AND data = '{Data}' ") #AND data = '{Data}'
+        cursor.execute(
+            f"SELECT * FROM carrego  WHERE status = 'ATIVO' AND data = '2024-08-15' ")  # AND data = '{Data}'
         itens = cursor.fetchall()
         conect.close()
         for i in range(0,len(itens)):
@@ -69,10 +71,11 @@ def sequencia():
 # dados para os graficos
 def DadosGrafico():
     try:
-        cubtotal = cubT = cubC = cubE = cubV = cubKZ = cubF = cubA = cubCSS = cubZC = cubfer = cubrai = cubluc =  porcentoTerceiro = porcentoClaudino = porcentoEscoameto = 0
+        cubtotal = cubT = cubC = cubE = cubV = cubKZ = cubF = cubA = cubCSS = cubZC = cubfer = cubrai = cubluc = porcentoTerceiro = porcentoClaudino = porcentoEscoameto = T = C = E = 0
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        cursor.execute(f"SELECT * FROM carrego WHERE status = 'ATIVO' AND data = '{Data}' ") #AND data = '{Data}'
+        cursor.execute(
+            f"SELECT * FROM carrego WHERE status = 'ATIVO' AND data = '2024-08-15' ")  # AND data = '{Data}'
         Dgrafico = cursor.fetchall()
         conect.close()
         if Dgrafico == []:
@@ -98,21 +101,24 @@ def DadosGrafico():
                 cubluc += i[6]
             if i[1] == 'C':
                 cubC += i[6]
+                C += 1
             if i[1] == 'T':
                 cubT += i[6]
+                T += 1
             if i[1] == 'E':
                 cubE += i[6]
+                E += 1
             cubtotal += i[6]
         porcentoTerceiro = cubT / cubtotal * 100
         porcentoClaudino = cubC / cubtotal * 100
         porcentoEscoameto = cubE / cubtotal * 100
-        #formatado com duas casas decimais
+        # formatado com duas casas decimais
         porcentoTerceiro = f'{porcentoTerceiro:.2f}'
         porcentoClaudino = f'{porcentoClaudino:.2f}'
         porcentoEscoameto = f'{porcentoEscoameto:.2f}'
         ##############################################
         dadoslidos = [cubtotal, cubF, cubCSS, cubA, cubV, cubKZ, cubZC, cubfer, cubrai, cubluc, cubC, cubT, cubE,
-                      porcentoTerceiro, porcentoClaudino, porcentoEscoameto]
+                      porcentoTerceiro, porcentoClaudino, porcentoEscoameto, T, C, E]
         return dadoslidos
     except:
         return
@@ -212,10 +218,8 @@ def eliminaTabela():
         return
 
 
-
-
-#eliminaTabela()
-#eliminaTabela()
-#excluir(13)
-#alterarFase(3,5)
-#sequencia()
+# eliminaTabela()
+# eliminaTabela()
+# excluir(13)
+# alterarFase(3,5)
+# sequencia()

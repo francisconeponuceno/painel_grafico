@@ -50,7 +50,7 @@ chart.data = [{
 }, {
   "category": "Esco + clau",
   "value": Number(Cladino_Escoamento),
-  "color": am4core.color("#4881fce6") // AZUL CLARO
+  "color": am4core.color("#96dbfc") // AZUL CLARO
 }];
 
 
@@ -97,11 +97,15 @@ am4core.ready(function() {
   categoryAxis.dataFields.category = "network";
   categoryAxis.renderer.minGridDistance = 1;
   categoryAxis.renderer.inversed = true;
-  categoryAxis.renderer.grid.template.disabled = true;
+  
   
   var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
   valueAxis.min = 0;
-  
+  valueAxis.renderer.labels.template.disabled = true;
+  categoryAxis.renderer.grid.template.disabled = true;
+  valueAxis.renderer.grid.template.disabled = true;
+
+
   var series = chart.series.push(new am4charts.ColumnSeries());
   series.dataFields.categoryY = "network";
   series.dataFields.valueX = "MAU";
@@ -236,11 +240,17 @@ am4core.ready(function() {
   categoryAxis.dataFields.category = "country";
   categoryAxis.renderer.minGridDistance = 20;
   categoryAxis.renderer.inversed = false;
-  categoryAxis.renderer.grid.template.disabled = true;
   
+
   var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
   valueAxis.min = 0;
   valueAxis.extraMax = 0.1;
+  categoryAxis.renderer.grid.template.disabled = true;
+  valueAxis.renderer.labels.template.disabled = true;
+  valueAxis.renderer.grid.template.disabled = true;
+
+  
+
   //valueAxis.rangeChangeEasing = am4core.ease.linear;
   //valueAxis.rangeChangeDuration = 1500;
   
@@ -252,6 +262,7 @@ am4core.ready(function() {
   series.columns.template.column.cornerRadiusTopRight = 0;
   series.columns.template.column.cornerRadiusTopLeft = 0;
   series.columns.template.propertyFields.fill = "color"; // Associa a cor definida no objeto de dados
+
   
   //series.interpolationDuration = 1500;
   //series.interpolationEasing = am4core.ease.linear;

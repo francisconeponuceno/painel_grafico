@@ -283,6 +283,10 @@ tbody tr.hide td img {
     font-size: 1rem;
 }
 
+.grafico .cubtotal .total i {
+    font-size: 1.1rem;
+}
+
 
 .chart-container {
     display: flex;
