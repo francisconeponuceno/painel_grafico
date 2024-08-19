@@ -256,7 +256,6 @@ tbody tr.hide td img {
     align-items: normal;
     background-color: var(--azul2);
     color:var(--azul3);
-    font-weight: bold;
 }
 
 .grafico .cubtotal {
@@ -277,7 +276,7 @@ tbody tr.hide td img {
     background-color: var(--branco);
     margin: 5px 2px 5px 2px;
     border-radius: 5px;
-    
+    box-shadow: 3px 3px 3px #757575;
 }
 
 .grafico .cubtotal .total span{
@@ -300,7 +299,7 @@ tbody tr.hide td img {
     border-radius: 3px;
     justify-content: center;
     align-items: center;
-    
+    box-shadow: 3px 3px 3px #757575;
   }
 
 #chartdiv {
