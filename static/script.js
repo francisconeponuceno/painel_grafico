@@ -113,13 +113,14 @@ am4core.ready(function() {
   series.columns.template.strokeOpacity = 0;
   series.columns.template.column.cornerRadiusBottomRight = 0;
   series.columns.template.column.cornerRadiusTopRight = 0;
-  series.columns.template.propertyFields.fill = "color"; // Associa a cor definida no objeto de dados 
+  series.columns.template.propertyFields.fill = "color"; // Associa a cor definida no objeto de dados (cor da barra)
   
   var labelBullet = series.bullets.push(new am4charts.LabelBullet())
   labelBullet.label.horizontalCenter = "left";
   labelBullet.label.dx = 5;
   labelBullet.label.text = "{values.valueX.workingValue.formatNumber('#.as')}";
   labelBullet.locationX = 1;
+  labelBullet.label.fill = am4core.color("#ffffff"); // Alterar para a cor desejada (cor da fonte)
   
   categoryAxis.sortBySeries = series;
   chart.data = [

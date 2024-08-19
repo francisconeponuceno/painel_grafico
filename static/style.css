@@ -45,6 +45,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    
 }
 
 .terceiro .painel form {
@@ -299,6 +300,7 @@ tbody tr.hide td img {
     border-radius: 3px;
     justify-content: center;
     align-items: center;
+    
   }
 
 #chartdiv {
