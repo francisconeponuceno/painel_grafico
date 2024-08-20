@@ -300,6 +300,11 @@ tbody tr.hide td img {
     justify-content: center;
     align-items: center;
     box-shadow: 3px 3px 3px #757575;
+    
+  }
+
+  .chart-container p {
+    font-size: 0.8rem;
   }
 
 #chartdiv {
