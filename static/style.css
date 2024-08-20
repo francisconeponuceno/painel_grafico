@@ -48,6 +48,16 @@ body {
     
 }
 
+.terceiro .logo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.terceiro .logo img {
+    width: 100px;
+}
+
 .terceiro .painel form {
     margin-bottom: 5px;
 }
