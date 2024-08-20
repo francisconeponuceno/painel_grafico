@@ -33,10 +33,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--vermelho);
     height: 80px;
     color: var(--branco);
     font-size: 1.3rem;
+    background-image: linear-gradient(to left, var(--branco), var(--azul3));
+    
 }
 
 .terceiro .painel {
@@ -45,17 +46,20 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-    
+    width: 100%;
+
 }
 
 .terceiro .logo {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 0 10px 0 10px;
 }
 
 .terceiro .logo img {
     width: 100px;
+    
 }
 
 .terceiro .painel form {
@@ -138,7 +142,7 @@ thead th {
     position: sticky;
     top: 0;
     left: 0;
-    background-color: var(--azul2);
+    background-color: var(--vermelho);
     cursor: pointer;
     color: var(--branco);
     
