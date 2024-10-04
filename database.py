@@ -221,5 +221,5 @@ def eliminaTabela():
 # eliminaTabela()
 # eliminaTabela()
 # excluir(13)
-# alterarFase(3,5)
+# alterarFase(41,5)
 # sequencia()

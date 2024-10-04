@@ -236,7 +236,7 @@ tbody tr.hide td img {
 /*FAZE 5*/
 .status.concluido {
     background-color: var(--verde);
-    color: var(--verde0);
+    color: var(--branco);
     font-size: 0.7rem;
     font-weight: bold;
 }
