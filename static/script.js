@@ -61,7 +61,7 @@ pieSeries.dataFields.value = "value";
 pieSeries.dataFields.category = "category";
 
 // Definir a propriedade innerRadius para transformar o gráfico de pizza em um gráfico de rosca
-pieSeries.innerRadius = am4core.percent(55);
+pieSeries.innerRadius = am4core.percent(70);
 
 // Definir cor de cada fatia
 pieSeries.slices.template.propertyFields.fill = "color";
