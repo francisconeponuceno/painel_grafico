@@ -211,8 +211,8 @@ tbody tr.hide td img {
 
 /*FASE 2*/
 .status.carregando {
-    background-color: #25b6fa;
-    color: var(--azul3);
+    background-color: var(--azul2);
+    color: var(--branco);
     font-size: 0.7rem;
     font-weight: bold;
 }
