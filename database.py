@@ -51,7 +51,7 @@ def consultarDados():
         return registros
     except:
         return
-consultarDados()
+#consultarDados()
 
 def sequencia():
     try:
@@ -165,7 +165,7 @@ def CubagemMes():
         return
 
 
-# alterar dados
+# alterar fase
 def alterarFase(id=0,fase=''):
     try:
         if id == '' or fase == '':
@@ -221,5 +221,9 @@ def eliminaTabela():
 # eliminaTabela()
 # eliminaTabela()
 # excluir(13)
+alterarFase(41,1)
 alterarFase(42,2)
+alterarFase(43,3)
+alterarFase(44,4)
+alterarFase(45,5)
 # sequencia()
