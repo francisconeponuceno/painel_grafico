@@ -45,7 +45,7 @@ def consultarDados():
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
         cursor.execute(
-            f"SELECT * FROM carrego  WHERE status = 'ATIVO' AND data = '2024-08-15' ")  # AND data = '{Data}'
+            f"SELECT * FROM carrego  WHERE data = '2024-08-15' ")  # AND data = '{Data}'
         registros = cursor.fetchall()
         conect.close()
         return registros
@@ -221,6 +221,6 @@ def eliminaTabela():
 # eliminaTabela()
 # eliminaTabela()
 # excluir(13)
-#alterarFase(41,1)
+alterarFase(48,'ADIADO')
 
 # sequencia()

@@ -75,9 +75,7 @@ body {
 }
 
 
-
 /* ####### ESTILO TABELA  ########*/
-/* ####### ESTILOTABELA  ########*/
 
 
 main.table {
@@ -193,50 +191,21 @@ tbody tr.hide td img {
 }
 
 .status {
-    padding: .5rem 0;
+    padding: .4rem 0;
     border-radius: 2rem;
     text-align: center;
     width: 90PX;
-}
-
-/*classe das fases*/
-
-/*FASE 1*/
-.status.aguardando {
     background-color: #96dbfc;
     color: var(--azul3);
     font-size: 0.7rem;
     font-weight: bold;
 }
 
-/*FASE 2*/
-.status.carregando {
-    background-color: var(--azul2);
-    color: var(--branco);
-    font-size: 0.7rem;
-    font-weight: bold;
-}
 
-/*FASE 3*/
-.status.aguard_fat {
-    background-color: var(--azul2);
-    color: var(--azul3);
-    font-size: 0.7rem;
-    font-weight: bold;
-}
-
-/*FASE 4*/
-.status.faturando {
-    background-color: var(--azul3);
-    color: #73cffa;
-    font-size: 0.7rem;
-    font-weight: bold;
-}
-
-/*FAZE 5*/
+/*CONCLUIDO */
 .status.concluido {
-    background-color: var(--verde);
-    color: var(--branco);
+    background-color: #7ebb7e;
+    color: #022902;
     font-size: 0.7rem;
     font-weight: bold;
 }
@@ -251,14 +220,12 @@ tbody tr.hide td img {
 
 /*ADIADO*/
 .status.adiado {
-    background-color: var(--amarelo);
-    color: var(--amarelo2);
+    background-color: #fd9250;
+    color: #672802;
     font-size: 0.7rem;
     font-weight: bold;
 }
 
-
-/*fim das fases*/
 
 /* ESTILO DOS GRAFICO */
 
@@ -369,59 +336,26 @@ thead th span.icon-arrow {
     height: 1.3rem;
     border-radius: 50%;
     border: 1.4px solid transparent;
-    
     text-align: center;
     font-size: 1rem;
-    
     margin-left: .5rem;
     transition: .2s ease-in-out;
 }
-
-thead th:hover span.icon-arrow{
-    border: 1.4px solid #6c00bd;
-}
-
-thead th:hover {
-    color: #6c00bd;
-}
-
-thead th.active span.icon-arrow{
-    background-color: #6c00bd;
-    color: #fff;
-}
-
-thead th.asc span.icon-arrow{
-    transform: rotate(180deg);
-}
-
-thead th.active,tbody td.active {
-    color: #6c00bd;
-}
-
-.export__file {
-    position: relative;
-}
-
 
 
 .export__file .export__file-options {
     position: absolute;
     right: 0;
-    
     width: 12rem;
     border-radius: .5rem;
     overflow: hidden;
     text-align: center;
-
     opacity: 0;
     transform: scale(.8);
     transform-origin: top right;
-    
     box-shadow: 0 .2rem .5rem #0004;
-    
     transition: .2s;
 }
-
 
 
 .export__file .export__file-options label{
@@ -429,11 +363,9 @@ thead th.active,tbody td.active {
     width: 100%;
     padding: .6rem 0;
     background-color: #f2f2f2;
-    
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     transition: .2s ease-in-out;
 }
 
