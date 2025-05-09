@@ -45,7 +45,7 @@ def consultarDados():
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
         cursor.execute(
-            f"SELECT * FROM carrego  WHERE data = '2024-08-15' ")  # AND data = '{Data}'
+            f"SELECT * FROM carrego  WHERE data = '2025-05-09' ")  # AND data = '{Data}'
         registros = cursor.fetchall()
         conect.close()
         return registros
@@ -75,7 +75,7 @@ def DadosGrafico():
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
         cursor.execute(
-            f"SELECT * FROM carrego WHERE status = 'ATIVO' AND data = '2024-08-15' ")  # AND data = '{Data}'
+            f"SELECT * FROM carrego WHERE status = 'ATIVO' AND data = '{Data}' ")  # AND data = '{Data}'
         Dgrafico = cursor.fetchall()
         conect.close()
         if Dgrafico == []:
@@ -89,7 +89,7 @@ def DadosGrafico():
                 cubA += i[6]
             if i[4] == 'VICENTE':
                 cubV += i[6]
-            if i[4] == 'CAZE':
+            if i[4] == 'CASE':
                 cubKZ += i[6]
             if i[4] == 'ZE CARLOS':
                 cubZC += i[6]
@@ -172,8 +172,6 @@ def alterarFase(id=0,fase=''):
             return
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        if fase == 1:
-            cursor.execute(f"UPDATE carrego SET classe = 'aguardando', frase = 'AGUARD' WHERE id = {id}")
         if fase == 2:
             cursor.execute(f"UPDATE carrego SET classe = 'carregando', frase = 'CARREGANDO' WHERE id = {id}")
         if fase == 3:
@@ -220,7 +218,8 @@ def eliminaTabela():
 
 # eliminaTabela()
 # eliminaTabela()
-# excluir(13)
-alterarFase(48,'ADIADO')
+#for i in range(1, 63):
+    #excluir(i)
+#alterarFase(48,'ADIADO')
 
 # sequencia()
