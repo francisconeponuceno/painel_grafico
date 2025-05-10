@@ -75,7 +75,7 @@ def DadosGrafico():
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
         cursor.execute(
-            f"SELECT * FROM carrego WHERE status = 'ATIVO' AND data = '{Data}' ")  # AND data = '{Data}'
+            f"SELECT * FROM carrego WHERE status = 'ATIVO' AND data = '2025-05-09' ")  # AND data = '{Data}'
         Dgrafico = cursor.fetchall()
         conect.close()
         if Dgrafico == []:
