@@ -29,6 +29,14 @@ body {
 }
 
 
+.exibir{
+    display: block;
+}
+
+.fechar{
+    display: none;
+}
+
 .terceiro {
     display: flex;
     justify-content: center;
