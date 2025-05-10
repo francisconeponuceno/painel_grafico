@@ -1,4 +1,4 @@
-from database import consultarDados, salvar, DadosGrafico, CubagemMes, sequencia
+from database import consultarDados, salvar, DadosGrafico, CubagemMes, excluir, alterarFase
 from flask import Flask, render_template, request, redirect
 
 
@@ -8,10 +8,9 @@ app = Flask(__name__)
 def index():
     try:
         dados = consultarDados()
-        index = sequencia()
         Dgrafico = DadosGrafico()
         graficoMes = CubagemMes()
-        return render_template("index.html", registro=dados ,Dgrafico=Dgrafico, graficoMes=graficoMes, index=index)
+        return render_template("index.html", registro=dados ,Dgrafico=Dgrafico, graficoMes=graficoMes)
     except:
         return redirect("/")
 
@@ -46,8 +45,25 @@ def cadastrar():
                 IMG = '/static/img_raione.png'
             if CONF == 'LUCAS':
                 IMG = '/static/img_lucas.png'
-                
+
             salvar(CLT,MOT,DEST,CONF,PLACA,CUB,'aguardando','AGUARD',IMG,'ATIVO')
+            return redirect("/")
+    except:
+        return redirect("/")
+
+
+@app.route("/remover", methods=["POST", "GET"])
+def remover():
+    try:
+        ID_CARREGO = request.form["num_carrego"].upper()
+        FASE = int(request.form["fase_carrego"])
+        if ID_CARREGO == "" and FASE == "":
+            return redirect("/")
+        if FASE == "":
+            excluir(ID_CARREGO)
+            return redirect("/")
+        else:
+            alterarFase(ID_CARREGO, FASE)
             return redirect("/")
     except:
         return redirect("/")
