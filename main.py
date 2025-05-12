@@ -3,13 +3,14 @@ from flask import Flask, render_template, request, redirect
 
 
 app = Flask(__name__)
-dados = consultarDados()
-Dgrafico = DadosGrafico()
-graficoMes = CubagemMes()
+
 
 @app.route('/')
 def index():
     try:
+        dados = consultarDados()
+        Dgrafico = DadosGrafico()
+        graficoMes = CubagemMes()
         return render_template("index.html", registro=dados ,Dgrafico=Dgrafico, graficoMes=graficoMes)
     except:
         return redirect("/")
@@ -35,7 +36,7 @@ def cadastrar():
                 IMG = '/static/img_fabio.png'
             case 'VICENTE':
                 IMG = '/static/img_vicente.png'
-            case 'KASSIO':
+            case 'CASSIO':
                 IMG = '/static/img_cassio.png'
             case 'ZE CARLOS':
                 IMG = '/static/img_zecarlos.png'
@@ -55,9 +56,10 @@ def cadastrar():
 @app.route("/remover", methods=["POST", "GET"])
 def remover():
     try:
+        dados = consultarDados()
         contador = 0
-        ID_CARREGO = request.form["num_carrego"].upper()
-        FASE = int(request.form["fase_carrego"])
+        ID_CARREGO = int(request.form["num_carrego"])
+        FASE = str(request.form["fase_carrego"])
         if ID_CARREGO == "" and FASE == "":
             return redirect("/")
         for i in dados:

@@ -45,7 +45,7 @@ def consultarDados():
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
         cursor.execute(
-            f"SELECT * FROM carrego  WHERE data = '2025-05-09' ")  # AND data = '{Data}'
+            f"SELECT * FROM carrego  WHERE data = '{Data}' ")  # AND data = '{Data}'
         registros = cursor.fetchall()
         conect.close()
         return registros
@@ -75,7 +75,7 @@ def DadosGrafico():
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
         cursor.execute(
-            f"SELECT * FROM carrego WHERE status = 'ATIVO' AND data = '2025-05-09' ")  # AND data = '{Data}'
+            f"SELECT * FROM carrego WHERE status = 'ATIVO' AND data = '{Data}' ")  # AND data = '{Data}'
         Dgrafico = cursor.fetchall()
         conect.close()
         if Dgrafico == []:
@@ -172,13 +172,15 @@ def alterarFase(id=0,fase=''):
             return
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        if fase == 2:
+        if fase == '1':
+            cursor.execute(f"UPDATE carrego SET classe = 'status', frase = 'AGUARD' WHERE id = {id}")
+        if fase == '2':
             cursor.execute(f"UPDATE carrego SET classe = 'carregando', frase = 'CARREGANDO' WHERE id = {id}")
-        if fase == 3:
+        if fase == '3':
             cursor.execute(f"UPDATE carrego SET classe = 'aguard_fat', frase = 'AGUARD FAT' WHERE id = {id}")
-        if fase == 4:
+        if fase == '4':
             cursor.execute(f"UPDATE carrego SET classe = 'faturando', frase = 'FATURANDO' WHERE id = {id}")
-        if fase == 5:
+        if fase == '5':
             cursor.execute(f"UPDATE carrego SET classe = 'concluido', frase = 'CONCLUÍDO' WHERE id = {id}")
         if fase == 'ADIADO':
             cursor.execute(f"UPDATE carrego SET classe = 'adiado', frase = 'ADIADO', status = 'ADIADO' WHERE id = {id}")
@@ -219,7 +221,7 @@ def eliminaTabela():
 # eliminaTabela()
 # eliminaTabela()
 #for i in range(1, 63):
-    #excluir(i)
+#excluir(4)
 #alterarFase(48,'ADIADO')
 
 # sequencia()
