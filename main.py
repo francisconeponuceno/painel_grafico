@@ -60,6 +60,7 @@ def remover():
         contador = 0
         ID_CARREGO = int(request.form["num_carrego"])
         FASE = request.form.get("opcoes")
+        print(FASE)
         if ID_CARREGO == "" and FASE == "":
             return redirect("/")
         for i in dados:
