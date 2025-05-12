@@ -3,13 +3,13 @@ from flask import Flask, render_template, request, redirect
 
 
 app = Flask(__name__)
+dados = consultarDados()
+Dgrafico = DadosGrafico()
+graficoMes = CubagemMes()
 
 @app.route('/')
 def index():
     try:
-        dados = consultarDados()
-        Dgrafico = DadosGrafico()
-        graficoMes = CubagemMes()
         return render_template("index.html", registro=dados ,Dgrafico=Dgrafico, graficoMes=graficoMes)
     except:
         return redirect("/")
@@ -55,17 +55,20 @@ def cadastrar():
 @app.route("/remover", methods=["POST", "GET"])
 def remover():
     try:
+        contador = 0
         ID_CARREGO = request.form["num_carrego"].upper()
         FASE = int(request.form["fase_carrego"])
         if ID_CARREGO == "" and FASE == "":
             return redirect("/")
-        
-        if FASE == "":
-            excluir(ID_CARREGO)
-            return redirect("/")
-        else:
-            alterarFase(ID_CARREGO, FASE)
-            return redirect("/")
+        for i in dados:
+            contador += 1
+            if contador == ID_CARREGO:
+                if FASE == "":
+                    excluir(i[0])
+                    return redirect("/")
+                else:
+                    alterarFase(i[0], FASE)
+                    return redirect("/")
     except:
         return redirect("/")
 
