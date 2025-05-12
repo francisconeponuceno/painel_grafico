@@ -67,9 +67,9 @@
                 </thead>
                 <tbody>
                     {% for item in registro %}
-                    
+                
                     <tr>
-                        <td class="seq"> {{item[0]}} </td>
+                        <td class="seq"> {{loop.index}} </td>
                         <td> {{item[1]}} </td>
                         <td> {{item[2]}} </td>
                         <td> {{item[3]}} </td>

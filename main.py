@@ -26,28 +26,28 @@ def cadastrar():
         IMG = '/static/images.jpg'
         if CLT =='' or MOT =='' or DEST =='' or CONF =='' or PLACA =='' or CUB == '':
             return redirect("/")
-        else:
-            if CONF == 'ARIMATEIA':
+        match CONF:
+            case 'ARIMATEIA':
                 IMG = '/static/img_arimateia.jpg'
-            if CONF == 'CAZE':
+            case 'CAZE':
                 IMG = '/static/img_caze.jpg'
-            if CONF == 'FABIO':
+            case 'FABIO':
                 IMG = '/static/img_fabio.png'
-            if CONF == 'VICENTE':
+            case 'VICENTE':
                 IMG = '/static/img_vicente.png'
-            if CONF == 'KASSIO':
+            case 'KASSIO':
                 IMG = '/static/img_cassio.png'
-            if CONF == 'ZE CARLOS':
+            case 'ZE CARLOS':
                 IMG = '/static/img_zecarlos.png'
-            if CONF == 'FERNANDO':
+            case 'FERNANDO':
                 IMG = '/static/img_fernando.png'
-            if CONF == 'RAIONE':
+            case 'RAIONE':
                 IMG = '/static/img_raione.png'
-            if CONF == 'LUCAS':
+            case 'LUCAS':
                 IMG = '/static/img_lucas.png'
 
-            salvar(CLT,MOT,DEST,CONF,PLACA,CUB,'aguardando','AGUARD',IMG,'ATIVO')
-            return redirect("/")
+        salvar(CLT,MOT,DEST,CONF,PLACA,CUB,'aguardando','AGUARD',IMG,'ATIVO')
+        return redirect("/")
     except:
         return redirect("/")
 
@@ -59,6 +59,7 @@ def remover():
         FASE = int(request.form["fase_carrego"])
         if ID_CARREGO == "" and FASE == "":
             return redirect("/")
+        
         if FASE == "":
             excluir(ID_CARREGO)
             return redirect("/")
