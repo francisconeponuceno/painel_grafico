@@ -30,7 +30,7 @@ def cadastrar():
         match CONF:
             case 'ARIMATEIA':
                 IMG = '/static/img_arimateia.jpg'
-            case 'CAZE':
+            case 'CASE':
                 IMG = '/static/img_caze.jpg'
             case 'FABIO':
                 IMG = '/static/img_fabio.png'
@@ -44,7 +44,7 @@ def cadastrar():
                 IMG = '/static/img_fernando.png'
             case 'RAIONE':
                 IMG = '/static/img_raione.png'
-            case 'LUCAS':
+            case 'EMERSON':
                 IMG = '/static/img_lucas.png'
 
         salvar(CLT,MOT,DEST,CONF,PLACA,CUB,'aguardando','AGUARD',IMG,'ATIVO')
@@ -59,7 +59,7 @@ def remover():
         dados = consultarDados()
         contador = 0
         ID_CARREGO = int(request.form["num_carrego"])
-        FASE = str(request.form["fase_carrego"])
+        FASE = request.form.get("opcoes")
         if ID_CARREGO == "" and FASE == "":
             return redirect("/")
         for i in dados:

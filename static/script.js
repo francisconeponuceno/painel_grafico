@@ -180,7 +180,7 @@ am4core.ready(function() {
         "color": am4core.color("#ff0000") // VERMELHO
       },
       {
-        "network": "Kassio",
+        "network": "Cassio",
         "MAU": Number(cubKassio.innerHTML),
         "color": am4core.color("#ff0000") // VERMELHO
       },
@@ -200,7 +200,7 @@ am4core.ready(function() {
         "color": am4core.color("#ff0000") // VERMELHO
       },
       {
-        "network": "Lucas",
+        "network": "Emerson",
         "MAU": Number(cubLucas.innerHTML),
         "color": am4core.color("#ff0000") // VERMELHO
       }

@@ -83,7 +83,7 @@ def DadosGrafico():
         for i in Dgrafico:
             if i[4] == 'FABIO':
                 cubF += i[6]
-            if i[4] == 'KASSIO':
+            if i[4] == 'CASSIO':
                 cubCSS += i[6]
             if i[4] == 'ARIMATEIA':
                 cubA += i[6]
@@ -97,7 +97,7 @@ def DadosGrafico():
                 cubfer += i[6]
             if i[4] == 'RAIONE':
                 cubrai += i[6]
-            if i[4] == 'LUCAS':
+            if i[4] == 'EMERSON':
                 cubluc += i[6]
             if i[1] == 'C':
                 cubC += i[6]
@@ -172,15 +172,15 @@ def alterarFase(id=0,fase=''):
             return
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        if fase == '1':
+        if fase == 'AGUARD':
             cursor.execute(f"UPDATE carrego SET classe = 'status', frase = 'AGUARD' WHERE id = {id}")
-        if fase == '2':
+        if fase == 'CARREGANDO':
             cursor.execute(f"UPDATE carrego SET classe = 'carregando', frase = 'CARREGANDO' WHERE id = {id}")
-        if fase == '3':
+        if fase == 'AGUARD FAT':
             cursor.execute(f"UPDATE carrego SET classe = 'aguard_fat', frase = 'AGUARD FAT' WHERE id = {id}")
-        if fase == '4':
+        if fase == 'FATURANDO':
             cursor.execute(f"UPDATE carrego SET classe = 'faturando', frase = 'FATURANDO' WHERE id = {id}")
-        if fase == '5':
+        if fase == 'CONCLUÍDO':
             cursor.execute(f"UPDATE carrego SET classe = 'concluido', frase = 'CONCLUÍDO' WHERE id = {id}")
         if fase == 'ADIADO':
             cursor.execute(f"UPDATE carrego SET classe = 'adiado', frase = 'ADIADO', status = 'ADIADO' WHERE id = {id}")

@@ -34,6 +34,16 @@
                 <form action="/remover" method="post" id="remover" class="fechar">
                     <input type="text" name="num_carrego" id="num_carrego" placeholder="carrego" style="width: 60px;">
                     <input type="text" name="fase_carrego" id="fase_carrego" placeholder="fase do carrego" style="width: 100px;">
+                    <select name="opcoes" id="opcoes" required style="height: 25px; font-size: 11px; border-radius: 5px; width: 110px;">
+                        <option value="">--Selecione--</option>
+                        <option value="AGUARD">AGUARD</option>
+                        <option value="CARREGANDO">CARREGANDO</option>
+                        <option value="AGUARD_FAT">AGUARD FAT</option>
+                        <option value="FATURANDO">FATURANDO</option>
+                        <option value="CONCLUIDO">CONCLUÍDO</option>
+                        <option value="CANCELADO">CANCELADO</option>
+                        <option value="ADIADO">ADIADO</option>
+                    </select>
                     <input type="submit" name="add" style="width: 30px;" value="-">
                 </form>
                
