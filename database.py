@@ -123,6 +123,7 @@ def DadosGrafico():
     except:
         return
 
+
 # dados pro mês
 def CubagemMes():
     try:
@@ -173,7 +174,7 @@ def alterarFase(id=0,fase=''):
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
         if fase == 'AGUARD':
-            cursor.execute(f"UPDATE carrego SET classe = 'status', frase = 'AGUARD' WHERE id = {id}")
+            cursor.execute(f"UPDATE carrego SET classe = 'status', frase = 'AGUARD', status = 'ATIVO' WHERE id = {id}")
         if fase == 'CARREGANDO':
             cursor.execute(f"UPDATE carrego SET classe = 'carregando', frase = 'CARREGANDO' WHERE id = {id}")
         if fase == 'AGUARD FAT':
