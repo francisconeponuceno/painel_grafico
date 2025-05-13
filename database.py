@@ -192,6 +192,18 @@ def alterarFase(id=0,fase=''):
     except:
         return
 
+def  alteraConferente(id=0, conferente=''):
+    try:
+        contador = 0
+        for i in consultarDados():
+            contador += 1
+        conect = sqlite3.connect('banco.db')
+        cursor = conect.cursor()
+        cursor.execute(f"UPDATE carrego SET conf = '{conferente}' WHERE id = {id} ")
+    except:
+        return
+
+#alteraConferente(7, 'CASE')
 
 # excluír registro
 def excluir(id):

@@ -59,8 +59,13 @@ def remover():
         dados = consultarDados()
         contador = 0
         ID_CARREGO = int(request.form["num_carrego"])
+        CLT = request.form['clt'].upper()
+        MOT = request.form['mot'].upper()
+        DEST = request.form['dest'].upper()
+        CONF = request.form['conf'].upper()
+        PLACA = request.form['placa'].upper()
+        CUB = request.form['cub'].upper()
         FASE = request.form.get("opcoes")
-        print(FASE)
         if ID_CARREGO == "" and FASE == "":
             return redirect("/")
         for i in dados:
@@ -72,6 +77,7 @@ def remover():
                 else:
                     alterarFase(i[0], FASE)
                     return redirect("/")
+                
     except:
         return redirect("/")
 
