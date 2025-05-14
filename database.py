@@ -167,14 +167,14 @@ def CubagemMes():
 
 
 # alterar fase
-def alterarFase(id=0,fase=''):
+def alterarFase(id=0, fase=''):
     try:
         if id == '' or fase == '':
             return
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
         if fase == 'AGUARD':
-            cursor.execute(f"UPDATE carrego SET classe = 'status', frase = 'AGUARD', status = 'ATIVO' WHERE id = {id}")
+            cursor.execute(f"UPDATE carrego SET  classe = 'status', frase = 'AGUARD', status = 'ATIVO' WHERE id = {id}")
         if fase == 'CARREGANDO':
             cursor.execute(f"UPDATE carrego SET classe = 'carregando', frase = 'CARREGANDO' WHERE id = {id}")
         if fase == 'AGUARD FAT':
@@ -192,18 +192,21 @@ def alterarFase(id=0,fase=''):
     except:
         return
 
-def  alteraConferente(id=0, conferente=''):
+
+def updateCarrego(id=0, clt='', mot='', dest='', conf='', placa='', cub='', img=''):
     try:
-        contador = 0
-        for i in consultarDados():
-            contador += 1
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        cursor.execute(f"UPDATE carrego SET conf = '{conferente}' WHERE id = {id} ")
+        camposInsert = [clt, mot, dest, conf, placa, cub, img]
+        campos = ['clt', 'mot', 'dest', 'conf', 'placa', 'cub', 'img']
+        for i in range(0,len(campos)):
+            if camposInsert[i] != '':        
+                cursor.execute(f"UPDATE carrego SET  '{campos[i]}' = '{camposInsert[i]}' WHERE id = {id}")
+                conect.commit()
+        conect.close()
     except:
         return
-
-#alteraConferente(7, 'CASE')
+        
 
 # excluír registro
 def excluir(id):
