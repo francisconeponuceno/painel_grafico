@@ -76,8 +76,7 @@ def remover():
                     return redirect("/")
                 else:
                     alterarFase(i[0], FASE)
-                    return redirect("/")
-                
+                    return redirect("/")      
     except:
         return redirect("/")
 

@@ -51,7 +51,7 @@ def consultarDados():
         return registros
     except:
         return
-#consultarDados()
+
 
 def sequencia():
     try:
