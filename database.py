@@ -113,9 +113,9 @@ def DadosGrafico():
         porcentoClaudino = cubC / cubtotal * 100
         porcentoEscoameto = cubE / cubtotal * 100
         # formatado com duas casas decimais
-        porcentoTerceiro = f'{porcentoTerceiro:.2f}'
-        porcentoClaudino = f'{porcentoClaudino:.2f}'
-        porcentoEscoameto = f'{porcentoEscoameto:.2f}'
+        porcentoTerceiro = f'{porcentoTerceiro:.0f}'
+        porcentoClaudino = f'{porcentoClaudino:.0f}'
+        porcentoEscoameto = f'{porcentoEscoameto:.0f}'
         ##############################################
         dadoslidos = [cubtotal, cubF, cubCSS, cubA, cubV, cubKZ, cubZC, cubfer, cubrai, cubluc, cubC, cubT, cubE,
                       porcentoTerceiro, porcentoClaudino, porcentoEscoameto, T, C, E]
@@ -210,7 +210,7 @@ def updateCarrego(id=0, clt='', mot='', dest='', conf='', placa='', cub='', img=
 def imagemConf(conferente=''):
     try:
         if conferente == '':
-            return '/static/images.jpg'
+            return ''
         match conferente:
             case 'ARIMATEIA':
                 IMG = '/static/img_arimateia.jpg'

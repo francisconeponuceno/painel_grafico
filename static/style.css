@@ -41,9 +41,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 60px;
     color: var(--branco);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     background-image: linear-gradient(to left, var(--branco), var(--azul3));
     
 }
@@ -66,7 +66,8 @@ body {
 }
 
 .terceiro .logo img {
-    width: 100px;
+    width: 90px;
+    height: 30px;
     
 }
 
