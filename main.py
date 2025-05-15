@@ -1,4 +1,4 @@
-from database import consultarDados, salvar, DadosGrafico, CubagemMes, excluir, alterarFase, updateCarrego
+from database import consultarDados, salvar, DadosGrafico, CubagemMes, excluir, alterarFase, updateCarrego, imagemConf
 from flask import Flask, render_template, request, redirect
 
 
@@ -24,29 +24,9 @@ def cadastrar():
         CONF = request.form['conf'].upper()
         PLACA = request.form['placa'].upper()
         CUB = request.form['cub'].upper()
-        IMG = '/static/images.jpg'
+        IMG = imagemConf(CONF)
         if CLT =='' or MOT =='' or DEST =='' or CONF =='' or PLACA =='' or CUB == '':
             return redirect("/")
-        match CONF:
-            case 'ARIMATEIA':
-                IMG = '/static/img_arimateia.jpg'
-            case 'CASE':
-                IMG = '/static/img_caze.jpg'
-            case 'FABIO':
-                IMG = '/static/img_fabio.png'
-            case 'VICENTE':
-                IMG = '/static/img_vicente.png'
-            case 'CASSIO':
-                IMG = '/static/img_cassio.png'
-            case 'ZE CARLOS':
-                IMG = '/static/img_zecarlos.png'
-            case 'FERNANDO':
-                IMG = '/static/img_fernando.png'
-            case 'RAIONE':
-                IMG = '/static/img_raione.png'
-            case 'EMERSON':
-                IMG = '/static/img_lucas.png'
-
         salvar(CLT,MOT,DEST,CONF,PLACA,CUB,'aguardando','AGUARD',IMG,'ATIVO')
         return redirect("/")
     except:
@@ -66,8 +46,8 @@ def remover():
         PLACA = request.form['placa'].upper()
         CUB = request.form['cub'].upper()
         FASE = request.form.get("opcoes")
-        IMG = '/static/images.jpg'
-        if ID_CARREGO == "" and FASE == "":
+        IMG = imagemConf(CONF)
+        if ID_CARREGO == "":
             return redirect("/")
         for i in dados:
             contador += 1
@@ -76,25 +56,6 @@ def remover():
                     excluir(i[0])
                     return redirect("/")
                 else:
-                    match CONF:
-                        case 'ARIMATEIA':
-                            IMG = '/static/img_arimateia.jpg'
-                        case 'CASE':
-                            IMG = '/static/img_caze.jpg'
-                        case 'FABIO':
-                            IMG = '/static/img_fabio.png'
-                        case 'VICENTE':
-                            IMG = '/static/img_vicente.png'
-                        case 'CASSIO':
-                            IMG = '/static/img_cassio.png'
-                        case 'ZE CARLOS':
-                            IMG = '/static/img_zecarlos.png'
-                        case 'FERNANDO':
-                            IMG = '/static/img_fernando.png'
-                        case 'RAIONE':
-                            IMG = '/static/img_raione.png'
-                        case 'EMERSON':
-                            IMG = '/static/img_lucas.png'
                     updateCarrego(i[0], CLT, MOT, DEST, CONF, PLACA, CUB, IMG)
                     alterarFase(i[0],FASE)
                     return redirect("/")      

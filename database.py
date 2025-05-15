@@ -207,6 +207,36 @@ def updateCarrego(id=0, clt='', mot='', dest='', conf='', placa='', cub='', img=
     except:
         return
         
+def imagemConf(conferente=''):
+    try:
+        if conferente == '':
+            return '/static/images.jpg'
+        match conferente:
+            case 'ARIMATEIA':
+                IMG = '/static/img_arimateia.jpg'
+            case 'CASE':
+                IMG = '/static/img_caze.jpg'
+            case 'FABIO':
+                IMG = '/static/img_fabio.png'
+            case 'VICENTE':
+                IMG = '/static/img_vicente.png'
+            case 'CASSIO':
+                IMG = '/static/img_cassio.png'
+            case 'ZE CARLOS':
+                IMG = '/static/img_zecarlos.png'
+            case 'FERNANDO':
+                IMG = '/static/img_fernando.png'
+            case 'RAIONE':
+                IMG = '/static/img_raione.png'
+            case 'EMERSON':
+                IMG = '/static/img_lucas.png'
+            case _: 
+                '/static/images.jpg'
+        return IMG
+    except:
+        return
+
+
 
 # excluír registro
 def excluir(id):
@@ -232,6 +262,7 @@ def eliminaTabela():
         TabCarrego()
     except:
         return
+
 
 
 # eliminaTabela()
