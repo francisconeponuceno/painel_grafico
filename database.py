@@ -231,7 +231,7 @@ def imagemConf(conferente=''):
             case 'EMERSON':
                 IMG = '/static/img_lucas.png'
             case _: 
-                '/static/images.jpg'
+                IMG = '/static/images.jpg'
         return IMG
     except:
         return

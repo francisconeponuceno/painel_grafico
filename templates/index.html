@@ -37,6 +37,7 @@
                     <input type="text" name="dest" id="dest" placeholder="destino" style="width: 200px;">
                     <select name="conf" id="conf" style="height: 25px; font-size: 11px; border-radius: 5px; width: 110px;">
                         <option value="">--Conferente--</option>
+                        <option value="GERAL">GERAL</option>
                         <option value="ARIMATEIA">ARIMATEIA</option>
                         <option value="CASE">CASE</option>
                         <option value="CASSIO">CASSIO</option>
@@ -59,7 +60,9 @@
                         <option value="ADIADO">ADIADO</option>
                         <option value="CANCELADO">CANCELADO</option>
                     </select>
-                    <input type="submit" name="add" style="width: 30px;" value="-">
+                    <input type="submit" name="add" style="width: 30px;" value="-"
+                    onclick="return confirm('Deseja Realmente Excluir ou Alterar Este Carrego ')"
+                    >
                 </form>
                
                 <form action="/cadastrar" method="post" id="adicionar" class="fechar">
@@ -145,8 +148,6 @@
             <p class="title">Cubagem mensal</p>
             <div id="chartdiv"></div>
         </div>
-        
-        
         
     </main>
     
