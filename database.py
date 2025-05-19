@@ -1,7 +1,10 @@
 import sqlite3
 from datetime import date, timedelta,datetime
+from time import sleep
 
 Data = date.today()
+
+
 # Criar tabela
 def TabCarrego():
     try:

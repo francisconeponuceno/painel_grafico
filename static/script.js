@@ -27,11 +27,28 @@ let out = document.getElementById('out').innerHTML;
 let nov = document.getElementById('nov').innerHTML;
 let dez = document.getElementById('dez').innerHTML;
 
+
 //FUNÇÃO PARA OS INPUTs
 const adicionar = document.getElementById('adicionar');
 const remover = document.getElementById('remover');
 const btn_remover = document.getElementById('btn_remover');
 const btn_adicionar = document.getElementById('btn_adicionar');
+
+//FUNÇÃO PARA PEGAR A HORA DO SISTEMA
+
+function atualizarHora() {
+            const agora = new Date();
+            const hora = agora.toLocaleTimeString('pt-BR', {
+              hour: '2-digit',
+              minute: '2-digit',
+              hour12: false // usa o formato 24h
+            });
+            document.getElementById('btn_remover').textContent = hora;
+        }
+
+        setInterval(atualizarHora, 1000); // Atualiza a cada 1 segundo
+        atualizarHora(); // Chamada inicial para não esperar 1 segundo
+
 
 const adicionar_carrego = (event) => {
   if (adicionar.className == "fechar") {
