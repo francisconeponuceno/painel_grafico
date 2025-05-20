@@ -180,7 +180,21 @@ def updateCarrego(id=0, clt='', mot='', dest='', conf='', placa='', cub='', fase
                 cursor.execute(f"UPDATE carrego SET  '{campos[i]}' = '{camposInsert[i]}' WHERE id = {id}")
                 conect.commit()
         if fase != '':
-            alterarFase(id,fase)
+            if fase == 'AGUARD':
+                cursor.execute(f"UPDATE carrego SET  classe = 'status', frase = 'AGUARD', status = 'ATIVO' WHERE id = {id}")
+            if fase == 'CARREGANDO':
+                cursor.execute(f"UPDATE carrego SET classe = 'carregando', frase = 'CARREGANDO' WHERE id = {id}")
+            if fase == 'AGUARD FAT':
+                cursor.execute(f"UPDATE carrego SET classe = 'aguard_fat', frase = 'AGUARD FAT' WHERE id = {id}")
+            if fase == 'FATURANDO':
+                cursor.execute(f"UPDATE carrego SET classe = 'faturando', frase = 'FATURANDO' WHERE id = {id}")
+            if fase == 'CONCLUÍDO':
+                cursor.execute(f"UPDATE carrego SET classe = 'concluido', frase = 'CONCLUÍDO' WHERE id = {id}")
+            if fase == 'ADIADO':
+                cursor.execute(f"UPDATE carrego SET classe = 'adiado', frase = 'ADIADO', status = 'ADIADO' WHERE id = {id}")
+            if fase == 'CANCELADO':
+                cursor.execute(f"UPDATE carrego SET classe = 'cancelado', frase = 'CANCELADO', status = 'CANCELADO' WHERE id = {id}")
+        conect.commit()
         conect.close()
     except:
         return

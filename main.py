@@ -17,10 +17,10 @@ def index():
 @app.route('/cadastrar',methods=['POST','GET'])
 def cadastrar():
     try:
-        CLT = request.form['clt'].upper()
+        CLT = request.form.get("clt")
         MOT = request.form['mot'].upper()
         DEST = request.form['dest'].upper()
-        CONF = request.form['conf'].upper()
+        CONF = request.form.get("conf")
         PLACA = request.form['placa'].upper()
         CUB = request.form['cub'].upper()
         IMG = imagemConf(CONF)
@@ -41,7 +41,7 @@ def remover():
         dados = consultarDados()
         contador = 0
         ID_CARREGO = int(request.form["num_carrego"])
-        CLT = request.form['clt'].upper()
+        CLT = request.form.get("clt")
         MOT = request.form['mot'].upper()
         DEST = request.form['dest'].upper()
         CONF = request.form.get("conf")
@@ -58,9 +58,9 @@ def remover():
                     excluir(i[0])
                     return redirect("/")
                 else:
-                    if CONF != 'GERAL':
+                    if CONF != '' and CONF != 'GERAL' and FASE == '':
                         FASE = 'CARREGANDO'
-                    else:
+                    if CONF == 'GERAL' and FASE == '':
                         FASE = 'AGUARD'
                     updateCarrego(i[0], CLT, MOT, DEST, CONF, PLACA, CUB, FASE, IMG)
                     #alterarFase(i[0],FASE)
