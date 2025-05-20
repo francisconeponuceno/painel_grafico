@@ -43,7 +43,7 @@ function atualizarHora() {
               minute: '2-digit',
               hour12: false // usa o formato 24h
             });
-            document.getElementById('btn_remover').textContent = hora;
+            document.getElementById('hora').textContent = hora;
         }
 
         setInterval(atualizarHora, 1000); // Atualiza a cada 1 segundo

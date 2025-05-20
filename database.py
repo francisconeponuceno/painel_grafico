@@ -168,12 +168,27 @@ def CubagemMes():
     except:
         return
 
+# ALTERA CARREGO
+def updateCarrego(id=0, clt='', mot='', dest='', conf='', placa='', cub='', fase='', img=''):
+    try:
+        conect = sqlite3.connect('banco.db')
+        cursor = conect.cursor()
+        camposInsert = [clt, mot, dest, conf, placa, cub, fase, img]
+        campos = ['clt', 'mot', 'dest', 'conf', 'placa', 'cub', 'frase', 'img']
+        for i in range(0,len(campos)):
+            if camposInsert[i] != '':        
+                cursor.execute(f"UPDATE carrego SET  '{campos[i]}' = '{camposInsert[i]}' WHERE id = {id}")
+                conect.commit()
+        if fase != '':
+            alterarFase(id,fase)
+        conect.close()
+    except:
+        return
+
 
 # alterar fase
 def alterarFase(id=0, fase=''):
     try:
-        if id == '' or fase == '':
-            return
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
         if fase == 'AGUARD':
@@ -195,20 +210,6 @@ def alterarFase(id=0, fase=''):
     except:
         return
 
-
-def updateCarrego(id=0, clt='', mot='', dest='', conf='', placa='', cub='', img=''):
-    try:
-        conect = sqlite3.connect('banco.db')
-        cursor = conect.cursor()
-        camposInsert = [clt, mot, dest, conf, placa, cub, img]
-        campos = ['clt', 'mot', 'dest', 'conf', 'placa', 'cub', 'img']
-        for i in range(0,len(campos)):
-            if camposInsert[i] != '':        
-                cursor.execute(f"UPDATE carrego SET  '{campos[i]}' = '{camposInsert[i]}' WHERE id = {id}")
-                conect.commit()
-        conect.close()
-    except:
-        return
         
 def imagemConf(conferente=''):
     try:

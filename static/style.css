@@ -35,6 +35,15 @@ body {
 
 .fechar{
     display: none;
+
+}
+
+.relogio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 25px;
 }
 
 .terceiro {

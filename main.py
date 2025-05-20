@@ -24,9 +24,12 @@ def cadastrar():
         PLACA = request.form['placa'].upper()
         CUB = request.form['cub'].upper()
         IMG = imagemConf(CONF)
+        AGUARD = 'AGUARD'
+        if CONF != 'GERAL':
+            AGUARD = 'CARREGANDO'
         if CLT =='' or MOT =='' or DEST =='' or CONF =='' or PLACA =='' or CUB == '':
             return redirect("/")
-        salvar(CLT,MOT,DEST,CONF,PLACA,CUB,'aguardando','AGUARD',IMG,'ATIVO')
+        salvar(CLT,MOT,DEST,CONF,PLACA,CUB,'aguardando', AGUARD, IMG,'ATIVO')
         return redirect("/")
     except:
         return redirect("/")
@@ -55,8 +58,12 @@ def remover():
                     excluir(i[0])
                     return redirect("/")
                 else:
-                    updateCarrego(i[0], CLT, MOT, DEST, CONF, PLACA, CUB, IMG)
-                    alterarFase(i[0],FASE)
+                    if CONF != 'GERAL':
+                        FASE = 'CARREGANDO'
+                    else:
+                        FASE = 'AGUARD'
+                    updateCarrego(i[0], CLT, MOT, DEST, CONF, PLACA, CUB, FASE, IMG)
+                    #alterarFase(i[0],FASE)
                     return redirect("/")      
     except:
         return redirect("/")
