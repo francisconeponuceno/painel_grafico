@@ -108,7 +108,7 @@ main.table {
 
 .table__body {
     width: 100%;
-    max-height: calc(89% - 1.6rem);
+    max-height: calc(95% - 1.6rem);
     background-color: #fffb;
     overflow: auto;
     overflow: overlay;
@@ -140,7 +140,7 @@ table {
 td img {
     width: 37px;
     height: 37px;
-    margin-right: .5rem;
+    margin-right: .2rem;
     border-radius: 50%;
     vertical-align: middle;
 }
@@ -148,9 +148,9 @@ td img {
 
 table, th, td {
     border-collapse: collapse;
-    padding: 0.2rem;
+    padding: 0.04rem;
     text-align: left;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     font-weight: bold;
 }
 
@@ -212,10 +212,10 @@ tbody tr.hide td img {
     padding: .4rem 0;
     border-radius: 2rem;
     text-align: center;
-    width: 90PX;
+    width: 80PX;
     background-color: #96dbfc;
     color: var(--azul3);
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-weight: bold;
 }
 
@@ -224,7 +224,7 @@ tbody tr.hide td img {
 .status.concluido {
     background-color: #7ebb7e;
     color: #022902;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-weight: bold;
 }
 
@@ -232,7 +232,7 @@ tbody tr.hide td img {
 .status.cancelado {
     background-color: #d893a3;
     color: #b30021;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-weight: bold;
 }
 
@@ -240,7 +240,7 @@ tbody tr.hide td img {
 .status.adiado {
     background-color: #fd9250;
     color: #672802;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-weight: bold;
 }
 
