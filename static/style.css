@@ -159,7 +159,6 @@ thead th {
     top: 0;
     left: 0;
     background-color: var(--vermelho);
-    cursor: pointer;
     color: var(--branco);
     
 }
@@ -172,7 +171,6 @@ tbody tr:nth-child(even) {
 tbody tr {
     --delay: .1s;
     transition: .5s ease-in-out var(--delay), background-color 0s;
-    cursor: pointer;
 }
 
 tbody tr.hide {
@@ -180,9 +178,6 @@ tbody tr.hide {
     transform: translateX(100%);
 }
 
-tbody tr:hover {
-    background-color: rgba(204, 204, 204, 0.4) !important;
-}
 
 tbody tr td,
 tbody tr td p,
@@ -267,7 +262,7 @@ tbody tr.hide td img {
 
 
 .grafico .cubtotal .total{
-    width: 95px;
+    width: 85px;
     height: 45px;
     display: flex;
     flex-direction: column;
@@ -324,19 +319,6 @@ tbody tr.hide td img {
     height: 100%;
     font-size: 0.7rem;
     
-}
-
-.title{
-    font-size: 0.7rem;
-}
-
-
-.futer {
-    background-color: var(--azul2);
-    text-align: right;
-    font-size: 0.7rem;
-    color: var(--branco);
-    padding-right: 10px;
 }
 
 
