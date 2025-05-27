@@ -45,31 +45,27 @@ def salvar(clt,mot,dest,conf,placa,cub,classe,frase,img,status):
 # Consultar dados
 def consultarDados():
     try:
+        T = [] 
+        C = []
+        E = []
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
         cursor.execute(
             f"SELECT * FROM carrego  WHERE data = '{Data}' ")  # AND data = '{Data}'
         registros = cursor.fetchall()
         conect.close()
-        return registros
+        for i in registros:
+            if i[1] == 'T':
+                T.append(i)
+            if i[1] == 'C':
+                C.append(i)
+            if i[1] == 'E':
+                E.append(i)
+        dados = T + C + E
+        return dados
     except:
         return
 
-
-def sequencia():
-    try:
-        index = []
-        conect = sqlite3.connect('banco.db')
-        cursor = conect.cursor()
-        cursor.execute(
-            f"SELECT * FROM carrego  WHERE status = 'ATIVO' AND data = '2024-08-15' ")  # AND data = '{Data}'
-        itens = cursor.fetchall()
-        conect.close()
-        for i in range(0,len(itens)):
-            index.append(i + 1)
-        return index
-    except:
-        return
 
 # dados para os graficos
 def DadosGrafico():
