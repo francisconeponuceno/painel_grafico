@@ -4,13 +4,15 @@ from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
     try:
+        Atualizacao = ''
         dados = consultarDados()
         Dgrafico = DadosGrafico()
         graficoMes = CubagemMes()
-        return render_template("index.html", registro=dados ,Dgrafico=Dgrafico, graficoMes=graficoMes)
+        return render_template("index.html", registro=dados ,Dgrafico=Dgrafico, graficoMes=graficoMes, Atualizacao=Atualizacao)
     except:
         return redirect("/")
 
