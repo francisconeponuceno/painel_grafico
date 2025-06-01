@@ -34,11 +34,7 @@ const remover = document.getElementById('remover');
 const btn_remover = document.getElementById('btn_remover');
 const btn_adicionar = document.getElementById('btn_adicionar');
 
-// FUNÇÃO PARA ATUALIZAR A PAGINA
-let refresh = document.getElementById('Atualizar');
-refresh.addEventListener('click', () => {
-  refresh()
-})
+
 
 //FUNÇÃO PARA PEGAR A HORA DO SISTEMA
 
@@ -144,7 +140,7 @@ pieSeries.labels.template.adapter.add("text", function(text, target) {
 am4core.ready(function() {
 
   // Themes begin
-  am4core.useTheme(am4themes_animated);
+  //am4core.useTheme(am4themes_animated);
   // Themes end
   
   var chart = am4core.create("chartdiv2", am4charts.XYChart);
@@ -330,16 +326,5 @@ am4core.ready(function() {
   labelBullet.label.dy = -0;
   labelBullet.label.text = "{values.valueY.workingValue.formatNumber('#.')}";
   chart.zoomOutButton.disabled = true;
-  
-  
-  //setInterval(function () {
-    //am4core.array.each(chart.data, function (item) {
-      //item.visits += Math.round(Math.random() * 200 - 100);
-      //item.visits = Math.abs(item.visits);
-    //})
-    //chart.invalidateRawData();
-   //}, 2000)
-  
-  //categoryAxis.sortBySeries = series;
   
   }); // end am4core.ready()

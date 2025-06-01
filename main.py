@@ -8,11 +8,11 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     try:
-        Atualizacao = ''
+        
         dados = consultarDados()
         Dgrafico = DadosGrafico()
         graficoMes = CubagemMes()
-        return render_template("index.html", registro=dados ,Dgrafico=Dgrafico, graficoMes=graficoMes, Atualizacao=Atualizacao)
+        return render_template("index.html", registro=dados ,Dgrafico=Dgrafico, graficoMes=graficoMes)
     except:
         return redirect("/")
 
