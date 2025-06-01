@@ -34,6 +34,12 @@ const remover = document.getElementById('remover');
 const btn_remover = document.getElementById('btn_remover');
 const btn_adicionar = document.getElementById('btn_adicionar');
 
+// FUNÇÃO PARA ATUALIZAR A PAGINA
+let refresh = document.getElementById('Atualizar');
+refresh.addEventListener('click', () => {
+  refresh()
+})
+
 //FUNÇÃO PARA PEGAR A HORA DO SISTEMA
 
 function atualizarHora() {
