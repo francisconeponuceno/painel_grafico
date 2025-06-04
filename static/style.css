@@ -92,6 +92,34 @@ body {
     border: 1px solid var(--azul3);
 }
 
+/* INPUTS REMOVER*/
+
+#num_carrego, #cub{
+    width: 40px
+}
+
+#clt {
+    width: 50px;
+    height: 25px;
+    font-size: 11px;
+    border-radius: 5px;
+}
+
+#mot, #dest {
+    width: 200px;
+    
+}
+
+#conf, #opcoes {
+    height: 25px;
+    width: 110px;
+    font-size: 11px;
+    border-radius: 5px;
+}
+
+#placa {
+    width: 80px;
+}
 
 /* ####### ESTILO TABELA  ########*/
 
