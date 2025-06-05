@@ -415,11 +415,7 @@ thead th span.icon-arrow {
 
 /* ####### MIDIA QUERY  ########*/
 
-@media (max-width: 1000px) {
-    td:not(:first-of-type) {
-        min-width: 12.1rem;
-    }
-}
+
 
 
 @media (min-width: 600px) and (max-width: 1100px) {
@@ -448,33 +444,121 @@ thead th span.icon-arrow {
 
     /* INPUTS REMOVER*/
 
-#num_carrego, #cub{
-    width: 30px
+    #num_carrego, #cub{
+        width: 30px;
+        font-size: 9px;
+    }
+
+    #clt {
+        width: 40px;
+        height: 25px;
+        font-size: 9px;
+        border-radius: 5px;
+    }
+
+    #mot, #dest {
+        width: 120px;
+        font-size: 9px;
+        
+    }
+
+    #conf, #opcoes {
+        height: 25px;
+        width: 90px;
+        font-size: 9px;
+        border-radius: 5px;
+    }
+
+    #placa {
+        width: 60px;
+        font-size: 9px;
+    }
 }
 
-#clt {
-    width: 40px;
+
+@media (min-width: 600px) and (max-width: 970px) {
+        table, th, td {
+        border-collapse: collapse;
+        padding: 0.03rem;
+        text-align: left;
+        font-size: 0.5rem;
+        font-weight: bold;
+    }
+
+    .relogio {
+        gap: 8px;
+        font-size: 15px;
+    }
+
+    .terceiro {
+        font-size: 0.7rem;
+    }
+
+    .terceiro .logo img {
+    width: 80px;
     height: 25px;
-    font-size: 9px;
-    border-radius: 5px;
-}
-
-#mot, #dest {
-    width: 120px;
     
+    }
+
+    .terceiro .painel form {
+        margin-bottom: 5px;
+        height: 20px;
+        font-size: 6px;
+    }
+
+    /* INPUTS REMOVER*/
+
+    #num_carrego, #cub{
+        width: 30px;
+        font-size: 9px;
+    }
+
+    #clt {
+        width: 40px;
+        height: 25px;
+        font-size: 9px;
+        border-radius: 5px;
+    }
+
+    #mot, #dest {
+        width: 120px;
+        font-size: 9px;
+        
+    }
+
+    #conf, #opcoes {
+        height: 25px;
+        width: 90px;
+        font-size: 9px;
+        border-radius: 5px;
+    }
+
+    #placa {
+        width: 60px;
+        font-size: 9px;
+    }
+
+    /*CONCLUIDO */
+    .status, .status.concluido, .status.cancelado, .status.adiado{
+        font-size: 0.5rem;
+        padding: .3rem 0;
+        width: 70PX;
+    }
+
 }
 
-#conf, #opcoes {
-    height: 25px;
-    width: 90px;
-    font-size: 9px;
-    border-radius: 5px;
-}
+@media (min-width: 300px) and (max-width: 700px) {
+    body {
+    display: flex;
+    flex-direction: column;
+    }
 
-#placa {
-    width: 60px;
-}
-
+    .grafico {
+    width: 100%;
+    display: flex;
+    
+    
+    }
 
 
 }
