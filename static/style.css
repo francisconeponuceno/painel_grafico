@@ -442,35 +442,37 @@ thead th span.icon-arrow {
 
     .terceiro .painel form {
         margin-bottom: 5px;
+        height: 20px;
+        font-size: 6px;
     }
 
     /* INPUTS REMOVER*/
 
 #num_carrego, #cub{
-    width: 40px
+    width: 30px
 }
 
 #clt {
-    width: 50px;
+    width: 40px;
     height: 25px;
-    font-size: 11px;
+    font-size: 9px;
     border-radius: 5px;
 }
 
 #mot, #dest {
-    width: 200px;
+    width: 120px;
     
 }
 
 #conf, #opcoes {
     height: 25px;
-    width: 110px;
-    font-size: 11px;
+    width: 90px;
+    font-size: 9px;
     border-radius: 5px;
 }
 
 #placa {
-    width: 80px;
+    width: 60px;
 }
 
 
