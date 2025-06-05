@@ -553,6 +553,94 @@ thead th span.icon-arrow {
     flex-direction: column;
     }
 
+    table, th, td {
+        border-collapse: collapse;
+        padding: 0.03rem;
+        text-align: left;
+        font-size: 0.4rem;
+        
+    }
+
+    .relogio {
+        gap: 5px;
+        font-size: 10px;
+    }
+
+    .terceiro {
+        Justify-content: center;
+        align-items: center;
+        font-size: 0.4rem;
+    }
+
+    .terceiro {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        
+    
+    }
+
+    .terceiro .logo img {
+    width: 60px;
+    height: 20px;
+    
+    }
+
+    td img {
+        width: 25px;
+        height: 25px;
+        margin-right: .1rem;
+        border-radius: 50%;
+        
+    }
+
+    .terceiro .painel form {
+        margin-bottom: 5px;
+        height: 20px;
+        font-size: 6px;
+    }
+
+    /* INPUTS REMOVER*/
+
+    #num_carrego, #cub{
+        width: 30px;
+        font-size: 9px;
+    }
+
+    #clt {
+        width: 40px;
+        height: 25px;
+        font-size: 9px;
+        border-radius: 5px;
+    }
+
+    #mot, #dest {
+        width: 120px;
+        font-size: 9px;
+        
+    }
+
+    #conf, #opcoes {
+        height: 25px;
+        width: 90px;
+        font-size: 9px;
+        border-radius: 5px;
+    }
+
+    #placa {
+        width: 60px;
+        font-size: 9px;
+    }
+
+    /*CONCLUIDO */
+    .status, .status.concluido, .status.cancelado, .status.adiado{
+        font-size: 0.4rem;
+        padding: .2rem 0;
+        width: 55PX;
+    }
+
+
     .grafico {
     width: 100%;
     display: flex;
