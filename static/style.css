@@ -588,8 +588,8 @@ thead th span.icon-arrow {
     }
 
     td img {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         margin-right: .1rem;
         border-radius: 50%;
         
@@ -602,6 +602,10 @@ thead th span.icon-arrow {
     }
 
     /* INPUTS REMOVER*/
+
+    .seq {
+        width: 10px;
+    }
 
     #num_carrego, #cub{
         width: 30px;
@@ -635,9 +639,9 @@ thead th span.icon-arrow {
 
     /*CONCLUIDO */
     .status, .status.concluido, .status.cancelado, .status.adiado{
-        font-size: 0.4rem;
-        padding: .2rem 0;
-        width: 55PX;
+        font-size: 0.3rem;
+        padding: .1rem 0;
+        width: 50PX;
     }
 
 
