@@ -564,7 +564,7 @@ thead th span.icon-arrow {
     }
 
     .table__body {
-        max-height: calc(60% - 1.6rem);
+        max-height: calc(50% - 1.6rem);
         
     }
 
@@ -595,8 +595,8 @@ thead th span.icon-arrow {
     }
 
     td img {
-        width: 20px;
-        height: 20px;
+        width: 17px;
+        height: 17px;
         margin-right: .1.2rem;
         border-radius: 50%;
         
@@ -611,7 +611,9 @@ thead th span.icon-arrow {
     /* INPUTS REMOVER*/
 
     .seq {
-        width: 10px;
+        width: 15px;
+        text-align: left;
+        
     }
 
     #num_carrego, #cub{
@@ -648,7 +650,7 @@ thead th span.icon-arrow {
     .status, .status.concluido, .status.cancelado, .status.adiado{
         font-size: 0.3rem;
         padding: .1rem 0;
-        width: 40PX;
+        width: 38PX;
     }
 
 
