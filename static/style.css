@@ -550,8 +550,8 @@ thead th span.icon-arrow {
 
 @media (min-width: 300px) and (max-width: 700px) {
     body {
-    display: flex;
-    flex-direction: column;
+        display: flex;
+        flex-direction: column;
     
     }
 
@@ -584,8 +584,6 @@ thead th span.icon-arrow {
         justify-content: center;
         align-items: center;
         height: 40px;
-        
-    
     }
 
     .terceiro .logo img {
