@@ -247,24 +247,18 @@ tbody tr.hide td img {
 .status.concluido {
     background-color: #7ebb7e;
     color: #022902;
-    font-size: 0.6rem;
-    font-weight: bold;
 }
 
 /*CANCELADO*/
 .status.cancelado {
     background-color: #d893a3;
     color: #b30021;
-    font-size: 0.6rem;
-    font-weight: bold;
 }
 
 /*ADIADO*/
 .status.adiado {
     background-color: #fd9250;
     color: #672802;
-    font-size: 0.6rem;
-    font-weight: bold;
 }
 
 
