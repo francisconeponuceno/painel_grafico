@@ -8,13 +8,20 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     try:
-        
         dados = consultarDados()
         Dgrafico = DadosGrafico()
         graficoMes = CubagemMes()
         return render_template("index.html", registro=dados ,Dgrafico=Dgrafico, graficoMes=graficoMes)
     except:
         return redirect("/")
+
+
+@app.route('/adicionar',methods=['POST','GET'])
+def adicionar():
+    
+    return render_template('/add.html')
+
+
 
 @app.route('/cadastrar',methods=['POST','GET'])
 def cadastrar():

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style2.css">
+    <title>Adicionar</title>
+</head>
+<body>
+    <div class="container">
+        <div class="modal">
+            <form action="/cadastrar" method="post" id="adicionar" class="fechar">
+                <select name="clt" id="clt">
+                    <option value="">--CLT--</option>
+                    <option value="C">C</option>
+                    <option value="E">E</option>
+                    <option value="T">T</option>
+                </select>
+                <input type="text" name="mot" id="mot" placeholder="motorista">
+                <input type="text" name="dest" id="dest" placeholder="destino">
+                <select name="conf" id="conf">
+                    <option value="">--Conferente--</option>
+                    <option value="GERAL">GERAL</option>
+                    <option value="ARIMATEIA">ARIMATEIA</option>
+                    <option value="CASE">CASE</option>
+                    <option value="CASSIO">CASSIO</option>
+                    <option value="EMERSON">EMERSON</option>
+                    <option value="FERNANDO">FERNANDO</option>
+                    <option value="RAIONE">RAIONE</option>
+                    <option value="FABIO">FABIO</option>
+                    <option value="VICENTE">VICENTE</option>
+                    <option value="ZE CARLOS">ZE CARLOS</option>
+                </select>
+                <input type="text" name="placa" id="placa" placeholder="placa">
+                <input type="text" name="cub" id="cub" placeholder="cub">
+                <input type="submit" name="add" id="add" style="width: 30px;" value="+">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
