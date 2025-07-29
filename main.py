@@ -1,4 +1,5 @@
-from database import consultarDados, salvar, DadosGrafico, CubagemMes, excluir, alterarFase, updateCarrego, imagemConf
+from database import consultarDados, salvar, DadosGrafico, CubagemMes, excluir, updateCarrego, imagemConf
+from database import select
 from flask import Flask, render_template, request, redirect
 
 
@@ -18,9 +19,7 @@ def index():
 
 @app.route('/adicionar',methods=['POST','GET'])
 def adicionar():
-    
     return render_template('/add.html')
-
 
 
 @app.route('/cadastrar',methods=['POST','GET'])
@@ -44,12 +43,15 @@ def cadastrar():
         return redirect("/")
 
 
-@app.route("/remover", methods=["POST", "GET"])
-def remover():
+@app.route('/update/<int:id>',methods=['GET','POST'])
+def update(id):
+    lista = select(id)
+    return render_template('/update.html',lista=lista)
+
+
+@app.route("/alterar/<int:id>", methods=["POST", "GET"])
+def remover(id):
     try:
-        dados = consultarDados()
-        contador = 0
-        ID_CARREGO = int(request.form["num_carrego"])
         CLT = request.form.get("clt")
         MOT = request.form['mot'].upper()
         DEST = request.form['dest'].upper()
@@ -58,22 +60,14 @@ def remover():
         CUB = request.form['cub'].upper()
         FASE = request.form.get("opcoes")
         IMG = imagemConf(CONF)
-        if ID_CARREGO == "":
-            return redirect("/")
-        for i in dados:
-            contador += 1
-            if contador == ID_CARREGO:
-                if FASE == "" and CLT == '' and MOT == ''and DEST == ''and CONF =='' and PLACA == ''and CUB == '':
-                    excluir(i[0])
-                    return redirect("/")
-                else:
-                    if CONF != '' and CONF != 'GERAL' and FASE == '':
-                        FASE = 'CARREGANDO'
-                    if CONF == 'GERAL' and FASE == '':
-                        FASE = 'AGUARD'
-                    updateCarrego(i[0], CLT, MOT, DEST, CONF, PLACA, CUB, FASE, IMG)
-                    #alterarFase(i[0],FASE)
-                    return redirect("/")      
+        if CONF == 'GERAL':
+            FASE = 'AGUARD'
+        if CONF != 'GERAL':
+            FASE = 'CARREGANDO'
+        lista = [id, CLT, MOT, DEST, CONF, PLACA, CUB, FASE, IMG]
+        print(lista)
+        updateCarrego(dados=lista)
+        return redirect("/")      
     except:
         return redirect("/")
 

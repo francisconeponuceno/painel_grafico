@@ -16,7 +16,7 @@
 }
 
 .container .modal {
-    width: 30%;
+    width: 25%;
     height: 60%;
     background-color: white;
     display: flex;
@@ -51,4 +51,20 @@
 
 .container .modal form button {
     width: 100%;
+    height: 35px;
+    border: none;
+    background-color: #0000ff;
+    border-radius: 30px;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: .4s linear;
+}
+
+.container .modal form button:hover {
+    background: none;
+    border: 1px solid #0000ff;
+    color: #0000ff;
+    transform: scale(1.0);
 }

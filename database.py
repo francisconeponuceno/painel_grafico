@@ -164,63 +164,50 @@ def CubagemMes():
     except:
         return
 
+
+#SELECT ATRAVÉS DO ID
+def select(id):
+    conct = sqlite3.connect('banco.db')
+    cursor = conct.cursor()
+    cursor.execute(f'SELECT * FROM carrego WHERE id = {id}')
+    return cursor.fetchall()
+
+
 # ALTERA CARREGO
-def updateCarrego(id=0, clt='', mot='', dest='', conf='', placa='', cub='', fase='', img=''):
+def updateCarrego(dados):
     try:
         conect = sqlite3.connect('banco.db')
         cursor = conect.cursor()
-        camposInsert = [clt, mot, dest, conf, placa, cub, fase, img]
-        campos = ['clt', 'mot', 'dest', 'conf', 'placa', 'cub', 'frase', 'img']
-        for i in range(0,len(campos)):
-            if camposInsert[i] != '':        
-                cursor.execute(f"UPDATE carrego SET  '{campos[i]}' = '{camposInsert[i]}' WHERE id = {id}")
-                conect.commit()
-        if fase != '':
-            if fase == 'AGUARD':
-                cursor.execute(f"UPDATE carrego SET  classe = 'status', frase = 'AGUARD', status = 'ATIVO' WHERE id = {id}")
-            if fase == 'CARREGANDO':
-                cursor.execute(f"UPDATE carrego SET classe = 'carregando', frase = 'CARREGANDO' WHERE id = {id}")
-            if fase == 'AGUARD FAT':
-                cursor.execute(f"UPDATE carrego SET classe = 'aguard_fat', frase = 'AGUARD FAT' WHERE id = {id}")
-            if fase == 'FATURANDO':
-                cursor.execute(f"UPDATE carrego SET classe = 'faturando', frase = 'FATURANDO' WHERE id = {id}")
-            if fase == 'CONCLUÍDO':
-                cursor.execute(f"UPDATE carrego SET classe = 'concluido', frase = 'CONCLUÍDO' WHERE id = {id}")
-            if fase == 'ADIADO':
-                cursor.execute(f"UPDATE carrego SET classe = 'adiado', frase = 'ADIADO', status = 'ADIADO' WHERE id = {id}")
-            if fase == 'CANCELADO':
-                cursor.execute(f"UPDATE carrego SET classe = 'cancelado', frase = 'CANCELADO', status = 'CANCELADO' WHERE id = {id}")
+        cursor.execute(f'''UPDATE carrego SET
+                        clt = '{dados[1]}',
+                        mot = '{dados[2]}',
+                        dest = '{dados[3]}',
+                        conf = '{dados[4]}',
+                        placa = '{dados[5]}',
+                        cub = '{dados[6]}',
+                        frase = '{dados[7]}',
+                        img = '{dados[8]}' WHERE id = {dados[0]}''')
+        conect.commit()
+        if dados[7] == 'AGUARD':
+            cursor.execute(f"UPDATE carrego SET  classe = 'status', frase = 'AGUARD', status = 'ATIVO' WHERE id = {dados[0]}")
+        if dados[7] == 'CARREGANDO':
+            cursor.execute(f"UPDATE carrego SET classe = 'carregando', frase = 'CARREGANDO' WHERE id = {dados[0]}")
+        if dados[7] == 'AGUARD FAT':
+            cursor.execute(f"UPDATE carrego SET classe = 'aguard_fat', frase = 'AGUARD FAT' WHERE id = {dados[0]}")
+        if dados[7] == 'FATURANDO':
+            cursor.execute(f"UPDATE carrego SET classe = 'faturando', frase = 'FATURANDO' WHERE id = {dados[0]}")
+        if dados[7] == 'CONCLUÍDO':
+            cursor.execute(f"UPDATE carrego SET classe = 'concluido', frase = 'CONCLUÍDO' WHERE id = {dados[0]}")
+        if dados[7] == 'ADIADO':
+            cursor.execute(f"UPDATE carrego SET classe = 'adiado', frase = 'ADIADO', status = 'ADIADO' WHERE id = {dados[0]}")
+        if dados[7] == 'CANCELADO':
+            cursor.execute(f"UPDATE carrego SET classe = 'cancelado', frase = 'CANCELADO', status = 'CANCELADO' WHERE id = {dados[0]}")
         conect.commit()
         conect.close()
     except:
         return
 
 
-# alterar fase
-def alterarFase(id=0, fase=''):
-    try:
-        conect = sqlite3.connect('banco.db')
-        cursor = conect.cursor()
-        if fase == 'AGUARD':
-            cursor.execute(f"UPDATE carrego SET  classe = 'status', frase = 'AGUARD', status = 'ATIVO' WHERE id = {id}")
-        if fase == 'CARREGANDO':
-            cursor.execute(f"UPDATE carrego SET classe = 'carregando', frase = 'CARREGANDO' WHERE id = {id}")
-        if fase == 'AGUARD FAT':
-            cursor.execute(f"UPDATE carrego SET classe = 'aguard_fat', frase = 'AGUARD FAT' WHERE id = {id}")
-        if fase == 'FATURANDO':
-            cursor.execute(f"UPDATE carrego SET classe = 'faturando', frase = 'FATURANDO' WHERE id = {id}")
-        if fase == 'CONCLUÍDO':
-            cursor.execute(f"UPDATE carrego SET classe = 'concluido', frase = 'CONCLUÍDO' WHERE id = {id}")
-        if fase == 'ADIADO':
-            cursor.execute(f"UPDATE carrego SET classe = 'adiado', frase = 'ADIADO', status = 'ADIADO' WHERE id = {id}")
-        if fase == 'CANCELADO':
-            cursor.execute(f"UPDATE carrego SET classe = 'cancelado', frase = 'CANCELADO', status = 'CANCELADO' WHERE id = {id}")
-        conect.commit()
-        conect.close()
-    except:
-        return
-
-        
 def imagemConf(conferente=''):
     try:
         if conferente == '':
