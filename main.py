@@ -62,10 +62,7 @@ def remover(id):
         IMG = imagemConf(CONF)
         if CONF == 'GERAL':
             FASE = 'AGUARD'
-        if CONF != 'GERAL':
-            FASE = 'CARREGANDO'
         lista = [id, CLT, MOT, DEST, CONF, PLACA, CUB, FASE, IMG]
-        print(lista)
         updateCarrego(dados=lista)
         return redirect("/")      
     except:

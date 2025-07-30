@@ -187,17 +187,13 @@ def updateCarrego(dados):
                         cub = '{dados[6]}',
                         frase = '{dados[7]}',
                         img = '{dados[8]}' WHERE id = {dados[0]}''')
-        conect.commit()
+        
         if dados[7] == 'AGUARD':
             cursor.execute(f"UPDATE carrego SET  classe = 'status', frase = 'AGUARD', status = 'ATIVO' WHERE id = {dados[0]}")
         if dados[7] == 'CARREGANDO':
-            cursor.execute(f"UPDATE carrego SET classe = 'carregando', frase = 'CARREGANDO' WHERE id = {dados[0]}")
-        if dados[7] == 'AGUARD FAT':
-            cursor.execute(f"UPDATE carrego SET classe = 'aguard_fat', frase = 'AGUARD FAT' WHERE id = {dados[0]}")
-        if dados[7] == 'FATURANDO':
-            cursor.execute(f"UPDATE carrego SET classe = 'faturando', frase = 'FATURANDO' WHERE id = {dados[0]}")
+            cursor.execute(f"UPDATE carrego SET classe = 'carregando', frase = 'CARREGANDO', status = 'ATIVO' WHERE id = {dados[0]}")
         if dados[7] == 'CONCLUÍDO':
-            cursor.execute(f"UPDATE carrego SET classe = 'concluido', frase = 'CONCLUÍDO' WHERE id = {dados[0]}")
+            cursor.execute(f"UPDATE carrego SET classe = 'concluido', frase = 'CONCLUÍDO', status = 'ATIVO' WHERE id = {dados[0]}")
         if dados[7] == 'ADIADO':
             cursor.execute(f"UPDATE carrego SET classe = 'adiado', frase = 'ADIADO', status = 'ADIADO' WHERE id = {dados[0]}")
         if dados[7] == 'CANCELADO':

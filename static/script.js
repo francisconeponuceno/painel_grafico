@@ -28,11 +28,7 @@ let nov = document.getElementById('nov').innerHTML;
 let dez = document.getElementById('dez').innerHTML;
 
 
-//FUNÇÃO PARA OS INPUTs
-const adicionar = document.getElementById('adicionar');
-const remover = document.getElementById('remover');
-const btn_remover = document.getElementById('btn_remover');
-const btn_adicionar = document.getElementById('btn_adicionar');
+
 
 
 
@@ -52,34 +48,6 @@ function atualizarHora() {
         atualizarHora(); // Chamada inicial para não esperar 1 segundo
 
 
-const adicionar_carrego = (event) => {
-  if (adicionar.className == "fechar") {
-    adicionar.classList.remove("fechar")
-    adicionar.classList.add("exibir")
-    return
-  } 
-  if (adicionar.classList == "exibir"){
-    adicionar.classList.remove("exibir")
-    adicionar.classList.add("fechar")
-  }
-
-}
-
-const remover_carrego = (event) => {
-  if (remover.className == "fechar") {
-    remover.classList.remove("fechar")
-    remover.classList.add("exibir")
-    return
-  }
-  if (remover.classList == "exibir") {
-    remover.classList.remove("exibir")
-    remover.classList.add("fechar")
-  }
-
-}
-
-btn_remover.addEventListener('click',remover_carrego);
-btn_adicionar.addEventListener('click', adicionar_carrego);
 
 
 // PRIMEIRO GRAFICO

@@ -29,14 +29,6 @@ body {
 }
 
 
-.exibir{
-    display: block;
-}
-
-.fechar{
-    display: none;
-
-}
 
 .relogio {
     display: flex;
@@ -314,7 +306,7 @@ tbody tr.hide td img {
 /* ####### FIM DO ESTILO PAINEL GRÁFICO  ########*/
 
 
-
+/*
 thead th span.icon-arrow {
     display: inline-block;
     width: 1.3rem;
@@ -369,7 +361,7 @@ thead th span.icon-arrow {
     width: 2rem;
     height: auto;
 }
-
+*/
 
 /* ####### FIM DO ESTILO TABELA  ########*/
 
