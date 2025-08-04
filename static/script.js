@@ -68,11 +68,7 @@ chart.data = [{
 }, {
   "category": "Escoamento",
   "value": Number(porcentoEscoamento.innerHTML),
-  "color": am4core.color("#fdb3b3") //  VERMELHO CLARO
-}, {
-  "category": "Esco + clau",
-  "value": Number(Cladino_Escoamento),
-  "color": am4core.color("#96dbfc") // AZUL CLARO
+  "color": am4core.color("#96dbfc") //  VERMELHO CLARO
 }];
 
 

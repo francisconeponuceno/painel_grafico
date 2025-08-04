@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <div class="modal">
+            <h2 style="color: blue; margin-top: 10px;">Alterar Carrego</h2>
             <form action="/alterar/{{lista[0][0]}}" method="post" id="adicionar" class="fechar">
                 <select name="clt" id="clt">
                     <option value="{{lista[0][1]}}">{{lista[0][1]}}</option>
@@ -37,9 +38,9 @@
                     <option value="{{lista[0][8]}}">{{lista[0][8]}}</option>
                     <option value="AGUARD">AGUARD</option>
                     <option value="CARREGANDO">CARREGANDO</option>
-                    <option value="CONCLUÍDO">CONCLUÍDO</option>
-                    <option value="ADIADO">ADIADO</option>
-                    <option value="CANCELADO">CANCELADO</option>
+                    <option style="color: green;" value="CONCLUÍDO">CONCLUÍDO</option>
+                    <option style="color: chocolate;" value="ADIADO">ADIADO</option>
+                    <option style="color: red;" value="CANCELADO">CANCELADO</option>
                 </select>
                 <button type="submit" id="add">Alterar</button>
             </form>
