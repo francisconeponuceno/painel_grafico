@@ -36,7 +36,6 @@ def salvar(clt,mot,dest,conf,placa,cub,classe,frase,img,status):
         cursor = conect.cursor()
         cursor.execute('''INSERT INTO carrego(clt, mot, dest, conf, placa, cub,classe,frase,img, status,data) VALUES(?,?,?,?,?,?,?,?,?,?,?)''',
                     [clt,mot,dest,conf,placa,cub,classe,frase,img,status,Data])
-        cursor.execute(f"DELETE FROM sqlite_sequence WHERE name = 'carrego' ")
         conect.commit()
         conect.close()
     except:
