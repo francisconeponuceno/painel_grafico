@@ -36,7 +36,8 @@ def cadastrar():
         if CONF != 'GERAL':
             AGUARD = 'CARREGANDO'
         if CLT =='' or MOT =='' or DEST =='' or CONF =='' or PLACA =='' or CUB == '':
-            return redirect("/")
+            alerta = 'Preencha Todos os Campos!'
+            return render_template("/add.html", alerta=alerta)
         salvar(CLT,MOT,DEST,CONF,PLACA,CUB,'aguardando', AGUARD, IMG,'ATIVO')
         return redirect("/")
     except:
