@@ -1,7 +1,7 @@
 from database import consultarDados, salvar, DadosGrafico, CubagemMes, excluir, updateCarrego, imagemConf
 from database import select
 from flask import Flask, render_template, request, redirect, flash
-from time import sleep
+
 
 
 app = Flask(__name__)
@@ -39,9 +39,9 @@ def cadastrar():
         if CONF != 'GERAL':
             AGUARD = 'CARREGANDO'
         if CLT =='' or MOT =='' or DEST =='' or CONF =='' or PLACA =='' or CUB == '':
-            alerta = 'Preencha Todos os Campos!'
+            alerta = 'Preencha Todos os Campos'
             classeAlerta = 'alerta'
-            icone = 'bi bi-exclamation-circle-fill'
+            icone = 'bi bi-exclamation-circle'
             return render_template("/add.html", alerta=alerta, classeAlerta=classeAlerta, icone=icone)
         
         salvar(CLT,MOT,DEST,CONF,PLACA,CUB,'aguardando', AGUARD, IMG,'ATIVO')
@@ -82,4 +82,5 @@ def remover(id):
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port=5000, debug=True)
 
+    # ABRE A APLICAÇÃO EM UMA PORTA PERSONALIZADA
     # app.run(host='0.0.0.0', port= 'A DEFINIR', debug=True)
