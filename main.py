@@ -1,6 +1,7 @@
 from database import consultarDados, salvar, DadosGrafico, CubagemMes, excluir, updateCarrego, imagemConf
 from database import select
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
+from time import sleep
 
 
 app = Flask(__name__)
@@ -25,6 +26,8 @@ def adicionar():
 @app.route('/cadastrar',methods=['POST','GET'])
 def cadastrar():
     try:
+        classeAlerta = 'close'
+        icone = ''
         CLT = request.form.get("clt")
         MOT = request.form['mot'].upper()
         DEST = request.form['dest'].upper()
@@ -37,8 +40,14 @@ def cadastrar():
             AGUARD = 'CARREGANDO'
         if CLT =='' or MOT =='' or DEST =='' or CONF =='' or PLACA =='' or CUB == '':
             alerta = 'Preencha Todos os Campos!'
-            return render_template("/add.html", alerta=alerta)
+            classeAlerta = 'alerta'
+            icone = 'bi bi-exclamation-circle-fill'
+            return render_template("/add.html", alerta=alerta, classeAlerta=classeAlerta, icone=icone)
+        
         salvar(CLT,MOT,DEST,CONF,PLACA,CUB,'aguardando', AGUARD, IMG,'ATIVO')
+        flash('Carrego Adicionado com Sucesso')
+        flash = 'bi bi-check-circle-fill'
+        flash = 'sucesso'
         return redirect("/")
     except:
         return redirect("/")

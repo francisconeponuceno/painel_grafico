@@ -29,7 +29,7 @@
 
 .container .modal {
     width: 25%;
-    height: 60%;
+    height: 80%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -60,11 +60,33 @@
 
 
 .alerta {
+    display: flex;
+    justify-content: space-evenly;
     width: 100%;
-    font-weight: bold;
     text-align: center;
+    font-size: 0.8rem;
     margin-top: 10px;
     color: red;
+    border: 1PX solid red;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.sucesso {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    color: green;
+    border: 1PX solid green;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.close {
+    display: none;
 }
 
 .container .modal form input, select {
