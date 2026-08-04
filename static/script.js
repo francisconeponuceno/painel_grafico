@@ -1,13 +1,13 @@
 
 let cubArimateia = document.getElementById('cubArimateia');
 let cubFabio = document.getElementById('cubFabio');
-let cubVicente = document.getElementById('cubVicente');
+let cubwillames = document.getElementById('cubwillames');
 let cubCaze = document.getElementById('cubCaze');
-let cubKassio = document.getElementById('cubKassio');
-let cubZecarlos = document.getElementById('cubZecarlos');
+let cubcubWesllen = document.getElementById('cubcubWesllen');
+let cubLuisFelipe = document.getElementById('cubLuisFelipe');
 let cubFernando = document.getElementById('cubFernando');
 let cubRaione = document.getElementById('cubRaione');
-let cubLucas = document.getElementById('cubLucas');
+let cubJoao = document.getElementById('cubJoao');
 let porcentoTerceiro = document.getElementById('porcentoTerceiro');
 let porcentoClaudino = document.getElementById('porcentoClaudino');
 let porcentoEscoamento = document.getElementById('porcentoEscoamento');
@@ -153,8 +153,8 @@ am4core.ready(function() {
         "color": am4core.color("#ff0000") // VERMELHO
       },
       {
-        "network": "Zé carlos",
-        "MAU": Number(cubZecarlos.innerHTML),
+        "network": "Luis Felipe",
+        "MAU": Number(cubLuisFelipe.innerHTML),
         "color": am4core.color("#ff0000") // VERMELHO
       },
       {
@@ -163,13 +163,13 @@ am4core.ready(function() {
         "color": am4core.color("#ff0000") // VERMELHO
       },
       {
-        "network": "Cassio",
-        "MAU": Number(cubKassio.innerHTML),
+        "network": "Wesllen",
+        "MAU": Number(cubWesllen.innerHTML),
         "color": am4core.color("#ff0000") // VERMELHO
       },
       {
-        "network": "Vicente",
-        "MAU": Number(cubVicente.innerHTML),
+        "network": "willames",
+        "MAU": Number(cubwillames.innerHTML),
         "color": am4core.color("#ff0000") // VERMELHO
       },
       {
@@ -183,8 +183,8 @@ am4core.ready(function() {
         "color": am4core.color("#ff0000") // VERMELHO
       },
       {
-        "network": "Emerson",
-        "MAU": Number(cubLucas.innerHTML),
+        "network": "João",
+        "MAU": Number(cubJoao.innerHTML),
         "color": am4core.color("#ff0000") // VERMELHO
       }
     ]

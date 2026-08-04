@@ -81,21 +81,21 @@ def DadosGrafico():
         for i in Dgrafico:
             if i[4] == 'FABIO':
                 cubF += i[6]
-            if i[4] == 'CASSIO':
+            if i[4] == 'WESLLEN':
                 cubCSS += i[6]
             if i[4] == 'ARIMATEIA':
                 cubA += i[6]
-            if i[4] == 'VICENTE':
+            if i[4] == 'WILLAMES':
                 cubV += i[6]
             if i[4] == 'CASE':
                 cubKZ += i[6]
-            if i[4] == 'ZE CARLOS':
+            if i[4] == 'LUIS FELIPE':
                 cubZC += i[6]
             if i[4] == 'FERNANDO':
                 cubfer += i[6]
             if i[4] == 'RAIONE':
                 cubrai += i[6]
-            if i[4] == 'EMERSON':
+            if i[4] == 'JOÃO':
                 cubluc += i[6]
             if i[1] == 'C':
                 cubC += i[6]
@@ -111,9 +111,9 @@ def DadosGrafico():
         porcentoClaudino = cubC / cubtotal * 100
         porcentoEscoameto = cubE / cubtotal * 100
         # formatado com duas casas decimais
-        porcentoTerceiro = f'{porcentoTerceiro:.0f}'
-        porcentoClaudino = f'{porcentoClaudino:.0f}'
-        porcentoEscoameto = f'{porcentoEscoameto:.0f}'
+        porcentoTerceiro = f'{porcentoTerceiro:.1f}'
+        porcentoClaudino = f'{porcentoClaudino:.1f}'
+        porcentoEscoameto = f'{porcentoEscoameto:.1f}'
         ##############################################
         dadoslidos = [cubtotal, cubF, cubCSS, cubA, cubV, cubKZ, cubZC, cubfer, cubrai, cubluc, cubC, cubT, cubE,
                       porcentoTerceiro, porcentoClaudino, porcentoEscoameto, T, C, E]
@@ -214,7 +214,7 @@ def imagemConf(conferente=''):
                 IMG = '/static/img_caze.jpg'
             case 'FABIO':
                 IMG = '/static/img_fabio.png'
-            case 'VICENTE':
+            case 'WILLAMES':
                 IMG = '/static/img_vicente.png'
             case 'CASSIO':
                 IMG = '/static/img_cassio.png'
@@ -224,7 +224,7 @@ def imagemConf(conferente=''):
                 IMG = '/static/img_fernando.png'
             case 'RAIONE':
                 IMG = '/static/img_raione.png'
-            case 'EMERSON':
+            case 'WESLLEN':
                 IMG = '/static/img_lucas.png'
             case _: 
                 IMG = '/static/images.jpg'
@@ -246,6 +246,12 @@ def excluir(id):
     except:
         return
 
+# limpa a tabela
+def limparTabela():
+    conect = sqlite3.connect('banco.db')
+    cursor = conect.cursor()
+    cursor.execute(f"DELETE FROM sqlite_sequence WHERE name='carrego'")
+    conect.commit()
 
 # eliminando a tabela
 def eliminaTabela():
@@ -261,8 +267,9 @@ def eliminaTabela():
 
 
 
-# eliminaTabela()
-# eliminaTabela()
+
+#limparTabela()
+#eliminaTabela()
 #for i in range(1, 63):
 #excluir(4)
 #alterarFase(48,'ADIADO')
