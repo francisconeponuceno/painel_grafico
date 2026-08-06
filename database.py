@@ -216,8 +216,8 @@ def imagemConf(conferente=''):
                 IMG = '/static/img_fabio.png'
             case 'WILLAMES':
                 IMG = '/static/img_vicente.png'
-            case 'CASSIO':
-                IMG = '/static/img_cassio.png'
+            case 'LUIS FELIPE':
+                IMG = '/static/img_luisfelipe.png'
             case 'ZE CARLOS':
                 IMG = '/static/img_zecarlos.png'
             case 'FERNANDO':
