@@ -129,8 +129,8 @@ am4core.ready(function() {
   series.dataFields.valueX = "MAU";
   series.tooltipText = "{valueX.value}"
   series.columns.template.strokeOpacity = 0;
-  series.columns.template.column.cornerRadiusBottomRight = 0;
-  series.columns.template.column.cornerRadiusTopRight = 0;
+  series.columns.template.column.cornerRadiusBottomRight = 5;
+  series.columns.template.column.cornerRadiusTopRight = 5;
   series.columns.template.propertyFields.fill = "color"; // Associa a cor definida no objeto de dados (cor da barra)
   
   var labelBullet = series.bullets.push(new am4charts.LabelBullet())
